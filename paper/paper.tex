@@ -1,0 +1,238 @@
+%
+% RELATED NOTES (Richard)
+%    PersonalJBArchive
+%    PSnucleosynthesis/Branch-GalaxyAssemblyAndZDistribution 
+%        */bhmetals   : paper.tex, paper-shorter.tex
+\documentclass[nofootinbib,twocolumn,prd]{emulateapj}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{ifpdf}
+%\usepackage{eps2pdf}
+
+\newcommand\mc{{\cal M}_c{}}
+\newcommand\editremark[1]{{\color{red}#1}}
+\newcommand\unit[1]{\text{#1}}
+\newcommand\abbrvPSgrb{PSG}
+\newcommand\abbrvPSellipticals{PSE}
+\newcommand\abbrvKBLowZa{BD2010}
+\newcommand\ForInternalReference[1]{}
+\newcommand\modelDefault{A}
+\newcommand\modelNiino{A'}
+\newcommand\modelKW{D}
+\newcommand\modelMannucci{D'}
+\newcommand\modelKB{B}
+\newcommand\modelPanter{C}
+%\newcommand\aap{A\&A}
+%\newcommand\apss{APSS}
+%\newcommand\aaps{AAPS}
+%% \newcommand\apjs{ApJ S}
+%% \newcommand\aj{AJ}
+%% \newcommand\apjl{ApJL}
+%% \newcommand\mnras{MNRAS}
+%% \newcommand\pasp{PASP}
+%% \newcommand\pasj{PASJ}
+%% \newcommand\araa{ARAA}
+%% \newcommand\physrep{Phys. Rep.}
+
+
+\begin{document}
+\title{Details matter: Similar-looking host galaxies can produce different merging compact binary populations} 
+\author{R.\ O'Shaughnessy}
+\affiliation{Center for Computational Relativity and Gravitation, Rochester Institute of Technology, Rochester, NY 14623, USA}
+\email{oshaughn@mail.rit.edu}
+\author{ J. Bellovary}
+\affiliation{Department of Physics and Astronomy, Vanderbilt University, Nashville TN 37235}
+\email{jillian.bellovary@vanderbilt.edu}
+\begin{abstract}
+% POINT:
+% - existence proof by example .. not an attempt to solve the general problem we raise
+Galaxy formation
+simulations can reproduce present-day galaxies with notably different assembly and star formation histories.  
+Recent binary evolution simulations suggest the compact binary merger rate depends
+sensitively on the progentior's metallicity, to the extent that rare low-metallicity star formation during galaxy
+assembly can produce more detected compact binaries than typical star formation.   
+Using detailed simulations of galaxy and chemical evolution, we demonstrate by example that galaxies with similar present-day appearance can host distinctly different
+compact binary populations.
+We discuss the implications for transient multimessenger astronomy with compact binary sources. 
+%% Present and future observations of  merging compact binaries can provide valuable constraints on their birthrate
+%%  and formation scenarios.  However, recent binary evolution simulations suggest the compact binary merger rate depends
+%% sensitively on the progentior's metallicity, to the extent that rare low-metallicity star formation during galaxy
+%% assembly can produce more detected compact binaries than typical star formation.    Additionally, galaxy formation
+%% simulations can reproduce present-day galaxies with notably different assembly and star formation histories, with
+%% corresponding different present-day merger rates.  
+%% % POINT 0: Gasoline + popsyn: real work was done
+%% Using existing simulations of the assembly,  chemical evolution, and compact-object formation rate of a single halo
+%% Milky Way-like galaxy with Gasoline, we construct present-day compact binary merger rates using a simple semianalytic
+%% compact binary formation model ($dP/dt \propto Z^\alpha/t $) motivated by detailed calculations in the literature. 
+%% % POINT 1: Observations
+%% %   - difficult to reconstruct f
+%% %   - local particle far away
+%% As expected, we show the present-day galactic state can be only weakly correlated with the dominant compact binary
+%% fomation rate: the galaxy could form in several ways, including epochs of low-metallicity star formation through major
+%% mergers; and present-day mergers rarely occur near gas with their progenitor metallicity, even when not kicked.  
+%% %  - but the galaxy 
+%% By contrast,  detailed studies which reconstruct the galaxy's star formation history and metallicity evolution could,
+%% when stacked, pinpoint the dominant formation process \editremark{need more than handwaving}.
+% POINT 2: Revised merger rates
+%% Averaging over the cosmological star formation history and galaxy mass-metallicity relation, we demonstrate low
+%% metallicity star formation can produce much of the detected population of short GRBs and nearly all gravitatational-wave
+%% sources. 
+%% % POINT 3: Challenge for observations
+%% Therefore,  though a potentially large fraction of binaries formed from low-metallicity gas,  their birth metallicity
+%% cannot be identified directly, even with spatially resolved observations. 
+%% %
+%% We discuss the extent to which observations can distinguish between different scenarios for  low-metallicity compact
+%% binary formation.
+%
+%\textbf{say something using GRBs in paragraph; perhaps mention relative bias in $p(M_g|GRB)$ relative to prior?}
+%% \textbf{say something about different SFR histories making present galaxies -- can do more if we can distinguish history
+%% of the galaxy}
+
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Cosmological simulations produce two distinct Milky-Way-like galaxies}
+
+\subsection{Simulating galaxy evolution}
+To thoroughly examine the significance of low metallicity star
+formation, we have run a cosmological smoothed particle hydrodynamics
+(SPH) $N$-body simulation of a Milky Way-like galaxy with GASOLINE
+\citep{Stadel01,Wadsley04}.  This simulation allows us to analyze both
+spatially and temporally resolved star formation, and determine not
+only the metallicity history of compact object progenitors, but also
+their dynamical evolution.  The simulation we report here, $h258$,
+involves the formation of a Milky Way-like disk galaxy whose
+progenitors undergo major mergers at $z = 2$ and $z = 0.8$.  This
+simulation has been previously discussed by
+\citet{Governato09,Bellovary10,Bellovary11,Brooks11}; however we have
+re-run the simulation at a factor of two higher in spatial resolution
+and additionally included new physics including a prescription for
+cooling by molecular hydrogen (Christensen et al. in prep).
+
+We selected our simulated region of interest from a 50 Mpc volume of
+uniform resolution, and resampled the region of interest at very high
+resolution using the volume renormalization technique \citep{Katz93}.
+This technique allows us to follow the detailed physical processes
+involved in galaxy evolution in our selected region while still
+including large-scale torques from cosmic structure.  We use {\bf
+WMAPX} cosmology \citep{WMAP} and model the ionizing UV background
+with the prescription from \citet{Haardt96}.  Stars form
+probabilistically from gas particles which meet density ($n_{min} =
+10$ amu cm$^{-3}$) and temperature ($T_{max} = 10^4$ K) thresholds
+{\bf (additional description needed for H2 SF prescription)}. If a gas
+particle meets these criteria, it has a likelihood of forming a star
+particle (representing a simple stellar population with a Kroupa IMF
+\citep{Kroupa}) which is given by
+
+\begin{equation}
+p = \frac{m_{\rm gas}}{m_{\rm star}} (1 - e^{c^*\Delta t/t_{\rm form}})
+\end{equation}
+
+\noindent
+where the star formation efficiency parameter $c^*$ is set to 0.1 such
+that our galaxies match the observed Kennicutt-Schmidt law
+\citep{Kennicutt89}; $m_{star}$ and $m_{gas}$ are the star and gas
+particle masses;\footnote{In our high-resolution simulations \textbf{ROS-check!}, each gas particle starts with a mass
+  $m_{gas,0}=26,676 M_\odot$, gaining mass from feedback and losing it to star formation.  Each star particle, when
+  formed, has $1/3$ of the progenitor mass of the forming gas particle.  See \cite{2010ApJ...717..121C} for a discussion
+of resolution issues in these SPH simulations.} $t_{form}$ is the dynamical time for the gas
+particle; and $\Delta t$ is the time between star formation episodes,
+which we set to 1 Myr.  We model supernova feedback using the
+blastwave formalism described in \citet{McKee77} and implemented in
+our simulations as in \citet{Stinson06}.  Each supernova releases
+$E_{SN} = 10^{51}$ erg into the surrounding gas with a radius
+determined by the blastwave equations.  These particles are not
+allowed to cool for the duration of the blastwave, mimicking the
+snowplow phase of a supernova explosion.  Previous works have found
+that this set of parameters results in realistic galaxies which obey a
+number of observed relations such as the mass-metallicity relation
+\citep{Brooks07}, the Tully-Fisher relation \citep{Governato09}, and
+the size-luminosity relation \citep{Brooks11}, as well as reproduce
+the detailed characteristics of bulgeless dwarf galaxies
+\citep{Governato10} and the Milky Way \citep{Guedes11}.
+
+
+Also included in our simulations is a scheme for turbulent metal
+diffusion \citep{Shen10}.  Metals are created in supernova explosions
+and deposited directly to the gas within the blast radius.  Stellar
+masses are converted to ages as described by \citet{Raiteri96}, and
+stars more massive than 8 M$_\odot$ are able to undergo a Type II
+supernova.  We follow metal enrichment from both Type II and Type 1a
+supernova, with metal yields derived from \citet{Weaver93} and
+\citet{Thielemann86} respectively.  From this point onwards metals
+diffuse through the surrounding gas, according to 
+\begin{equation}
+\frac{dZ}{dt}|_{diff} = \nabla (D \nabla {Z}) \\
+\end{equation}
+%
+where the diffusion paremeter $D$ is given by
+%
+\begin{equation}
+D = C_{diff} |S_{ij}| h
+\end{equation}
+%
+and $h$ is the SPH smoothing length, $S_{ij}$ is the trace-free shear
+tensor, and $C_{diff}$ is a dimensionless constant which we set to
+{\bf something.  Reasons for setting it are good, let's have some.
+Sijing finds that C = 0.05 makes for a good comparison to clusters, we
+tend to use something more conservative}.
+
+We identify individual galaxies using the halo finder $AHF$
+\citep{Gill04,Knollmann09}, which identifies halos based on an
+overdensity criterion for a flat universe \citep{Gross97}.  For this
+work, we are focusing on the primary (i.e. most massive) galaxy at any
+given redshift, which serves as the progenitor to our $z = 0$ Milky
+Way-like galaxy.
+
+
+
+\subsection{Two Milky-Way-like galaxies with }
+
+\begin{figure}
+\caption{\textbf{Star formation and metallicity versus time}: \editremark{writeme}
+}
+\end{figure}
+
+\section{Results}
+
+\section{Conclusions}
+
+
+\appendix
+
+\section{Outline }
+\begin{verbatim}
+
+Intro
+  -Important (edo/Brian)
+  - More important soon (LIGO; IFU's give detail)
+    because these galaxies are local and spatially resolved
+    at 400 Mpc distance
+  - The question: can we learn about things from detailed host galaxy 
+    observations, and if so what?
+    Obviously yes (cf. SN Ia, short GRB, etc)
+  - Specific questions of interest, particularly for BH-NS origin for short GRBs:
+    is there dependence of the event rate and BH mass on the source metallicity
+
+  - Not clear because of kicks, mixing
+  - Goal of paper: address this challenge via simulations
+
+Methods
+  - JB: specifically target two 'identical' MW galaxies (and their subhalo population)
+  - Postproces JB: rhodot; Z of star forming gas
+  - Model:
+      - predict present-day number (and mass distribution) by formula 
+
+Results:
+  - Different histories which look the same now can produce different answers
+  - 
+\end{verbatim}
+%1 Kilo Parsec/(400 Mega Parsec)
+%Convert[%, Milli ArcSecond] // N
+\bibliography{bhmetals}
+\end{document}
