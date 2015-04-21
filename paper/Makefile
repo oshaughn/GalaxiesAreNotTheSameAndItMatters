@@ -7,6 +7,8 @@ PDFS	= $(SRC:.tex=.pdf) $(ART:.tex=.dvi)
 
 
 pdf:	 $(PDFS)
+	(cd Figures; ps2pdf zvst.ps)
+	(cd Figures; ps2pdf sfh.ps)
 	echo "Done processing" `pwd`;
 
 
