@@ -296,7 +296,8 @@ due to any individual galaxy via the following formula
 \begin{subequations}
 \label{eq:RatePerGalaxy}
 \begin{eqnarray}
-r_D  &\equiv& \int^{0}_{-T_{univ}} dt' d\log Z  \, [\dot{M}_*(t') p(\log Z|t) ] \times \; {\cal G}(0-t' | Z)  p(\mc|Z) (\mc/1.2 M_\odot)^{15/6}
+r_D  &\equiv& \int^{0}_{-T_{univ}} dt' d\log Z  \, [\dot{M}_*(t') p(\log Z|t) ] \times \; {\cal G}(0-t' | Z)  
+ [\int d\mc p(\mc|Z) (\mc/1.2 M_\odot)^{15/6}]
 %\\
 %% {\cal R}(z)&\equiv &  \int dx {\cal R} p(z)
 \end{eqnarray}
@@ -304,7 +305,7 @@ r_D  &\equiv& \int^{0}_{-T_{univ}} dt' d\log Z  \, [\dot{M}_*(t') p(\log Z|t) ] 
 \end{widetext}
 In this expression, the galactic star formation rate
 $\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$ are galaxy-dependent and drawn from our
-simulations.  
+simulations.   \editremark{rewrite this to be average chirp mass at a given metallicity}
 
 
 We parameterize the response function ${\cal G}(t|Z)$ with two factors: (a) an overall efficiency $\lambda$ for forming
@@ -353,10 +354,42 @@ time distributions.\footnote{Simulations suggest the delay time distribution var
 For suitable choices of parameter, our phenomenological response function is qualitatively consistent with the results of detailed simulations of binary
 evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2-StarTrackRevised-2012}.
 
+\subsection{Tidal disruption and black hole mass versus metallicity}
+At merger, black holes may promptly engulf a companion neutron star \editremark{same papers as for Brandon:Foucart,
+  etc}.  Without  a tidal disruption event prior to merger, the prospects for associated electromagnetic counterparts
+are severely diminished.  
+To quantify this effect
+
+
+
+DISCUSSION: could we explain the redshift distribution of short GRBs this way?
+
+
 \section{Results}
 \label{sec:results}
 
 
+\begin{verbatim}
+ACTION ITEMS AND STATUS
+
+* Result script looks good (\texttt{sfr\_to\_rate.py}).  Follow instructions
+
+** May want more Z bins to make sure we resolve it. Our differences between predictions are not huge
+
+*** or rewrite script to use numpy on raw star data.  Use 'starmetal.dat': last colum is age.
+
+** Clear that low-Z matters a lot
+
+*
+
+* Do we get to different answers?  Are they different ENOUGH?  
+
+** Overall event rate: different by 20\% between two types. Largely similar.
+   - plot versus z_exponent.  Is there a trend
+
+** mass-cut-dependent event rate -- will be more sensitive (e.g., if there
+  is a hard cutoff on some masses, as having no EM counterpart)
+\end{verbatim}
 
 
 \section{Conclusions}
