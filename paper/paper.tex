@@ -103,32 +103,47 @@ In the next few years, ground-based gravitational wave detectors like LIGO
 and Virgo  should detect the gravitational
 wave signal from merging compact binaries, including  binary  neutron stars and black hole-neutron star binaries; see,
 e.g., \cite{LIGO-Inspiral-Rates} and references therein.
-In addition to the strong gravitational wave signal, mergers of neutron stars is expected to  frequently be accompanied by detectable
+In addition to the strong gravitational wave signal, mergers of neutron stars are expected to  frequently be accompanied by detectable
 electromagnetic radiation  via a number of  mechanisms, including a strong but tightly beamed
-ultrarelativistic jet \citep{2013PhRvL.111r1101C} and weakly-beamed but more isotropic thermal radiation from an expanding hot shell
-\citep{short-grb-GWCoincidenceEM-MetzgerBerger2011}.  
+ultrarelativistic jet and weakly-beamed but more isotropic thermal radiation from an expanding hot shell
+\citep[see,e.g.,][and references therein]{2013PhRvL.111r1101C,short-grb-GWCoincidenceEM-MetzgerBerger2011}.  
 % People we can't afford the space to cite, alas:
-%    - 2015arXiv150101986H
+%    - 2015arXiv150101986H   -
+%    - 2013MNRAS.430.2121P - Rosswog recent
+%    - Shibata group/Koutarou
 In addition to providing a wealth of information about the merger event itself, a multimessenger detection will pin down
 the sky position and therefore approximate birthplace of each merging binary.    
 As with supernovae and  GRBs, these host galaxy associations   are expected to tightly constrain models for compact binary
 formation; see, for comparison,  \citet{2011MNRAS.412.1508M}, \citet{long-grb-GuettaPiran2007},
 \citet{2014ARAA..52...43B}, and references therein. %2010ApJ...722.1879M,2010MNRAS.407.1314M}.     
 %
-These associations will be particularly valuable because of the relative proximity of LIGO sources, expected to short GRB host 
 
-% POOINT: Huge detail possible
+% POINT: Huge detail possible
 The host galaxies of distant short GRBs have already been extensively investigated, with the associations being used to
-draw conclusions about their progentitors  \cite{2014ARAA..52...43B}.   Of necessity, these analyses  relied largely on
-bulk correlations, often stacked to increase significance across multiple sources \editremark{clean up/don't piss off
-  Edo}.  
+draw preliminary conclusions about their progentitors  \cite{2014ARAA..52...43B}.   
+%Of necessity, these analyses  on bulk correlations, often stacked to increase significance across multiple sources
+%\editremark{clean up/don't piss off   Edo}.  
 Unlike GRBs, detected gravitational wave sources will be limited by the range of LIGO to the local universe; for
 example,  binary neutron star sources should be closer than $400\unit{Mpc}$.  Due to their proximity, each host galaxy
 can be explored at great depth and detail via  position-resolved spectroscopy, enabling detailed position-resolved star-formation
-and chemical evolution histories \editremark{citation: need better ones} \cite{2009MNRAS.396..462K,2014MNRAS.444..336C}.
+and chemical evolution histories \editremark{citation: need better ones} \citep[see,e.g.][]{2009MNRAS.396..462K,2014MNRAS.444..336C}.
 % POINT: But is it useful?
 In this work, we demonstrate by concrete example that detailed analysis of individual galaxies can be essential to
 investigate key physical questions about the origin of compact binary mergers. 
+
+
+This paper is organized as follows. 
+In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  two galaxies.  Though these two
+galaxies are at  present similar to the Milky Way, we
+show that their star formation and chemical evolution history have subtle but important differences due to their
+distinctive merger histories.   To demonstrate
+these differences have a significant practical impact,  in \S \ref{sec:model}, we introduce a simple,
+metallicity-dependent  phenomenological model to calculate the present-day rate and mass distribution of compact binary
+mergers from  a galaxy's known history.  
+In \S \ref{sec:results} we show that while these two galaxy formation models should produce comparable detectable binary neutron star
+populations, these two scenarios could produce dramatically different populations of electromagnetically detectable
+merging black hole-neutron star binaries. 
+%
 
 
 %% %   - Delay  time only: 
@@ -143,6 +158,7 @@ investigate key physical questions about the origin of compact binary mergers.
 
 
 \section{Cosmological simulations produce two distinct Milky-Way-like galaxies}
+\label{sec:sims}
 
 \subsection{Simulating galaxy evolution}
 To thoroughly examine the significance of low metallicity star
@@ -151,7 +167,7 @@ formation, we have run a cosmological smoothed particle hydrodynamics
 \citep{Stadel01,Wadsley04}.  This simulation allows us to analyze both
 spatially and temporally resolved star formation, and determine not
 only the metallicity history of compact object progenitors, but also
-their dynamical evolution.  The simulation we report here, $h258$,
+their dynamical evolution.  One simulation we report here, $h258$,
 involves the formation of a Milky Way-like disk galaxy whose
 progenitors undergo major mergers at $z = 2$ and $z = 0.8$.  This
 simulation has been previously discussed by
@@ -237,19 +253,166 @@ Way-like galaxy.
 
 
 
-\subsection{Two Milky-Way-like galaxies with }
+\subsection{Two Milky-Way-like galaxies with distinct histories }
+
+Figure \ref{fig:TwoGalaxies} shows the history of 
 
 \begin{figure}
-\caption{\textbf{Star formation and metallicity versus time}: \editremark{writeme}
+\includegraphics[width=\columnwidth]{Figures/zvst}
+\caption{\label{fig:TwoGalaxies}\textbf{Star formation and metallicity versus time}:  \emph{Left panel}: Star formation history $\dot{M}_{*}$
+  versus time.  Red corresponds to galaxy A (``boring'') and blue to gaalxy B (``exciting'').  
+\emph{Right panel}: A plot of the  metallicity $Z$ of recently-formed stars versus time.  Solid red and black lines show
+the mean metallicity; dotted lines correspond to  90\% of newly-born stars have lower metallicity,   or 10\% of
+newly-born stars have greater metallicity.
 }
 \end{figure}
 
+\section{Model for compact binary formation}
+\label{sec:model}
+
+
+Binary evolution calculations suggest the detection rate depends sensitively on the assumed metallicity, in conjuction
+with other parameters \citep[see,\,e.g.][and references
+  therein]{popsyn-LowMetallicityImpact-Chris2008,popsyn-LIGO-SFR-2008}.\editremark{New dominik et al}
+% POINT: 
+%   - final BH spin, mass can change number favored
+%   - of course
+The detected population of compact binary mergers can further favor low-metallicity environments, e.g. through the total
+mass of merging binaries.
+% POINT: Simple model to encompass all
+To explore plausible binary detection scenarios, we adopt a parameterized formalism for binary evolution and event detection, motivated by
+the detailed studies of  \abbrvPSgrb{} and \abbrvPSellipticals.  Specifically, we encapsulate all information about
+ binary evolution into two  parameterized response functions.  The funciton ${\cal G}(t| Z) =
+dN/dt dM_*$ describes how many mergers per unit initial mass occur after a time $t$ since a starburst,
+given ambient metallicity $Z$.  The function $p(m_1,m_2|Z)$ is a metallicity-dependent mass distribution for binaries
+formed in a metallicity $Z$.
+%
+Finally, we account for the substantially increased sensitivity of gravitational wave detectors to binaries of larger
+chirp mass $\mc=(m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$; see \abbrvPSellipticals.
+%
+In terms of this response function, we can therefore calculate the relative contribution to the LIGO  event rate $r_D$
+due to any individual galaxy via the following formula 
+\begin{widetext}
+\begin{subequations}
+\label{eq:RatePerGalaxy}
+\begin{eqnarray}
+r_D  &\equiv& \int^{0}_{-T_{univ}} dt' d\log Z  \, [\dot{M}_*(t') p(\log Z|t) ] \times \; {\cal G}(0-t' | Z)  p(\mc|Z) (\mc/1.2 M_\odot)^{15/6}
+%\\
+%% {\cal R}(z)&\equiv &  \int dx {\cal R} p(z)
+\end{eqnarray}
+\end{subequations}
+\end{widetext}
+In this expression, the galactic star formation rate
+$\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$ are galaxy-dependent and drawn from our
+simulations.  
+
+
+We parameterize the response function ${\cal G}(t|Z)$ with two factors: (a) an overall efficiency $\lambda$ for forming
+binaries;  and (b) a
+cumulative delay time distribution $P_t(<t|Z)$, describing the fraction of binaries born at $t=0$ that merge in less
+than time $t$ from a population of binaries $Z$:\footnote{For simplicity, we assume the mass and delay time
+  distributions are uncorrelated.  Figure A9 in \abbrvPSgrb{} shows this approximation, while not strictly true, is an
+  excellent approximation for merging BH-BH binaries at solar metallicity.  }
+\begin{eqnarray}
+G(t,x|Z) &=& \lambda(Z) p_x(x|Z) \frac{dP_t}{dt}(t) 
+\end{eqnarray}
+Previous studies suggest the number of merging compact binaries $\lambda \delta M_*$ produced by a starburst depends
+as a power law on metallicity:
+\begin{eqnarray}
+\label{eq:LambdaVersusZModel}
+\lambda(Z) &=& \lambda_o \text{max}[(Z/Z_\odot)^{-a}, F_{max}] 
+\end{eqnarray}
+with $a\in [0,3]$ and $F_{max}<10^3$
+%$\lambda_o F_{max} < 3\times 10^{-4}/M_\odot$
+ (see, e.g.\cite{popsyn-LIGO-SFR-2008}, \abbrvKBLowZa).
+In this paper we only investigate the dependence of rates with metallicity; we therefore  adopt 
+\[
+\lambda_0 = 10^{-3}/M_\odot
+\]
+as a typical value for neutron star compact binaries (see \abbrvPSgrb{}, \abbrvPSellipticals, and \abbrvKBLowZa).
+%
+Finally, for simplicity we adopt the universal delay time distribution
+%% Finally, we parameterize the delay time distribution by  either
+%% \begin{eqnarray}
+%% P_t(<t) &=& \begin{cases}
+%% 0 & t<10 \unit{Myr} \\
+%% (t/13\unit{Gyr})^{b}& t \in [10\unit{Myr},t_H]
+%% \end{cases} 
+%% \end{eqnarray}
+%% with $b> 0$ or as the special case
+\begin{eqnarray}
+\frac{dP_t(<t)}{dt} =  \begin{cases}
+0 & t<10 \unit{Myr} \\
+\frac{1}{t \ln (13 \unit{Gyr}/10\unit{Myr})} & t \in [10\unit{Myr},13\unit{Gyr}]
+\end{cases} 
+\end{eqnarray}
+\abbrvPSgrb{} and \abbrvPSellipticals{} show this distribution is reasonable approximations to compact binary delay
+time distributions.\footnote{Simulations suggest the delay time distribution varies from model to model and with mass.
+  These variations have less impact on our results than the evolving metallicity distribution of star forming gas.}
+%
+For suitable choices of parameter, our phenomenological response function is qualitatively consistent with the results of detailed simulations of binary
+evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2-StarTrackRevised-2012}.
+
 \section{Results}
+\label{sec:results}
+
+
+
+
+\section{Conclusions}
+
+
+
+
+% POINT: Future directions
+
+\begin{acknowledgements}
+ROS acknowledges support from NSF award AST-1412449, via subcontract from the University of Wisconsin-Milwaukee.
+%
+JB acknolwedges support  from \editremark{writeme}
+\end{acknowledgements}
+
+\appendix
+
+\section{Outline }
+\begin{verbatim}
+
+Intro
+  -Important (edo/Brian)
+  - More important soon (LIGO; IFU's give detail)
+    because these galaxies are local and spatially resolved
+    at 400 Mpc distance
+  - The question: can we learn about things from detailed host galaxy 
+    observations, and if so what?
+    Obviously yes (cf. SN Ia, short GRB, etc)
+  - Specific questions of interest, particularly for BH-NS origin for short GRBs:
+    is there dependence of the event rate and BH mass on the source metallicity
+
+  - Not clear because of kicks, mixing
+  - Goal of paper: address this challenge via simulations
+
+Methods
+  - JB: specifically target two 'identical' MW galaxies (and their subhalo population)
+  - Postproces JB: rhodot; Z of star forming gas
+  - Model:
+      - predict present-day number (and mass distribution) by formula 
+
+Results:
+  - Different histories which look the same now can produce different answers
+     - key issue: impact of past mergers
+  - 
+
+Stuff to skip
+  - (spin-dependent) tidal disruption threshold: assume all BH-NS disrupt, for simplicity
+\end{verbatim}
+%1 Kilo Parsec/(400 Mega Parsec)
+%Convert[%, Milli ArcSecond] // N
+
+
+\section{Other discussion}
 
 
 \section{Implications for transient multimessenger astronomy}
-
-* ascertain properties of hosts critical..
 
 
 % POINT: Observations provide sample of extragalactic  binaries at merger, and  host galaxies.  Possible to mine large archive of events
@@ -328,43 +491,5 @@ distribution of the progenitor; see, e.g., their Fig 3.
 
 
 
-\section{Conclusions}
-
-
-
-
-% POINT: Future directions
-
-\appendix
-
-\section{Outline }
-\begin{verbatim}
-
-Intro
-  -Important (edo/Brian)
-  - More important soon (LIGO; IFU's give detail)
-    because these galaxies are local and spatially resolved
-    at 400 Mpc distance
-  - The question: can we learn about things from detailed host galaxy 
-    observations, and if so what?
-    Obviously yes (cf. SN Ia, short GRB, etc)
-  - Specific questions of interest, particularly for BH-NS origin for short GRBs:
-    is there dependence of the event rate and BH mass on the source metallicity
-
-  - Not clear because of kicks, mixing
-  - Goal of paper: address this challenge via simulations
-
-Methods
-  - JB: specifically target two 'identical' MW galaxies (and their subhalo population)
-  - Postproces JB: rhodot; Z of star forming gas
-  - Model:
-      - predict present-day number (and mass distribution) by formula 
-
-Results:
-  - Different histories which look the same now can produce different answers
-  - 
-\end{verbatim}
-%1 Kilo Parsec/(400 Mega Parsec)
-%Convert[%, Milli ArcSecond] // N
 \bibliography{bhmetals}
 \end{document}
