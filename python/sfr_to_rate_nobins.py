@@ -10,7 +10,8 @@
 #      --Z-exponent 0
 #
 #  USAGE
-#    python sfr_to_rate.py --starmetal-file ~/PersonalJBArchive/boring-galaxy/sfrhist_metalbin_boring.txt --plot
+#    python sfr_to_rate_nobins.py --starmetal-file ~/PersonalJBArchive/boring-galaxy/z0.016.starmetal.dat --Z-exponent 2
+#    python sfr_to_rate_nobins.py --starmetal-file ~/PersonalJBArchive/boring-galaxy/z0.016.starmetal.dat
 #
 # PLOTS
 #    Third plot is money plot: shows you where the mergers are coming from, for different exponent choices.
