@@ -257,15 +257,20 @@ Way-like galaxy.
 
 Figure \ref{fig:TwoGalaxies} shows the history of 
 
-\begin{figure}
+\begin{figure*}
+\includegraphics[width=\columnwidth]{Figures/sfh}
 \includegraphics[width=\columnwidth]{Figures/zvst}
 \caption{\label{fig:TwoGalaxies}\textbf{Star formation and metallicity versus time}:  \emph{Left panel}: Star formation history $\dot{M}_{*}$
-  versus time.  Red corresponds to galaxy A (``boring'') and blue to gaalxy B (``exciting'').  
+  versus time.  Black corresponds to galaxy A (``boring'') and red to gaalxy B (``exciting'').  
 \emph{Right panel}: A plot of the  metallicity $Z$ of recently-formed stars versus time.  Solid red and black lines show
 the mean metallicity; dotted lines correspond to  90\% of newly-born stars have lower metallicity,   or 10\% of
-newly-born stars have greater metallicity.
+newly-born stars have greater metallicity.  When these two galaxies are $2-3\unit{Gyr}$ old, prior to the first major
+merger of  near the peak of their
+star-forming history, newly-born stars are created with significantlydifferent metallicity.  Additionally, prior to the
+second major merger of galaxy B at $\simeq 6\unit{Gyr}$, stars form in the ``exciting'' galaxy at a systematically lower
+metallicity than in the ``boring'' counterpart.
 }
-\end{figure}
+\end{figure*}
 
 \section{Model for compact binary formation}
 \label{sec:model}
@@ -356,12 +361,20 @@ evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRev
 
 \subsection{Tidal disruption and black hole mass versus metallicity}
 At merger, black holes may promptly engulf a companion neutron star \editremark{same papers as for Brandon:Foucart,
-  etc}.  Without  a tidal disruption event prior to merger, the prospects for associated electromagnetic counterparts
+  etc}, unless they have sufficiently small mass and sufficiently large spin.  Without  a tidal disruption event prior to merger, the prospects for associated electromagnetic counterparts
 are severely diminished.  
-To quantify this effect
+%
+The black hole mass and possibly spin in black hole-neutron star binaries can depend sensitively on binary formation
+channels.  Because of the extremely narrow range of masses that permit tidal disruption in BH-NS binaries, small changes
+in the mass distribution can produce significant changes in the electromagnetically detected population.
+%
+To quantify this effect, we adopt a simple formula for tidal disruption of neutron stars in BH-NS binaries and a simple
+phenomenological model for the metallicity-dependent mass distribution of BHs in BH-NS binaries
 
 
 
+
+\editremark{calibrate mass distribution to synthetic universe/Dominik - but also allow reversed trend}
 DISCUSSION: could we explain the redshift distribution of short GRBs this way?
 
 
@@ -374,11 +387,11 @@ ACTION ITEMS AND STATUS
 
 * Result script looks good (\texttt{sfr\_to\_rate.py}).  Follow instructions
 
-** May want more Z bins to make sure we resolve it. Our differences between predictions are not huge
+** Modify script to include tidal disruption options for BHs
 
-*** or rewrite script to use numpy on raw star data.  Use 'starmetal.dat': last colum is age.
+** plot 'stanard' results for NS-NS
 
-** Clear that low-Z matters a lot
+** set scale to be physical units -- some ad-hoc factors used
 
 *
 
