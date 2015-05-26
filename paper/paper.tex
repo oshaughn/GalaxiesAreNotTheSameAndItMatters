@@ -13,6 +13,7 @@
 
 \newcommand\mc{{\cal M}_c{}}
 \newcommand\editremark[1]{{\color{red}#1}}
+\newcommand\msun{M_\odot}
 \newcommand\unit[1]{\text{#1}}
 \newcommand\abbrvPSgrb{PSG}
 \newcommand\abbrvPSellipticals{PSE}
@@ -270,10 +271,10 @@ quiescent merger history.  It experiences its last major merger at $z
 life.  This simulation has been shown to emulate several Milky Way
 properties, including stellar dynamics
 \citep{Loebman12,Loebman14,Kassin14}, baryon fraction
-\citep{Munshi13}, halo properties \citep{Zolotov09,Zolotov10), and
+\citep{Munshi13}, halo properties \citep{Zolotov09,Zolotov10}, and
   disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir}
-  = 6.79 \times 10^{11}$ \msun, stellar mass $M_* = 4.24 \times
-  10^{10}$ \msun, and circular velocity $v_{circ} = xx$ km s$^{-1}$.
+  = 6.79 \times 10^{11}  \msun$, stellar mass $M_* = 4.24 \times
+  10^{10} \msun$, and circular velocity $v_{circ} = \editremark{xx}$ km s$^{-1}$.
 
   The simulation h258 (Exciting Galaxy), on the other hand, has a much
   more active merger history.  At $z = 1$ there is a 1:1 merger event;
@@ -286,8 +287,8 @@ properties, including stellar dynamics
   the series of major mergers, plus a number of minor interactions and
   flybys, gives a stark contrast to the relatively quiescent history
   of h277.  At $z = 0$, h258 has a virial mass of $M_{vir} = 7.74
-  \times 10^{11}$ \msun, stellar mass $M_* = 4.46 \times 10^{10}$
-  \msun, and circular velocity $v_{circ} = xx$ km s$^{-1}$.
+  \times 10^{11} \msun$, stellar mass $M_* = 4.46 \times 10^{10}$
+  \msun, and circular velocity $v_{circ} = \editremark{xx}$ km s$^{-1}$.
 
 
   Due to the differences in merger histories, the metallicity
@@ -407,15 +408,92 @@ At merger, black holes may promptly engulf a companion neutron star \editremark{
   etc}, unless they have sufficiently small mass and sufficiently large spin.  Without  a tidal disruption event prior to merger, the prospects for associated electromagnetic counterparts
 are severely diminished.  
 %
-The black hole mass and possibly spin in black hole-neutron star binaries can depend sensitively on binary formation
-channels.  Because of the extremely narrow range of masses that permit tidal disruption in BH-NS binaries, small changes
-in the mass distribution can produce significant changes in the electromagnetically detected population.
+A neutron star  (NS) coalescing with a black hole (BH) will be tidally disrupted prior to merger if and only if the component
+masses, spins, and equation of state permit it.  As described below, only a small fraction of all  possible coalescing
+BH-NS binaries have parameters consistent with tidal disruption.  
+%
+Stellar evolution and hence supernovae remnants are expected to evolve
+substantially with birth metallicity, the black hole mass and possibly spin in black hole-neutron star binaries can depend sensitively on binary formation
+channels and the fraction of coalescing NS-BH binaries which are tidally disrupted will vary
+over cosmic time. 
 %
 To quantify this effect, we adopt a simple formula for tidal disruption of neutron stars in BH-NS binaries and a simple
 phenomenological model for the metallicity-dependent mass distribution of BHs in BH-NS binaries
 
 
+\begin{figure}
+\includegraphics{Figures/fig-mma-TidalDisrupt-MbhA-VersusTheta}
+\caption{\label{fig:TidalDisrupt}\textbf{Tidal disruption}:  Following  \citet{2012PhRvD..86l4007F}, a plot of
+  the critical spin needed for tidal disruption versus black hole mass and inclination (solid black, dotted black,
+  dashed black, solid blue, and dotted blue are $\theta_{LS}=\pi/2,3\pi/8,\pi/4, \pi/8,0$ respectively).  Specifically,
+  this figure corresponds to $M_{\rm disk}=0$ in Eq. (\ref{eq:Mdisk}), assuming  a $1.4 M_\odot$ neutron star with compactness ${\cal
+    C}=1.66$ in inclined orbit around a spinning black hole of mass $m_{bh}$ and dimensionless spin $\chi_{bh}$.
+  Parameters consistent with tidal disruption are above the curves; prompt capture occurs below the
+  curve.
+}
+\end{figure}
 
+% POINT: Trend versus mass and opening angle.  [Be careful: disruption time will depend on opening angle]
+To estimate whether a specific compact binary will be tidally disrupted prior to merger, we employ the
+following procecure to identify posterior samples consistent with tidal disruption of a neutron star.  First, the
+smaller mass must lie within the range of masses allowed by our fiducial NS equation of state (\textbf{MPA1 from Ben}), here
+between $0.5 M_\odot$ and $2.5 M_\odot$.  Second, the disruption process must leave behind a remnant disk with nonzero
+mass, as estimated using Foucart's expression \cite{2012PhRvD..86l4007F} (his Eqs. (6,12-13)):
+\begin{align}
+\frac{M_{disk}}{M_{NS}} &=
+ 0.288 (3 m_{bh}/m_{ns})^{1/3}[1-2 {\cal C}] 
+\nonumber \\
+&
+ -0.148 (m_{bh}/m_{ns})  {\cal C} R_{isco}(a)/m_{bh} 
+\label{eq:Mdisk}
+\end{align}
+where $q=m_{bh}/m_{NS}$ is the binary mass ratio; $a=S_{bh}/m_{bh}^2$ is a dimensionless measure of the black hole spin;
+and  where ${\cal C}(m_{ns})=m_{ns}/R_{ns}$ is a mass- and equation-of-state dependent  measure of the neutron star
+compactness.  In Foucart's expression, shown above, $R_{isco}(a)$ is the radius of the  innermost stable equitorial circular orbit  of a test particle
+about a Kerr black hole  \cite{1972ApJ...178..347B}. % Brandon:  [their Eq. 2.21].   
+When the black hole spin is not aligned with the orbit, we use the aligned component of the black hole spin magnitude $a\rightarrow a \cos \theta_{LS}$ in this
+expression.   Fixing the neutron star mass $m_{ns}=1.4 M_\odot$ and hence compactness to ${\cal C}=1.66$, this expression implies a two-dimensional surface in
+the three-dimensional parameter space $m_{bh},a,\theta_{LS}$ seperates parameters corresponding to tidal disruption to
+parameters corresponding to prompt coalescence.
+%
+After coalescence, the remnant disk generates a tightly beamed electromagnetic counterpart.  For simplicity, we assume
+beaming angle is independent of the disruption process or progenitor parameters, so a constant beaming correction factor $f_b$ enters into all
+subsequent calculations and can hence be omitted.  
+%
+Figure \ref{fig:TidalDisrupt} shows contours of this expression for different values of $\theta_{LS}$.
+
+\begin{figure}
+\caption{\textbf{Disruption fraction}: Approximate tidal disrpution fraction}
+\end{figure}
+
+% POINT: Distribution of tilt angles
+Based on Monte Carlo simulations of supernova kicks \editremark{citations:Eggleton,Kalogera,IhmXXX}, we approximate the tilt angle distribution $p(\theta)$ of bound,
+coalescing BH-NS binaries by the positive half of a normal distribution
+\[
+p(\theta)\simeq e^{-\theta^2/2\sigma_\theta^2} \frac{2}{\sqrt{2\pi \sigma_\theta^2}}
+\]
+where $\sigma_{\theta}\simeq 1$ is a characteristic angular width that varies relatively weakly with the black hole mass
+and supernova kick velocity, for velocities consistent with pulsar recoil velocities \editremark{citations}.  This simple distribution is consistent with some detailed population synthesis simulations by
+\texttt{StarTrack}. \editremark{validate with more modern startrack}  
+For simplicity, in this work we adopt $\sigma_{\theta}=1$.   
+%  POINT Average over spin distributions
+Using this approximate distribution of misalignment angles, Figure  assumed black hole mass and spin we calculate the
+fraction of coalescing binaries consistent with 
+
+
+% POINT: Average over distributions
+
+The relative probability of a given tilt angle
+
+- first aproximations: tilt angle independent of merger time
+
+
+% POINT: Include delay time: get examples of disruption fraction versus time
+
+
+
+
+------
 
 \editremark{calibrate mass distribution to synthetic universe/Dominik - but also allow reversed trend}
 DISCUSSION: could we explain the redshift distribution of short GRBs this way?
@@ -462,6 +540,7 @@ JB acknolwedges support  from \editremark{writeme}
 \end{acknowledgements}
 
 \appendix
+\section{Tidal disruption probability}
 
 \section{Outline }
 \begin{verbatim}
