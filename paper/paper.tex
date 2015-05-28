@@ -26,6 +26,7 @@
 \newcommand\modelKB{B}
 \newcommand\modelPanter{C}
 \newcommand\cqg{CQG}
+\newcommand\E[1]{\left<#1\right>}
 %\newcommand\aap{A\&A}
 %\newcommand\apss{APSS}
 %\newcommand\aaps{AAPS}
@@ -287,8 +288,7 @@ properties, including stellar dynamics
   the series of major mergers, plus a number of minor interactions and
   flybys, gives a stark contrast to the relatively quiescent history
   of h277.  At $z = 0$, h258 has a virial mass of $M_{vir} = 7.74
-  \times 10^{11} \msun$, stellar mass $M_* = 4.46 \times 10^{10}$
-  \msun, and circular velocity $v_{circ} = \editremark{xx}$ km s$^{-1}$.
+  \times 10^{11} \msun$, stellar mass $M_* = 4.46 \times 10^{10} \msun$, and circular velocity $v_{circ} = \editremark{xx}$ km s$^{-1}$.
 
 
   Due to the differences in merger histories, the metallicity
@@ -438,7 +438,7 @@ To estimate whether a specific compact binary will be tidally disrupted prior to
 following procecure to identify posterior samples consistent with tidal disruption of a neutron star.  First, the
 smaller mass must lie within the range of masses allowed by our fiducial NS equation of state (\textbf{MPA1 from Ben}), here
 between $0.5 M_\odot$ and $2.5 M_\odot$.  Second, the disruption process must leave behind a remnant disk with nonzero
-mass, as estimated using Foucart's expression \cite{2012PhRvD..86l4007F} (his Eqs. (6,12-13)):
+mass, as estimated using the expression in \cite{2012PhRvD..86l4007F} (his Eqs. (6,12-13)):
 \begin{align}
 \frac{M_{disk}}{M_{NS}} &=
  0.288 (3 m_{bh}/m_{ns})^{1/3}[1-2 {\cal C}] 
@@ -450,7 +450,7 @@ mass, as estimated using Foucart's expression \cite{2012PhRvD..86l4007F} (his Eq
 where $q=m_{bh}/m_{NS}$ is the binary mass ratio; $a=S_{bh}/m_{bh}^2$ is a dimensionless measure of the black hole spin;
 and  where ${\cal C}(m_{ns})=m_{ns}/R_{ns}$ is a mass- and equation-of-state dependent  measure of the neutron star
 compactness.  In Foucart's expression, shown above, $R_{isco}(a)$ is the radius of the  innermost stable equitorial circular orbit  of a test particle
-about a Kerr black hole  \cite{1972ApJ...178..347B}. % Brandon:  [their Eq. 2.21].   
+about a Kerr black hole  \citep{1972ApJ...178..347B}. % Brandon:  [their Eq. 2.21].   
 When the black hole spin is not aligned with the orbit, we use the aligned component of the black hole spin magnitude $a\rightarrow a \cos \theta_{LS}$ in this
 expression.   Fixing the neutron star mass $m_{ns}=1.4 M_\odot$ and hence compactness to ${\cal C}=1.66$, this expression implies a two-dimensional surface in
 the three-dimensional parameter space $m_{bh},a,\theta_{LS}$ seperates parameters corresponding to tidal disruption to
@@ -463,40 +463,67 @@ subsequent calculations and can hence be omitted.
 Figure \ref{fig:TidalDisrupt} shows contours of this expression for different values of $\theta_{LS}$.
 
 \begin{figure}
-\caption{\textbf{Disruption fraction}: Approximate tidal disrpution fraction}
+\includegraphics{Figures/fig-mma-PrecomputeDisrupt}
+\caption{\label{fig:TidalDisrupt:Probability}\textbf{Disruption fraction}: Contour plot of the fraction
+  $P_{dis}(m_{bh},\chi_{bh})$ of BH-NS binaries with BH mass and spin $m_{bh},\chi_{bh}$ that are expected to tidally
+  disrupt using the assumptions in the text.  Contours are shown at $0.1, 1/3, 0.5, 0.9$.}
 \end{figure}
 
 % POINT: Distribution of tilt angles
-Based on Monte Carlo simulations of supernova kicks \editremark{citations:Eggleton,Kalogera,IhmXXX}, we approximate the tilt angle distribution $p(\theta)$ of bound,
+Based on Monte Carlo simulations of supernova kicks as described in the Appendix, we approximate the
+cumulative tilt angle distribution $P(<\theta)$ of bound,
 coalescing BH-NS binaries by the positive half of a normal distribution
-\[
-p(\theta)\simeq e^{-\theta^2/2\sigma_\theta^2} \frac{2}{\sqrt{2\pi \sigma_\theta^2}}
-\]
-where $\sigma_{\theta}\simeq 1$ is a characteristic angular width that varies relatively weakly with the black hole mass
-and supernova kick velocity, for velocities consistent with pulsar recoil velocities \editremark{citations}.  This simple distribution is consistent with some detailed population synthesis simulations by
-\texttt{StarTrack}. \editremark{validate with more modern startrack}  
+\begin{eqnarray}
+P(<\theta)\simeq \int_0^\theta e^{-\theta^2/2\sigma_\theta^2} \frac{2}{\sqrt{2\pi \sigma_\theta^2}} d\theta
+\end{eqnarray}
+where $\sigma_{\theta}\simeq 1$ is a characteristic angular width that varies relatively weakly with the black hole mass,
+ supernova kick velocity, and compact binary formation channel.  This simple distribution is consistent with some detailed population synthesis simulations by
+\texttt{StarTrack}.
 For simplicity, in this work we adopt $\sigma_{\theta}=1$.   
 %  POINT Average over spin distributions
-Using this approximate distribution of misalignment angles, Figure  assumed black hole mass and spin we calculate the
-fraction of coalescing binaries consistent with 
-
+Using this approximate distribution of misalignment angles, Figure \ref{fig:TidalDisrupt:Probability} estimates the fraction
+$P_{dis}(m_{bh},\chi_{bh})$ of coalescing binaries with a given black hole mass and spin that should tidally disrupt.  
+For simplicity assuming detection weighting does not strongly favor specific relative orientations $\theta$, this
+distribution determines the relative likelihood that a gravitational wave event with a given BH mass and spin produces
+is consistent with an electromagnetic counterpart.
 
 % POINT: Average over distributions
-
-The relative probability of a given tilt angle
-
-- first aproximations: tilt angle independent of merger time
+The relative event rate of electromagnetic counterparts to BH-NS disruptions therefore depends on the intrinsic
+distribution $p_d(m_{bh},\chi_{bh})$ of black hole mass and spin among GW-detected BH-NS mergers and the probability
+that an event is detected via electromagnetic emission and GW: 
+\begin{eqnarray}
+p_{em}(m_{bh},\chi_{bh}) = \frac{P_{dis}(m_{bh},\chi_{bh}) p_d(m_{bh},\chi_{bh})}{\int dm_{bh} d\chi_{bh}P_{dis}(m_{bh},\chi_{bh}) p_d(m_{bh},\chi_{bh})}
+\end{eqnarray}
+where the constant beaming factor cancels.  
+%
+Because black holes in BH-NS binaries are currently expected to accrete relatively little mass, the spin distribution at merger
+should be close to their birth spin distribution.   This distribution is entirely unknown but likely significant, given
+tidally-induced spinup prior to merger\editremark{Ott}; we will assume the spin distribution to be uniform between $0.7$
+and $1$, independent of formation channel or birth conditions: \editremark{change: make this one Z dependent}
+\begin{eqnarray}
+p(\chi_{bh}) = \frac{1}{0.3} \theta(\chi_{bh}-0.7)\theta(1-\chi_{bh})
+\end{eqnarray}
+As discussed in \cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012},  the black hole mass distribution depends
+sensitively on the birth environment and coalescing binary formation channels; see their Tables 7 and 9 and their Figures 6,9, 11, and 13,
+reconstructing the BH mass from the reported chirp masses (red curves).  
+Omitting formation channels that predict implausibly high compact binary formation rates (their model A), the
+distribution of $m_{bh}$ in BH-NS binaries extends over a wide range.  As a first approximation, the BH mass
+distribution in BH-NS binaries does not depend on composition, favoring BH-NS binaries with relatively low BH masses
+$m_{bh}\lesssim 5-9 M_\odot$ independent of birth composition.  
+% \cite{2012ApJ...749...91F}  : physics of SN explosions used in these mechanisms. Rapid engine needed for mass gap, but
+% is there one? 
+% mc[m1_, m2_] := (m1 m2)^(3/5)/(m1 + m2)^(1/5)
+% Solve[mc[m1, 1.4] == 2.5]
+For simplicity, we will adopt a uniform mass distribution between $5$ and $9 M_\odot$:
+\begin{eqnarray}
+p(m_{bh}) = \frac{1}{4 M_\odot} \theta(m_{bh}-4 M_\odot)\theta(9 M_\odot-m_{bh})
+\end{eqnarray}
 
 
 % POINT: Include delay time: get examples of disruption fraction versus time
 
 
 
-
-------
-
-\editremark{calibrate mass distribution to synthetic universe/Dominik - but also allow reversed trend}
-DISCUSSION: could we explain the redshift distribution of short GRBs this way?
 
 
 \section{Results}
@@ -523,6 +550,9 @@ ACTION ITEMS AND STATUS
 
 ** mass-cut-dependent event rate -- will be more sensitive (e.g., if there
   is a hard cutoff on some masses, as having no EM counterpart)
+
+
+* Aside: BBH distribution the most sensitive, but not relevant for EM followup
 \end{verbatim}
 
 
@@ -540,7 +570,90 @@ JB acknolwedges support  from \editremark{writeme}
 \end{acknowledgements}
 
 \appendix
-\section{Tidal disruption probability}
+\section{Binary evolution and spin-orbit misalignment}
+
+\editremark{ROS to do} -- find python/C code (Davide?) for simple MC; mine old resuts from startrack
+
+%% POINT: Other reference
+% 2014arXiv1401.3032W  - fallback details
+
+The progenitors of both components of a BH-NS binary undergo supernova, whose associated asymmetric mass loss and
+supernova kicks significantly perturb the orbit  \citep{2013PhRvD..87j4028G,2002MNRAS.329..897H,2000ApJ...541..319K}.   Assuming progeniror stellar spins are
+aligned with the orbital plane (e.g., due to strong tides), only asymmetric supernova kicks can change
+the orbital plane and introduce misalignment between the BH spin and the orbit.   The distribution of spin-orbit
+misalignments expected in any specific binary depends strongly on weakly-constrained binary evolution physics, the
+treatment of which is beyond the scope of this article.  Previous detailed calculations have reported on spin-orbit
+misalignment \citep{2010ApJ...719L..79F,2008ApJ...682..474B,2004PhRvD..69j2002G}.  That said, relatively simple order-of-magnitude calculations
+can explain the typical small misalignment angles expected among merging BH-NS binaries.
+% POINT: Small angle tilt forma (follows from simple considerations of angular momentum)
+Specifically, in the limit of a small supernova kick $\vec{v}_K$, the orbital plane  change by an angle $\theta \simeq \vec{v}_K \cdot
+\hat{z}/v_{orb}$ where $\hat{z}$ is the direction perpendicular to the (circular) orbital plane.  The black hole forms first and cannot
+significantly change its spin magnitude or direction through accretion; therefore the two supernovae kicks produced by
+forming the black hole and then neutron star add (in quadrature) to produce a characteristic RMS misalignment error
+$\E{\theta^2}$.
+%
+For simplicity, we will adopt the model used in the \texttt{StarTrack} binary evolution code \citep{StarTrack2}: binaries
+prior to each supernovae can be approximated as in circular orbits;  supernova kicks on neutron stars produce a Maxwellian
+distribution of velocities with 1d velocity dispersion $\sigma_v=265$ \citep{HobbsKicks};  supernova kicks on black holes
+$v_{bh}$ are suppressed by fallback, with velocities  $\vec{v}_{K,BH} = (1-f_b)v_{NS}$ suppressed by fallback accretion
+onto the black hole; and the dominant formation channels for BH-NS binaries involve common
+envelope accretion after the first supernova forms a black hole.   Combining these expressions under these assumptions, we expect the net misalignment  $\theta$ due to both supernova
+explosions will have zero mean and variance
+\begin{eqnarray}
+\label{eq:MisalignmentOrderOfMagnitude}
+\E{\theta^2} = \frac{\E{v^2}}{3}\left[ \frac{(1-f_b)^2\epsilon_1}{v_{orb,1}^2}+\frac{\epsilon_2}{v_{orb,2}^2} \right]
+\end{eqnarray}
+where $v_{orb,1}$ and $v_{orb,2}$ are the orbital velocities at the first and second supernova and where
+$\epsilon_1,\epsilon_2$ are factors between 0 and 1 which account for the fact that the average is taken over binaries which \emph{survive} and are not
+disrupted by the kick.  Because the second supernova  occurs in a tight orbit (post common
+envelope),  the orbital velocity $v_{orb,2}$ at the supernova producing the neutron
+star will be  large:  if $M_2$ and $r_2$ are the total mass and orbital separation, $v_{orb,2}=\sqrt{GM_{2}/r}\simeq
+440\unit{km/s} \sqrt{M/M_\odot/(r_2/R_\odot)}$, 
+% Convert[Sqrt[  GravitationalConstant (mbh SolarMass)/(r SolarRadius)], (Kilo Meter/    Second)]
+comparable to or
+significantly in excess of the typical supernova kick velocity for massive black holes orbiting the stripped progenitors of
+neutron stars at seperations of a few $R_\odot$.  Conversely, at birth the black hole will often capture a significant
+amount of the stellar envelope (``fallback'' accretion or prompt collapse) with $f_b\simeq 1$.  Therefore, even though
+the initial orbit is wide, orbital  velocity is very small, and hence the orbit can be easily strongly misaligned by
+supernova kicks,  the first kick when acting on a massive black hole can produce little to  modest amounts orbital
+misalignment.  
+
+% POINT: Second term of order unity
+For exceptional models of binary evolution, the population of coalescing BH-NS binaries will depend extremely critically on the
+a finely-tuned second supernova.  In this case, only a small fraction of surviving BH-NS binaries merge; the BH-NS merger rate will be extremely low and  depend extremely sensitively on
+the magnitude of supernova kicks; and the misalignment produced by the second supernova can frequently be very large.  More typically, however, a significant fraction of surviving BH-NS binaries merge
+\citep{2008ApJ...675..566O,popsyn-LowMetallicityImpact2-StarTrackRevised-2012,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}; in these cases, the  second supernova's kick does not require fine-tuning to guarantee
+coalescence.   In these most common scenarios, the second term in Eq. (\ref{eq:MisalignmentOrderOfMagnitude}) is of
+order unity.  
+
+% POINT:
+As a result, the process of surviving two supernova kicks generally produces a wide  distribution of misalignment
+angles concentrated near $\theta\simeq 0$.  This wide distribution is expected to be relatively robust.  Extremely wide
+distributions are disfavored kinematically and by the requirement that sufficiently many binaries survive to coalesce.
+Conversely, the width of the distribution is bounded below by the contribution from the second supernova kick.\footnote{For simplicity and brevity, we neglect the
+  possibility of different modes of supernova explosions and hence kicks, notably via electron capture supernovae \citep{2012ARNPS..62..407J,2004ApJ...612.1044P,2010MNRAS.406..656K,2015ApJ...801...32A}.  That said, small supernova kicks in NS
+  birth would further minimize any spin-orbit misaligment and hence further favor the strong dependence of tidal disruption probability on the black hole mass and spin
+  distribution described in the text.} 
+As a first approximation,  the cumulative distribution of misalignment angles should agree with direct calculations \cite{2010ApJ...719L..79F,2008ApJ...682..474B,2004PhRvD..69j2002G}.
+
+
+
+% POINT: 
+%% To calculate the necessary inputs to this expression, we adopt one particular family of supernova mechanism:  Fryer et al 
+%% \cite{2012ApJ...749...91F}, the model adopted in \texttt{StarTrack} and applied in detailed calculations of binary
+%% evolution
+%% \cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}.
+%% Because of significant residual uncertainty in the supernova mechanism, our results are proof-of-concept calculations
+%% intended to illustrate plausible effects of composition on remnant masses, spins, and hence misalignments.  Other models
+%% for supernovae produce dramatically different initial-final mass relations \cite{2012ApJ...757...69U} and are
+%% anticipated to produce equally different different amounts of spin-orbit
+%% misalignment in BH-NS binaries.  
+%% %
+%% Observations of isolated pulsar
+%% recoils \cite{1997MNRAS.291..569H,Ar} and binary pulsars \cite{psr-kicks-WongWillemsKalogera2010}
+%% strongly constrain the action of random supernova kicks on neutron stars.  
+
+
 
 \section{Outline }
 \begin{verbatim}
