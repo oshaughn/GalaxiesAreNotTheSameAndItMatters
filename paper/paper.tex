@@ -163,72 +163,73 @@ merging black hole-neutron star binaries.
 \label{sec:sims}
 
 \subsection{Simulating galaxy evolution}
-To thoroughly examine the significance of low metallicity star
-formation, we have run a cosmological smoothed particle hydrodynamics
-(SPH) $N$-body simulation of a Milky Way-like galaxy with GASOLINE
-\citep{Stadel01,Wadsley04}.  This simulation allows us to analyze both
+To thoroughly study the significance of low metallicity star
+formation, we examine cosmological smoothed particle hydrodynamics
+(SPH) $N$-body simulations of Milky Way-like galaxies with GASOLINE
+\citep{2001PhDT........21S,2004NewA....9..137W}.  These simulations allow us to analyze both
 spatially and temporally resolved star formation, and determine not
 only the metallicity history of compact object progenitors, but also
-their dynamical evolution.  One simulation we report here, $h258$,
+their dynamical evolution.  
+%maybe move the below section to later and/or consolidate
+One simulation we report here, $h258$,
 involves the formation of a Milky Way-like disk galaxy whose
 progenitors undergo major mergers at $z = 2$ and $z = 0.8$.  This
 simulation has been previously discussed by
-\citet{Governato09,Bellovary10,Bellovary11,Brooks11}; however we have
+\citet{2009MNRAS.398..312G,2010ApJ...721L.148B,2011ApJ...742...13B,2011ApJ...728...51B}; however we have
 re-run the simulation at a factor of two higher in spatial resolution
 and additionally included new physics including a prescription for
-cooling by molecular hydrogen (Christensen et al. in prep).
+cooling by molecular hydrogen \citet{2012MNRAS.425.3058C}.
 
 We selected our simulated region of interest from a 50 Mpc volume of
-uniform resolution, and resampled the region of interest at very high
-resolution using the volume renormalization technique \citep{Katz93}.
+uniform resolution, and resampled the region at very high
+resolution using the volume renormalization technique \citep{1993ApJ...412..455K}.
 This technique allows us to follow the detailed physical processes
 involved in galaxy evolution in our selected region while still
-including large-scale torques from cosmic structure.  We use {\bf
-WMAPX} cosmology \citep{WMAP} and model the ionizing UV background
-with the prescription from \citet{Haardt96}.  Stars form
+including large-scale torques from cosmic structure.  We use
+WMAP3 cosmology \citep{WMAP} and model the ionizing UV background
+with the prescription from \citet{1996ApJ...461...20H}.  Stars form
 probabilistically from gas particles which meet density ($n_{min} =
-10$ amu cm$^{-3}$) and temperature ($T_{max} = 10^4$ K) thresholds
-{\bf (additional description needed for H2 SF prescription)}. If a gas
+10$ amu cm$^{-3}$) and temperature ($T_{max} = 10^4$ K) thresholds. If a gas
 particle meets these criteria, it has a likelihood of forming a star
 particle (representing a simple stellar population with a Kroupa IMF
-\citep{Kroupa}) which is given by
+\citep{2001MNRAS.322..231K}) which is given by
 
 \begin{equation}
-p = \frac{m_{\rm gas}}{m_{\rm star}} (1 - e^{c^*\Delta t/t_{\rm form}})
+p = \frac{m_{\rm gas}}{m_{\rm star}} (1 - e^{c^*\rm X_{\rm H_2} \Delta t/t_{\rm form}})
 \end{equation}
 
 \noindent
 where the star formation efficiency parameter $c^*$ is set to 0.1 such
 that our galaxies match the observed Kennicutt-Schmidt law
-\citep{Kennicutt89}; $m_{star}$ and $m_{gas}$ are the star and gas
-particle masses;\footnote{In our high-resolution simulations \textbf{ROS-check!}, each gas particle starts with a mass
+\citep{1989ApJ...344..685K};  X$_{\rm H_2}$ is the molecular hydrogen fraction of the gas particle; $m_{star}$ and $m_{gas}$ are the star and gas
+particle masses;\footnote{In our high-resolution simulations \textbf{ROS-check!}\editremark{this number is correct, is that what you want to check? - JMB}, each gas particle starts with a mass
   $m_{gas,0}=26,676 M_\odot$, gaining mass from feedback and losing it to star formation.  Each star particle, when
   formed, has $1/3$ of the progenitor mass of the forming gas particle.  See \cite{2010ApJ...717..121C} for a discussion
 of resolution issues in these SPH simulations.} $t_{form}$ is the dynamical time for the gas
 particle; and $\Delta t$ is the time between star formation episodes,
 which we set to 1 Myr.  We model supernova feedback using the
-blastwave formalism described in \citet{McKee77} and implemented in
-our simulations as in \citet{Stinson06}.  Each supernova releases
+blastwave formalism described in \citet{1977ApJ...218..148M} and implemented in
+our simulations as in \citet{2006MNRAS.373.1074S}.  Each supernova releases
 $E_{SN} = 10^{51}$ erg into the surrounding gas with a radius
 determined by the blastwave equations.  These particles are not
 allowed to cool for the duration of the blastwave, mimicking the
 snowplow phase of a supernova explosion.  Previous works have found
 that this set of parameters results in realistic galaxies which obey a
 number of observed relations such as the mass-metallicity relation
-\citep{Brooks07}, the Tully-Fisher relation \citep{Governato09}, and
-the size-luminosity relation \citep{Brooks11}, as well as reproduce
+\citep{2007ApJ...655L..17B}, the Tully-Fisher relation \citep{2009MNRAS.398..312G}, and
+the size-luminosity relation \citep{2011ApJ...728...51B}, as well as reproduce
 the detailed characteristics of bulgeless dwarf galaxies
-\citep{Governato10} and the Milky Way \citep{Guedes11}.
+\citep{2010Natur.463..203G} and the Milky Way \citep{2011ApJ...742...76G}.
 
 
 Also included in our simulations is a scheme for turbulent metal
-diffusion \citep{Shen10}.  Metals are created in supernova explosions
+diffusion \citep{2010MNRAS.407.1581S}.  Metals are created in supernova explosions
 and deposited directly to the gas within the blast radius.  Stellar
-masses are converted to ages as described by \citet{Raiteri96}, and
+masses are converted to ages as described by \citet{1996A&A...315..105R}, and
 stars more massive than 8 M$_\odot$ are able to undergo a Type II
 supernova.  We follow metal enrichment from both Type II and Type 1a
-supernova, with metal yields derived from \citet{Weaver93} and
-\citet{Thielemann86} respectively.  From this point onwards metals
+supernova, with metal yields derived from \citet{1993PhR...227...65W} and
+\citet{1986A&A...158...17T} respectively.  From this point onwards metals
 diffuse through the surrounding gas, according to 
 \begin{equation}
 \frac{dZ}{dt}|_{diff} = \nabla (D \nabla {Z}) \\
@@ -241,14 +242,13 @@ D = C_{diff} |S_{ij}| h
 \end{equation}
 %
 and $h$ is the SPH smoothing length, $S_{ij}$ is the trace-free shear
-tensor, and $C_{diff}$ is a dimensionless constant which we set to
-{\bf something.  Reasons for setting it are good, let's have some.
-Sijing finds that C = 0.05 makes for a good comparison to clusters, we
-tend to use something more conservative}.
+tensor, and $C_{diff}$ is a dimensionless constant which we set to a conservative value of 0.03.  
+
+%Sijing finds that C = 0.05 makes for a good comparison to clusters, and that C = 0.05 - 0.1 is expected from turbulence theory.
 
 We identify individual galaxies using the halo finder $AHF$
-\citep{Gill04,Knollmann09}, which identifies halos based on an
-overdensity criterion for a flat universe \citep{Gross97}.  For this
+\citep{2004MNRAS.351..399G,2009ApJS..182..608K}, which identifies halos based on an
+overdensity criterion for a flat universe \citep{1997PhDT........14G}.  For this
 work, we are focusing on the primary (i.e. most massive) galaxy at any
 given redshift, which serves as the progenitor to our $z = 0$ Milky
 Way-like galaxy.
@@ -259,7 +259,7 @@ Way-like galaxy.
 
 {\bf Richard go ahead and edit this however is needed.}  The evolution
 of a galaxy, in terms of its stellar mass and metallicity evolution,
-depends strongly on its interaction history.  Galaxies which look
+depends strongly on its interaction history.  Galaxies which appear
 similar at the present day may have had drastically different
 histories, which may result in differences in compact object merger
 rates.  To investigate whether galaxy history affects the GRB event
@@ -271,24 +271,25 @@ quiescent merger history.  It experiences its last major merger at $z
 = 3$, after which a small number of minor interactions permeate its
 life.  This simulation has been shown to emulate several Milky Way
 properties, including stellar dynamics
-\citep{Loebman12,Loebman14,Kassin14}, baryon fraction
-\citep{Munshi13}, halo properties \citep{Zolotov09,Zolotov10}, and
-  disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir}
-  = 6.79 \times 10^{11}  \msun$, stellar mass $M_* = 4.24 \times
-  10^{10} \msun$, and circular velocity $v_{circ} = \editremark{xx}$ km s$^{-1}$.
+\citep{2012ApJ...758L..23L,2014ApJ...794..151L,2014ApJ...790...89K}, baryon fraction
+\citep{2013ApJ...766...56M}, halo properties \citep{2009ApJ...702.1058Z,2010ApJ...721..738Z}, and
+disk properties \citep{2011ApJ...728...51B}.  It has a virial mass of $M_{vir} =
+6.79 \times 10^{11} \msun$, stellar mass $M_* = 4.24 \times 10^{10}
+\msun$, and maximum circular velocity $v_{circ} = 235$ km s$^{-1}$.
 
   The simulation h258 (Exciting Galaxy), on the other hand, has a much
   more active merger history.  At $z = 1$ there is a 1:1 merger event;
   a gas disk rapidly reforms following the collision (see
-  \citet{Governato09}), resulting in a massive disk galaxy at $z = 0$
+  \citet{2009MNRAS.398..312G}), resulting in a massive disk galaxy at $z = 0$
   which looks remarkably similar to the Milky Way and to the other
   simulation, h277.  Prior to the $z = 1$ merger, each of the two
   progenitor galaxies actually experiences its own additional major
-  merger events around $z = 2.5$ ({\bf check!}).  The combination of
+  merger events around $z = 2$.  The combination of
   the series of major mergers, plus a number of minor interactions and
   flybys, gives a stark contrast to the relatively quiescent history
   of h277.  At $z = 0$, h258 has a virial mass of $M_{vir} = 7.74
-  \times 10^{11} \msun$, stellar mass $M_* = 4.46 \times 10^{10} \msun$, and circular velocity $v_{circ} = \editremark{xx}$ km s$^{-1}$.
+  \times 10^{11} \msun$, stellar mass $M_* = 4.46 \times 10^{10}
+  \msun$, and maximum circular velocity $v_{circ} = 242$ km s$^{-1}$.  \editremark{Might we want to show the images of these galaxies?}
 
 
   Due to the differences in merger histories, the metallicity
@@ -297,7 +298,10 @@ properties, including stellar dynamics
   recently formed stars vs time (thick solid lines), where we define
   recent as within the past 50 Myr.  The shaded regions correspond to
   one standard devation of the mean, while the thick dashed lines
-  represent the top and bottom 90\%.  We see that {\bf different things happen at different times.}
+  represent the top and bottom 90\%.  We see that the early evolution
+  of the metal properties of these galaxies does differ - between 0.5
+  and 6 Gyr, h277 hosts a {\bf modestly} more metal-rich population than
+  h258. \editremark{The difference isn't all that big, I want to address it without sounding foolish.}
 
 
 
