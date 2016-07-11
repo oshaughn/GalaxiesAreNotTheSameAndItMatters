@@ -6,8 +6,8 @@ import scipy.interpolate as interpol
 
 metals,maxbh = np.loadtxt("mass_max_of_z.dat",unpack=True)
 
-print metals
-print maxbh
+#print metals
+#print maxbh
 
 metalgrid = np.linspace(min(metals),max(metals),1000)
 
@@ -36,7 +36,7 @@ print maxmass"""
 def probability(input_metal,sigma):
     place = np.abs(metalgrid - input_metal).argmin()
     maxmass = maxmassgrid[place]
-    print place,maxmass
+    #print place,maxmass
     prob = np.exp(-np.power(maxmassgrid-maxmass,2.0) / (2*np.power(sigma,2.)))
     return prob
 
@@ -51,7 +51,7 @@ plt.show()
 
 def make_uniform_func(metal_now):
     MmaxNow = f(metal_now)
-    print MmaxNow
+    #print MmaxNow
     nm = 1./(MmaxNow - 3)  # normalization
     return lambda x, Nm = nm, A = MmaxNow: np.where( np.logical_and(x<A , x > 3), nm* np.ones(len(x)), np.zeros(len(x)))
 
@@ -72,5 +72,5 @@ def average_mass(input_probability_distribution):
     result = scipy.integrate.simps(prob*np.power(masses, 15./6), masses)
     return np.power(result, 6/15.)
 
-thing = average_mass(prob_function)
-print thing
+the_answer = average_mass(prob_function)
+print "the mean mass for the metallicity",input_metal, " is" ,the_answer
