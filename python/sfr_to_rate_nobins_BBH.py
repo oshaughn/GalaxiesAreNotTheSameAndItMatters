@@ -52,6 +52,7 @@ def time_function(time_exp):
     # where does this come from?
     return 1./np.power(0.01+dat[:,2], time_exp)
 
+
 if opts.Z_exponent:
     # print a specific value
     weights = metal_function(opts.Z_exponent) * time_function(opts.time_exponent)*BBH_function(1.0)
