@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{ifpdf}
+\usepackage[normalem]{ulem}
 %\usepackage{eps2pdf}
 
 \newcommand\mc{{\cal M}_c{}}
@@ -125,7 +126,7 @@ Over the next few years, ground-based gravitational wave detectors like LIGO
 and Virgo  should detect the gravitational
 wave signal from many more similar merging compact binaries \citep{LIGO-O1-BBH,RatesPaper,gwastro-EventPopsynPaper-2016}, as well as  binary  neutron stars and black hole-neutron star binaries \citep{LIGO-Inspiral-Rates,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}.
 %
-The host galaxies of gravitational wave sources will identified, either directly or statistically.  
+The host galaxies of gravitational wave sources will be identified, either directly or statistically.  
 On the one hand, addition to the strong gravitational wave signal, mergers of neutron stars are expected to  frequently be accompanied by detectable
 electromagnetic radiation  via a number of  mechanisms, including a strong but tightly beamed
 ultrarelativistic jet and weakly-beamed but more isotropic thermal radiation from an expanding hot shell
@@ -195,7 +196,7 @@ merging black hole-neutron star binaries.
 To thoroughly study the significance of low metallicity star
 formation, we examine cosmological smoothed particle hydrodynamics
 (SPH) $N$-body simulations of Milky Way-like galaxies with GASOLINE
-\citep{2001PhDT........21S,2004NewA....9..137W}.  These simulations allow us to analyze both
+\citep{Stadel01,Wadsley04}.  These simulations allow us to analyze both
 spatially and temporally resolved star formation, and determine not
 only the metallicity history of compact object progenitors, but also
 their dynamical evolution.  
@@ -204,24 +205,24 @@ One simulation we report here, $h258$,
 involves the formation of a Milky Way-like disk galaxy whose
 progenitors undergo major mergers at $z = 2$ and $z = 0.8$.  This
 simulation has been previously discussed by
-\citet{2009MNRAS.398..312G,2010ApJ...721L.148B,2011ApJ...742...13B,2011ApJ...728...51B}; however we have
+\citet{Governato09,Bellovary10,Bellovary11,Brooks11}; however we have
 re-run the simulation at a factor of two higher in spatial resolution
 and additionally included new physics including a prescription for
-cooling by molecular hydrogen \citet{2012MNRAS.425.3058C}.
+cooling by molecular hydrogen \citet{Christensen12}.
 
 We selected our simulated region of interest from a 50 Mpc volume of
 uniform resolution, and resampled the region at very high
-resolution using the volume renormalization technique \citep{1993ApJ...412..455K}.
+resolution using the volume renormalization technique \citep{Katz93}.
 This technique allows us to follow the detailed physical processes
 involved in galaxy evolution in our selected region while still
 including large-scale torques from cosmic structure.  We use
 WMAP3 cosmology \citep{WMAP} and model the ionizing UV background
-with the prescription from \citet{1996ApJ...461...20H}.  Stars form
+with the prescription from \citet{Haardt96}.  Stars form
 probabilistically from gas particles which meet density ($n_{min} =
 10$ amu cm$^{-3}$) and temperature ($T_{max} = 10^4$ K) thresholds. If a gas
 particle meets these criteria, it has a likelihood of forming a star
 particle (representing a simple stellar population with a Kroupa IMF
-\citep{2001MNRAS.322..231K}) which is given by
+\citep{Kroupa01}) which is given by
 
 \begin{equation}
 p = \frac{m_{\rm gas}}{m_{\rm star}} (1 - e^{c^*\rm X_{\rm H_2} \Delta t/t_{\rm form}})
@@ -238,33 +239,33 @@ of resolution issues in these SPH simulations.} $t_{form}$ is the dynamical time
 particle; and $\Delta t$ is the time between star formation episodes,
 which we set to 1 Myr.  We model supernova feedback using the
 blastwave formalism described in \citet{1977ApJ...218..148M} and implemented in
-our simulations as in \citet{2006MNRAS.373.1074S}.  Each supernova releases
+our simulations as in \citet{Stinson06}.  Each supernova releases
 $E_{SN} = 10^{51}$ erg into the surrounding gas with a radius
 determined by the blastwave equations.  These particles are not
 allowed to cool for the duration of the blastwave, mimicking the
 snowplow phase of a supernova explosion.  Previous works have found
 that this set of parameters results in realistic galaxies which obey a
 number of observed relations such as the mass-metallicity relation
-\citep{2007ApJ...655L..17B}, the Tully-Fisher relation \citep{2009MNRAS.398..312G}, and
-the size-luminosity relation \citep{2011ApJ...728...51B}, as well as reproduce
+\citep{Brooks07}, the Tully-Fisher relation \citep{Governato09}, and
+the size-luminosity relation \citep{Brooks11}, as well as reproduce
 the detailed characteristics of bulgeless dwarf galaxies
-\citep{2010Natur.463..203G} and the Milky Way \citep{2011ApJ...742...76G}.
+\citep{Governato10} and the Milky Way \citep{2011ApJ...742...76G}.
 
 
 Also included in our simulations is a scheme for turbulent metal
-diffusion \citep{2010MNRAS.407.1581S}.  Metals are created in supernova explosions
+diffusion \citep{Shen10}.  Metals are created in supernova explosions
 and deposited directly to the gas within the blast radius.  Stellar
 masses are converted to ages as described by \citet{1996A&A...315..105R}, and
 stars more massive than 8 M$_\odot$ are able to undergo a Type II
 supernova.  We follow metal enrichment from both Type II and Type 1a
-supernova, with metal yields derived from \citet{1993PhR...227...65W} and
-\citet{1986A&A...158...17T} respectively.  From this point onwards metals
+supernova, with metal yields derived from \citet{Weaver93} and
+\citet{Thielemann86} respectively.  From this point onwards metals
 diffuse through the surrounding gas, according to 
 \begin{equation}
 \frac{dZ}{dt}|_{diff} = \nabla (D \nabla {Z}) \\
 \end{equation}
 %
-where the diffusion paremeter $D$ is given by
+where the diffusion parameter $D$ is given by
 %
 \begin{equation}
 D = C_{diff} |S_{ij}| h
@@ -276,8 +277,8 @@ tensor, and $C_{diff}$ is a dimensionless constant which we set to a conservativ
 %Sijing finds that C = 0.05 makes for a good comparison to clusters, and that C = 0.05 - 0.1 is expected from turbulence theory.
 
 We identify individual galaxies using the halo finder $AHF$
-\citep{2004MNRAS.351..399G,2009ApJS..182..608K}, which identifies halos based on an
-overdensity criterion for a flat universe \citep{1997PhDT........14G}.  For this
+\citep{Gill04,Knollman09}, which identifies halos based on an
+overdensity criterion for a flat universe \citep{Gross97}.  For this
 work, we are focusing on the primary (i.e. most massive) galaxy at any
 given redshift, which serves as the progenitor to our $z = 0$ Milky
 Way-like galaxy.
@@ -300,16 +301,16 @@ quiescent merger history.  It experiences its last major merger at $z
 = 3$, after which a small number of minor interactions permeate its
 life.  This simulation has been shown to emulate several Milky Way
 properties, including stellar dynamics
-\citep{2012ApJ...758L..23L,2014ApJ...794..151L,2014ApJ...790...89K}, baryon fraction
-\citep{2013ApJ...766...56M}, halo properties \citep{2009ApJ...702.1058Z,2010ApJ...721..738Z}, and
-disk properties \citep{2011ApJ...728...51B}.  It has a virial mass of $M_{vir} =
+\citep{Loebman12,Loebman14,2014ApJ...790...89K}, baryon fraction
+\citep{Munshi13}, halo properties \citep{Zolotov09,Zolotov10}, and
+disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir} =
 6.79 \times 10^{11} \msun$, stellar mass $M_* = 4.24 \times 10^{10}
 \msun$, and maximum circular velocity $v_{circ} = 235$ km s$^{-1}$.
 
   The simulation h258 (Exciting Galaxy), on the other hand, has a much
   more active merger history.  At $z = 1$ there is a 1:1 merger event;
   a gas disk rapidly reforms following the collision (see
-  \citet{2009MNRAS.398..312G}), resulting in a massive disk galaxy at $z = 0$
+  \citet{Governato09}), resulting in a massive disk galaxy at $z = 0$
   which looks remarkably similar to the Milky Way and to the other
   simulation, h277.  Prior to the $z = 1$ merger, each of the two
   progenitor galaxies actually experiences its own additional major
@@ -336,7 +337,8 @@ disk properties \citep{2011ApJ...728...51B}.  It has a virial mass of $M_{vir} =
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Figures/boring}
 \includegraphics[width=\columnwidth]{Figures/exciting}
-\caption{\textbf{Two fiducial galaxies}
+\caption{Synthetic SDSS $gri$ images of our two Milky Way-type galaxies, h277 (left) and h258 (right), created with \textsc{SUNRISE} \citep{Jonsson06}.
+\label{fig:images}
 }
 \end{figure*}
 
@@ -362,7 +364,7 @@ metallicity than in the ``boring'' counterpart.
 
 To explore plausible binary detection scenarios, we adopt a parameterized formalism for binary evolution and event
 detection in an individual galaxy, motivated by
-the detailed studies of  \abbrvPSgrb{} and \abbrvPSellipticals; similar approaches have been used by
+the detailed studies of  \abbrvPSgrb{} and \abbrvPSellipticals; \jillianremark{this is first mention of PSG and PSE, define} similar approaches have been used by
 \cite{2016arXiv160508783L} and others.
 
 
@@ -372,13 +374,13 @@ with other parameters \citep[see,\,e.g.][and references
 % POINT: 
 %   - final BH spin, mass can change number favored
 %   - of course
-Gravitational wave detectors are also far more sensitive to  massive compact binaries, as are  preferentially  formed in low metallicity
+Gravitational wave detectors are also far more sensitive to  massive compact binaries, \sout{as}  \jillianremark{ which?} are  preferentially  formed in low metallicity
 environments \citep{PSellipticals,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}.  As a result, low metallicity
 environments can be overwhelmingly efficient factories for detectable black hole binaries
 \citep{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,gwastro-EventPopsynPaper-2016}.  
 %
 For this reason, our estimates for compact binary coalescence rates must account for how often  different star-forming
-conditions occur;  how often compact binaries that can coalesce now can  derive from each environment; and how often LIGO will detect compact
+conditions occur;  how often compact binaries that can coalesce now \jillianremark{\sout{can}}  derive from each environment; and how often LIGO will detect compact
 binaries with different masses, all other things being equal.
 
 \begin{widetext}
@@ -391,20 +393,20 @@ naive estimate for the volume to which advanced LIGO is sensitive \citep[see,e.g
 V = \frac{4\pi}{3} [445 \unit{Mpc}]^3 \int p(m_1,m_2|Z) dm_1 dm_2 [ (\mc/1.2 M_\odot)^{5/6}]^3
 \end{eqnarray}
 where $\mc\equiv (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$.   
-This expression depends explicitly on an assumed and metallicity-dependent mass distribution for compact object
+This expression depends explicitly on an assumed \jillianremark{\sout{and}} metallicity-dependent mass distribution for compact object
 mergers, through the characteristic chirp mass $\mc_{*}(Z)\equiv [\int p(m_1,m_2|Z) dm_1 d,m_2 (\mc/1.2
   M_\odot)^{15/6}]^{5/16}$ .  We calibrate our metallicity-dependent mass distributions to metallicity-dependent binary
 evolution calculations presented in \cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012} and
 \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}; see, e.g., their Table 1 and Figures 5-7.    For neutron
 stars, we adopt a fiducial neutron star mass of $1.4 M_\odot$ at all metallicities.  For BH-NS binaries, we adopt a
-highly simplified model: the black hole masses are uniformly \editremark{fixme?} drawn from $5 M_\odot$ to the maximum
+highly simplified model: the black hole masses are uniformly \editremark{fixme?} drawn from $5 M_\odot$ to the maximum 
 black hole mass $M_{max}(Z)$ allowed by
 \emph{isolated} stellar evolution, as reported in prior work \citep[see,e.g.][and references
   therein]{gwastro-EventPopsynPaper-2016}.  In agreement with much more detailed prior work \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, this simplified model yields typical chirp masses for BH-NS binaries that
 vary slightly as $Z/Z_\odot$ decreases, from a lower limit of $3 M_\odot$ near solar metallicity to an upper limit of
 $4.3 M_\odot$ in low-metallicity environments.  Finally, for binary black holes, we assume  comparable-mass binaries
 form ($m_1=m_2$), with the distribution of component masses chosen to be $\propto m_1^{-p}$ 
- with $p=2$ between $3 M_\odot$ and $M_{max}(Z)$ and zero otherwise; see, e.g.,
+ with $p=2$ between $3 M_\odot$ and $M_{max}(Z)$ and zero otherwise \jillianremark{(hold on, p=0 otherwise or masses $ \propto 0$ otherwise?)}; see, e.g.,
 \cite{popsyn-LowMetallicityImpact2b-StarTrackRevised-2013}.    For binary black holes, this means  the
 detection-weighted mass distribution [$\propto p(m_1,m_2)
 \mc^{15/6}$] depends weakly on mass [$ p(m_1,m_2)
@@ -414,8 +416,8 @@ distributions   are qualitatively consistent with detailed  binary evolution cal
 \end{widetext}
 
 % POINT:  Model
-To characterize how often different star-forming conditions occur, we use our simulations, which provide a galaxy's star formation rate
-$\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$.
+To characterize the frequency of different star-forming conditions, we use our cosmological simulations of Milky Way-like galaxies, which provide each galaxy's star formation rate
+$\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$ over time.
 
 % POINT: 
 To characterize how often compact binaries form and coalesce, we use the ansatz adopted in \abbrvPSellipticals{} and
@@ -425,16 +427,16 @@ a metallicity-dependent delay time distribution.\footnote{For simplicity, we ass
   distributions are uncorrelated.  Figure A9 in \abbrvPSgrb{} shows this approximation, while not strictly true, is an
   excellent approximation for merging BH-BH binaries at solar metallicity.  }
     In this paper we only investigate the relative contribution of
-different star-forming environments, not the overall normalization, so the overall scale of $\lambda$ is irrelevant.  
+different star-forming environments, not the overall normalization \jillianremark{(why doesn't the absolute value matter?)}, so the overall scale of $\lambda$ is irrelevant.  
 However, to account for the strong tendency of low-metallicity star-forming regions to produce many binary compact
 objects, we adopt a power law
 \begin{eqnarray}
 \label{eq:LambdaVersusZModel}
-\lambda(Z) &=& \lambda_o \text{max}[(Z/Z_\odot)^{-a}, F_{max}] 
+\lambda(Z) &=& \lambda_o \text{min}[(Z/Z_\odot)^{-a}, F_{max}] 
 \end{eqnarray}
 with $a\in [0,3]$ and $F_{max}<10^3$
 %$\lambda_o F_{max} < 3\times 10^{-4}/M_\odot$
- (see, e.g.\cite{popsyn-LIGO-SFR-2008}, \abbrvKBLowZa).  For the purposes of illustration, we adop a  concrete scale
+ (see, e.g.\cite{popsyn-LIGO-SFR-2008}, \abbrvKBLowZa).  For the purposes of illustration, we adopt a  concrete scale
 factor  $
 \lambda_0 = 10^{-3}/M_\odot $,  a typical value suitable for neutron star compact binaries (see \abbrvPSgrb{}, \abbrvPSellipticals, and \abbrvKBLowZa).
 %
@@ -465,7 +467,7 @@ For binary black holes formed near solar metallicity, the delay time distributio
 and merger, as demonstrated in Figures 9 and 10 of \abbrvPSellipticals{}.  [Figure 2 of  \cite{2016arXiv160508783L} is
   an extreme example of this well-known trend.]  In practice, however, binary black holes produced near solar
 metallicity correspond to a relatively small proportion of the overall population; we therefore neglect this
-effect \footnote{may want to change}.
+effect\footnote{may want to change}.
 
 
 % POINT: Net effect
@@ -494,7 +496,7 @@ individual gas packets at different points in a galaxy.
 These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and
 chemical evolution history.    
 
-Even when electromagnetic counterparts are available, the long delay times between coalescence and merger  limit
+Even when electromagnetic counterparts are available, the long delay times between coalescence and merger \jillianremark{(hold on are coalescence and mergers not the same thing?  does coalescence represent the beginning of the inspiral?  hmmm)} limit
 the prospects of detailed electromagnetic followup of individual event. 
 The metallicity of stars and gas adjacent to a specific merger event provides
 few direct, unambiguous clues to a compact binary merger's progenitors.  
