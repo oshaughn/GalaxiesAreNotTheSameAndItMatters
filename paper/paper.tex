@@ -388,85 +388,57 @@ naive estimate for the volume to which advanced LIGO is sensitive \citep[see,e.g
   simplicity, in this calculation we neglect the effects of cosmology; strong field coalescence; and black hole spin;
   see \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, \cite{AstroPaper}, or \cite{RatesPaper} for more details.}
 \begin{eqnarray}
-V(m_1,m_2) = \frac{4\pi}{3} [445 \unit{Mpc}]^3 \int p(m_1,m_2|Z) dm_1 d,m_2 [ (\mc/1.2 M_\odot)^{5/6}]^3
+V = \frac{4\pi}{3} [445 \unit{Mpc}]^3 \int p(m_1,m_2|Z) dm_1 dm_2 [ (\mc/1.2 M_\odot)^{5/6}]^3
 \end{eqnarray}
 where $\mc\equiv (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$.   
 This expression depends explicitly on an assumed and metallicity-dependent mass distribution for compact object
-mergers, through the characteristic chirp mass $\mc_{C}\equiv [\int p(m_1,m_2|Z) dm_1 d,m_2 (\mc/1.2
+mergers, through the characteristic chirp mass $\mc_{*}(Z)\equiv [\int p(m_1,m_2|Z) dm_1 d,m_2 (\mc/1.2
   M_\odot)^{15/6}]^{5/16}$ .  We calibrate our metallicity-dependent mass distributions to metallicity-dependent binary
 evolution calculations presented in \cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012} and
 \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}; see, e.g., their Table 1 and Figures 5-7.    For neutron
 stars, we adopt a fiducial neutron star mass of $1.4 M_\odot$ at all metallicities.  For BH-NS binaries, we adopt a
-highly simplified model: the black hole masses are uniformly \editremark{fixme?} drawn from $5 M_\odot$ to the maximum mass allowed by
+highly simplified model: the black hole masses are uniformly \editremark{fixme?} drawn from $5 M_\odot$ to the maximum
+black hole mass $M_{max}(Z)$ allowed by
 \emph{isolated} stellar evolution, as reported in prior work \citep[see,e.g.][and references
   therein]{gwastro-EventPopsynPaper-2016}.  In agreement with much more detailed prior work \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, this simplified model yields typical chirp masses for BH-NS binaries that
 vary slightly as $Z/Z_\odot$ decreases, from a lower limit of $3 M_\odot$ near solar metallicity to an upper limit of
-$4.3 M_\odot$ in low-metallicity environments.  Finally, for binary black holes, we assume only comparable-mass binaries
-form, with  component masses drawn from 
+$4.3 M_\odot$ in low-metallicity environments.  Finally, for binary black holes, we assume  comparable-mass binaries
+form ($m_1=m_2$), with the distribution of component masses chosen to be $\propto m_1^{-p}$ 
+ with $p=2$ between $3 M_\odot$ and $M_{max}(Z)$ and zero otherwise; see, e.g.,
+\cite{popsyn-LowMetallicityImpact2b-StarTrackRevised-2013}.    For binary black holes, this means  the
+detection-weighted mass distribution [$\propto p(m_1,m_2)
+\mc^{15/6}$] depends weakly on mass [$ p(m_1,m_2)
+\mc^{15/6} \propto m_1^{-0.5} \delta(m_1-m_2)$.  In our simple model, the total  and chirp mass
+distributions   are qualitatively consistent with detailed  binary evolution calculations \citep{popsyn-LowMetallicityImpact2b-StarTrackRevised-2013}. 
 
+\end{widetext}
 
 % POINT:  Model
 To characterize how often different star-forming conditions occur, we use our simulations, which provide a galaxy's star formation rate
 $\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$.
 
 % POINT: 
-To characterize how often compact binaries form and coalesce
-
-% POINT: Simple model to encompass all
-  Specifically, we encapsulate all information about
- binary evolution into two  parameterized response functions.  The function ${\cal G}(t| Z) =
-dN/dt dM_*$ describes how many mergers per unit initial mass occur after a time $t$ since a starburst,
-given ambient metallicity $Z$.  The function $p(m_1,m_2|Z)$ is a metallicity-dependent mass distribution for binaries
-formed in a metallicity $Z$.
-%
-Finally, we account for the substantially increased sensitivity of gravitational wave detectors to binaries of larger
-chirp mass $\mc=(m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$; see \abbrvPSellipticals.
-%
-In terms of this response function, we can therefore calculate the relative contribution to the LIGO  event rate $r_D$
-due to any individual galaxy via the following formula 
-\begin{subequations}
-\label{eq:RatePerGalaxy}
-\begin{eqnarray}
-r_D  &\equiv& \int^{0}_{-T_{univ}} dt' d\log Z  \, [\dot{M}_*(t') p(\log Z|t) ] \times \; {\cal G}(0-t' | Z)  
- [\int d\mc p(\mc|Z) (\mc/1.2 M_\odot)^{15/6}]
-%\\
-%% {\cal R}(z)&\equiv &  \int dx {\cal R} p(z)
-\end{eqnarray}
-\end{subequations}
-In this expression, the galactic star formation rate
-are galaxy-dependent and drawn from our
-simulations.   \editremark{rewrite this to be average chirp mass at a given metallicity}
-
-
-
-\end{widetext}
-We parameterize the response function ${\cal G}(t|Z)$ with two factors: (a) an overall efficiency $\lambda$ for forming
-binaries;  and (b) a
-cumulative delay time distribution $P_t(<t|Z)$, describing the fraction of binaries born at $t=0$ that merge in less
-than time $t$ from a population of binaries $Z$:\footnote{For simplicity, we assume the mass and delay time
+To characterize how often compact binaries form and coalesce, we use the ansatz adopted in \abbrvPSellipticals{} and
+\abbrvPSgrb{}: for a star-forming parcel of mass $\Delta M$ the number of binaries born at time $0$ which
+are coalescing now is $\lambda \Delta M dP/dt$, where $\lambda$ is an overall efficiency per unit mass and $P(<t|Z)$ is
+a metallicity-dependent delay time distribution.\footnote{For simplicity, we assume the mass and delay time
   distributions are uncorrelated.  Figure A9 in \abbrvPSgrb{} shows this approximation, while not strictly true, is an
   excellent approximation for merging BH-BH binaries at solar metallicity.  }
-\begin{eqnarray}
-G(t,x|Z) &=& \lambda(Z) p_x(x|Z) \frac{dP_t}{dt}(t) 
-\end{eqnarray}
-Previous studies suggest the number of merging compact binaries $\lambda \delta M_*$ produced by a starburst depends
-as a power law on metallicity:
+    In this paper we only investigate the relative contribution of
+different star-forming environments, not the overall normalization, so the overall scale of $\lambda$ is irrelevant.  
+However, to account for the strong tendency of low-metallicity star-forming regions to produce many binary compact
+objects, we adopt a power law
 \begin{eqnarray}
 \label{eq:LambdaVersusZModel}
 \lambda(Z) &=& \lambda_o \text{max}[(Z/Z_\odot)^{-a}, F_{max}] 
 \end{eqnarray}
 with $a\in [0,3]$ and $F_{max}<10^3$
 %$\lambda_o F_{max} < 3\times 10^{-4}/M_\odot$
- (see, e.g.\cite{popsyn-LIGO-SFR-2008}, \abbrvKBLowZa).
-In this paper we only investigate the dependence of rates with metallicity; we therefore  adopt 
-\[
-\lambda_0 = 10^{-3}/M_\odot
-\]
-as a typical value for neutron star compact binaries (see \abbrvPSgrb{}, \abbrvPSellipticals, and \abbrvKBLowZa).
+ (see, e.g.\cite{popsyn-LIGO-SFR-2008}, \abbrvKBLowZa).  For the purposes of illustration, we adop a  concrete scale
+factor  $
+\lambda_0 = 10^{-3}/M_\odot $,  a typical value suitable for neutron star compact binaries (see \abbrvPSgrb{}, \abbrvPSellipticals, and \abbrvKBLowZa).
 %
-
-
-For binaries containing neutron stars, for simplicity we adopt the universal delay time distribution
+For binaries containing neutron stars, for simplicity and without loss of generality we adopt the universal delay time distribution
 %% Finally, we parameterize the delay time distribution by  either
 %% \begin{eqnarray}
 %% P_t(<t) &=& \begin{cases}
@@ -490,11 +462,11 @@ evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRev
 
 
 For binary black holes formed near solar metallicity, the delay time distribution can favor long delays between birth
-and merger, as demonstrated in \abbrvPSellipticals{}.
+and merger, as demonstrated in Figures 9 and 10 of \abbrvPSellipticals{}.  [Figure 2 of  \cite{2016arXiv160508783L} is
+  an extreme example of this well-known trend.]  In practice, however, binary black holes produced near solar
+metallicity correspond to a relatively small proportion of the overall population; we therefore neglect this
+effect \footnote{may want to change}.
 
-Figure 2 of  \cite{2016arXiv160508783L} is an extreme example of this well-known trend
-
-\editremark{Note}: 
 
 \section{Formation rate for binary black holes}
 \label{sec:results:BBH}
