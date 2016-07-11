@@ -7,6 +7,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
+import scipy.interpolate as interpol
 
 metals,maxbh = np.loadtxt("mass_max_of_z.dat",unpack=True)
 
@@ -18,6 +19,8 @@ metalgrid = np.linspace(min(metals),max(metals),1000)
 
 f = interpol.interp1d(metals,maxbh)
 maxmassgrid = f(metalgrid)
+#print f(0.1)
+#print "******"
 
 """
 plt.plot(metals,maxbh)
