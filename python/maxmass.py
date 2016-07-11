@@ -56,7 +56,7 @@ def make_uniform_func(metal_now):
     return lambda x, Nm = nm, A = MmaxNow: np.where( np.logical_and(x<A , x > 3), nm* np.ones(len(x)), np.zeros(len(x)))
 
 
-prob_function = make_uniform_func(0.1) # input is a metallicity
+prob_function = make_uniform_func(input_metal) # input is a metallicity
 newmassgrid = np.linspace(0,100,50)
 #print np.logical_and(newmassgrid < 80 , newmassgrid > 3)
 p = prob_function(newmassgrid)
