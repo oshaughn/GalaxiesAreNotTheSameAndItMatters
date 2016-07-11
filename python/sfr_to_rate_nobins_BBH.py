@@ -16,9 +16,13 @@
 # PLOTS
 #    Third plot is money plot: shows you where the mergers are coming from, for different exponent choices.
 
+import matplotlib.pyplot as plt
+import sys
 import numpy as np
+from scipy.integrate import simps
 
 import bisect
+from scipy.interpolate import interp1d
 from scipy.interpolate import griddata
 
 import ParseStars
@@ -26,12 +30,78 @@ import ParseStars
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--starmetal-file", default=None)
+parser.add_argument("--type-bbh",action='store_true',help="Volume function selection bias (and Z exponent?) appropriate to BBH")
+parser.add_argument("--type-bhns",action='store_true',help="Volume function selection bias (and Z exponent?) appropriate to BH-NS")
 parser.add_argument("--time-exponent",default=1,type=float)
 parser.add_argument("--Z-exponent",default=0,type=float)
 opts = parser.parse_args()
 if not opts.starmetal_file:
     print "  Please specify an SFR file "
 
+
+# Maximum mass information (single BH)
+
+metals,maxbh = np.loadtxt("mass_max_of_z.dat",unpack=True)
+metals = metals[::-1]  # write in order
+maxbh = maxbh[::-1]
+metals = np.concatenate( (np.array([1e-5]), metals,[100]))
+maxbh = np.concatenate( ([maxbh[0]],maxbh,[maxbh[-1]] ))
+
+#plt.plot(metals, maxbh);plt.legend(); plt.xlabel("metals") ; plt.ylabel("max BH mass")
+#plt.savefig('inputs.png'); plt.clf
+#plt.plot(np.log10(metals), maxbh);plt.legend(); plt.xlabel("metals") ; plt.ylabel("max BH mass")
+#plt.savefig('inputs-scaled.png')
+
+#maxbh_of_logZ = interp1d(np.log10(metals),maxbh,bounds_error=True,fill_value = np.max(maxbh),kind='linear')
+#maxbh_of_Z = lambda x: maxbh_of_logZ(np.log10(x))
+maxbh_of_Z = interp1d(metals,maxbh,bounds_error=False)#,bounds_error=True,fill_value =np.max(maxbh),kind='linear',copy=True)
+
+#print np.min(np.log10(metals)), np.max(np.log10(metals)), maxbh_of_logZ(0.0)
+
+
+#print np.min(metals),np.max(metals), maxbh_of_Z(1)
+#plt.plot(metals,maxbh,label='raw')
+# Zvals = np.linspace(0.001, 2,100)
+# plt.plot(Zvals, maxbh_of_Z(Zvals),label='fit')
+# print maxbh_of_Z(Zvals)
+# plt.legend()
+# plt.xlabel("metals")
+# plt.ylabel("max BH mass")
+# plt.savefig('tmp.png')
+# plt.show()
+# sys.exit(0)
+
+def mc(m1,m2):
+    return np.power(m1**m2,3./5.)/np.power(m1+m2, 1./5.)
+
+def average_func(func,input_probability_distribution):
+    masses = np.linspace(0,100,50)
+    prob = input_probability_distribution(masses)
+    result = simps(prob*func(masses), masses)
+    return result
+
+def make_uniform_func(metal_now):
+    MmaxNow = maxbh_of_Z(metal_now)
+#    print MmaxNow
+    nm = 1./(MmaxNow - 3)  # normalization
+    return lambda x, Nm = nm, A = MmaxNow: np.where( np.logical_and(x<A , x > 3), nm* np.ones(len(x)), np.zeros(len(x)))
+
+
+def Vaveraged_bns(Z):
+    mc_av =mc(1.4, 1.4)
+    return np.power(mc_av, 15./6.)
+
+def Vaveraged_bhns(Z):
+    prob_Mbh = make_uniform_func(Z)
+    mc_av = average_func(lambda x: mc(1.4,x), prob_Mbh)
+#    print " internal ", Z, mc_av
+    return np.power(mc_av, 15./6.)
+
+
+for lZ in np.linspace(-3,0, 30):
+    print lZ, Vaveraged_bns(np.power(10,lZ)), Vaveraged_bhns(np.power(10,lZ))
+
+sys.exit(0)
 
 # SFR files:
 #    - not guaranteed to have same # per Z bin ! 
@@ -49,8 +119,11 @@ def metal_function(z_exp):
     return np.minimum(np.power((1e-8+dat[:,0])/0.02,-1.*z_exp), 1e3*np.ones(len(dat)))
 
 def time_function(time_exp):
+    """
+    time_function: dP/dt \propto 1/t for t > 0.01 Gyr
+    """
     # where does this come from?
-    return 1./np.power(0.01+dat[:,2], time_exp)
+    return np.where(dat[:,2]>0.01,1./np.power(dat[:,2], time_exp),np.zeros(len(dat)))
 
 
 if opts.Z_exponent:
