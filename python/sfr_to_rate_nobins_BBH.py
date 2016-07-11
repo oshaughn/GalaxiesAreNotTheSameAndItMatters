@@ -24,6 +24,7 @@ from scipy.integrate import simps
 import bisect
 from scipy.interpolate import interp1d
 from scipy.interpolate import griddata
+from scipy.integrate import quad
 
 import ParseStars
 
@@ -72,10 +73,10 @@ maxbh_of_Z = interp1d(metals,maxbh,bounds_error=False)#,bounds_error=True,fill_v
 # sys.exit(0)
 
 def mc(m1,m2):
-    return np.power(m1**m2,3./5.)/np.power(m1+m2, 1./5.)
+    return np.power(m1*m2,3./5.)/np.power(m1+m2, 1./5.)
 
 def average_func(func,input_probability_distribution):
-    masses = np.linspace(0,100,50)
+    masses = np.linspace(0.1,100,500)  # zero total mass causes problems with mchirp definition
     prob = input_probability_distribution(masses)
     result = simps(prob*func(masses), masses)
     return result
@@ -87,19 +88,46 @@ def make_uniform_func(metal_now):
     return lambda x, Nm = nm, A = MmaxNow: np.where( np.logical_and(x<A , x > 3), nm* np.ones(len(x)), np.zeros(len(x)))
 
 
+def make_power_func(metal_now,mass_exponent=2):
+    MmaxNow = maxbh_of_Z(metal_now)
+    ret, err = quad( lambda x: np.power(x,-1*mass_exponent),3,MmaxNow)
+    nm  =ret
+#    print metal_now, MmaxNow, nm
+    return lambda x, Nm = nm, A = MmaxNow,p=mass_exponent: np.where( np.logical_and(x<A , x > 3), nm* np.power(x,-1.*p), np.zeros(len(x)))
+
 def Vaveraged_bns(Z):
     mc_av =mc(1.4, 1.4)
     return np.power(mc_av, 15./6.)
 
 def Vaveraged_bhns(Z):
     prob_Mbh = make_uniform_func(Z)
-    mc_av = average_func(lambda x: mc(1.4,x), prob_Mbh)
-#    print " internal ", Z, mc_av
-    return np.power(mc_av, 15./6.)
+    mc_av = np.power(average_func(lambda x: np.power(mc(1.4,x),15./6), prob_Mbh),5./16.)
+    nm_check = average_func(lambda x: 1, prob_Mbh)
+#    print " internal ", Z, mc_av, nm_check
+    return np.power(mc_av, 15./6.)/nm_check
 
+def Vaveraged_bhbh(Z):
+    prob_Mbh = make_power_func(Z)
+    mc_av = np.power(average_func(lambda x: np.power(mc(x,x),15./6), prob_Mbh),5./16.)
+    nm_check = average_func(lambda x: 1, prob_Mbh)
+#    print " internal ", Z, mc_av, nm_check
+    return np.power(mc_av, 15./6.)/nm_check
+
+
+# val = Vaveraged_bhns(1)
+# prob_Mbh = make_uniform_func(1)
+# mc_av = np.power(average_func(lambda x: np.power(mc(1.4,x),15./6), prob_Mbh),5./16.)
+# print 1, maxbh_of_Z(1), mc(1.4,maxbh_of_Z(1)),    mc_av
+# sys.exit(0)
+
+#prob_Mbh = make_power_func(1)
+#print prob_Mbh(np.linspace(1,30,20))
+#mc_av = np.power(average_func(lambda x: np.power(mc(x,x),15./6), prob_Mbh),5./16.)
+#print 1, maxbh_of_Z(1), mc_av
+#sys.exit(0)
 
 for lZ in np.linspace(-3,0, 30):
-    print lZ, Vaveraged_bns(np.power(10,lZ)), Vaveraged_bhns(np.power(10,lZ))
+    print lZ, Vaveraged_bns(np.power(10,lZ)), Vaveraged_bhns(np.power(10,lZ)) , Vaveraged_bhbh(np.power(10,lZ))
 
 sys.exit(0)
 
@@ -110,9 +138,17 @@ dat = np.loadtxt(opts.starmetal_file,skiprows=1)
 lambda0 = 1e-3
 
 
-def BBH_function(arg):
+def volume_function():
+    """
+    volume_function: compute the metallicity-dependent factor proportionan to V \propto \mc^(15/6)
+    """
     # we will add something real here
-    return 1.0
+    if not opts.type_bbh and not opts.type_bhns:
+        return np.array(map(Vaveraged_nsns,dat[:,0]))
+    elif opts.type_bhns:
+        return np.array(map(Vaveraged_bhns,dat[:,0]))
+    else:
+        return np.array(map(Vaveraged_bhbh,dat[:,0]))
 
 def metal_function(z_exp):
     # number of merging compact binaries in a starburst depends on metallicity
@@ -128,10 +164,10 @@ def time_function(time_exp):
 
 if opts.Z_exponent:
     # print a specific value
-    weights = metal_function(opts.Z_exponent) * time_function(opts.time_exponent)*BBH_function(1.0)
+    weights = metal_function(opts.Z_exponent) * time_function(opts.time_exponent)*volume_function()
     print opts.starmetal_file, opts.Z_exponent,  len(dat)*ParseStars.jbStarMass/1e10, np.sum(weights)*lambda0*ParseStars.jbStarMass/1e10, np.sum(weights)/len(dat)
 else:
     # Loop over all from 0 to 3 in steps of 0.1
     for Zexp in np.linspace(0,3, 30):
-        weights = metal_function(Zexp)*time_function( opts.time_exponent)*BBH_function(1.0)
+        weights = metal_function(Zexp)*time_function( opts.time_exponent)*volume_function()
         print opts.starmetal_file, Zexp,  len(dat)*ParseStars.jbStarMass/1e10, np.sum(weights)*lambda0*ParseStars.jbStarMass/1e10, np.sum(weights)/len(dat)
