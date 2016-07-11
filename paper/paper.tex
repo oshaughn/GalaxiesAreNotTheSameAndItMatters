@@ -356,21 +356,57 @@ metallicity than in the ``boring'' counterpart.
 }
 \end{figure*}
 
-\section{Model for compact binary formation}
+\section{Detection-weighted compact binary formation}
 \label{sec:model}
 
 
-Binary evolution calculations suggest the detection rate depends sensitively on the assumed metallicity, in conjuction
+To explore plausible binary detection scenarios, we adopt a parameterized formalism for binary evolution and event
+detection in an individual galaxy, motivated by
+the detailed studies of  \abbrvPSgrb{} and \abbrvPSellipticals; similar approaches have been used by
+\cite{2016arXiv160508783L} and others.
+
+
+Binary evolution calculations suggest the binary compact object formation rate rate depends sensitively on the assumed metallicity, in conjuction
 with other parameters \citep[see,\,e.g.][and references
-  therein]{popsyn-LowMetallicityImpact-Chris2008,popsyn-LIGO-SFR-2008}.\editremark{New dominik et al}
+  therein]{popsyn-LowMetallicityImpact-Chris2008,popsyn-LIGO-SFR-2008,gwastro-EventPopsynPaper-2016}.
 % POINT: 
 %   - final BH spin, mass can change number favored
 %   - of course
-The detected population of compact binary mergers can further favor low-metallicity environments, e.g. through the total
-mass of merging binaries. \jillianremark{The previous sentence is confusing - rephrase?  I have trouble with ``the detected population can further favor low-Z environments'' because that makes no sense.}
+Gravitational wave detectors are also far more sensitive to  massive compact binaries, as are  preferentially  formed in low metallicity
+environments \citep{PSellipticals,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}.  As a result, low metallicity
+environments can be overwhelmingly efficient factories for detectable black hole binaries
+\citep{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,gwastro-EventPopsynPaper-2016}.  
+%
+For this reason, our estimates for compact binary coalescence rates must account for how often  different star-forming
+conditions occur;  how often compact binaries that can coalesce now can  derive from each environment; and how often LIGO will detect compact
+binaries with different masses, all other things being equal.
+
+\begin{widetext}
+% POINT:  Model
+To characterize how much more likely LIGO will detect coalescing binaries with different masses, we use a common and
+naive estimate for the volume to which advanced LIGO is sensitive \citep[see,e.g.,][]{PSellipticals}:\footnote{For
+  simplicity, in this calculation we neglect the effects of cosmology; strong field coalescence; and black hole spin;
+  see \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, \cite{AstroPaper}, or \cite{RatesPaper} for more details.}
+\begin{eqnarray}
+V(m_1,m_2) = \frac{4\pi}{3} [445 \unit{Mpc}]^3 \int p(m_1,m_2|Z) dm_1 d,m_2 [ (\mc/1.2 M_\odot)^{5/6}]^3
+\end{eqnarray}
+This expression depends explicitly on an assumed and metallicity-dependent mass distribution for compact object
+mergers, through the characteristic chirp mass $\mc_{C}\equiv [\int p(m_1,m_2|Z) dm_1 d,m_2 (\mc/1.2
+  M_\odot)^{15/6}]^{5/16}$ .  We calibrate our metallicity-dependent mass distributions to metallicity-dependent binary
+evolution calculations presented in \cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012} and
+\cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}; see, e.g., their Table 1 and Figures 5-7.    For neutron stars, we adopt a fiducial neutron star mass of $1.4 M_\odot$ at all metallicities.  For black
+hole-neutron star binaries, we 
+For the metallicity-dependent where $p(m_1,m_2|Z)$
+
+% POINT:  Model
+To characterize how often different star-forming conditions occur, we use our simulations, which provide a galaxy's star formation rate
+$\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$.
+
+% POINT: 
+To characterize how often compact binaries form and coalesc
+
 % POINT: Simple model to encompass all
-To explore plausible binary detection scenarios, we adopt a parameterized formalism for binary evolution and event detection, motivated by
-the detailed studies of  \abbrvPSgrb{} and \abbrvPSellipticals.  Specifically, we encapsulate all information about
+  Specifically, we encapsulate all information about
  binary evolution into two  parameterized response functions.  The funciton ${\cal G}(t| Z) =
 dN/dt dM_*$ describes how many mergers per unit initial mass occur after a time $t$ since a starburst,
 given ambient metallicity $Z$.  The function $p(m_1,m_2|Z)$ is a metallicity-dependent mass distribution for binaries
@@ -381,7 +417,6 @@ chirp mass $\mc=(m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$; see \abbrvPSellipticals.
 %
 In terms of this response function, we can therefore calculate the relative contribution to the LIGO  event rate $r_D$
 due to any individual galaxy via the following formula 
-\begin{widetext}
 \begin{subequations}
 \label{eq:RatePerGalaxy}
 \begin{eqnarray}
@@ -391,12 +426,13 @@ r_D  &\equiv& \int^{0}_{-T_{univ}} dt' d\log Z  \, [\dot{M}_*(t') p(\log Z|t) ] 
 %% {\cal R}(z)&\equiv &  \int dx {\cal R} p(z)
 \end{eqnarray}
 \end{subequations}
-\end{widetext}
 In this expression, the galactic star formation rate
-$\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$ are galaxy-dependent and drawn from our
+are galaxy-dependent and drawn from our
 simulations.   \editremark{rewrite this to be average chirp mass at a given metallicity}
 
 
+
+\end{widetext}
 We parameterize the response function ${\cal G}(t|Z)$ with two factors: (a) an overall efficiency $\lambda$ for forming
 binaries;  and (b) a
 cumulative delay time distribution $P_t(<t|Z)$, describing the fraction of binaries born at $t=0$ that merge in less
