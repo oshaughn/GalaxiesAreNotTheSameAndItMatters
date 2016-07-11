@@ -1,8 +1,12 @@
+##  this code does the following:
+##  read in table of max BH mass vs metals
+##  interpolate this data
+##  makes a uniform probability function of mass for a given metallicity
+##  calculates the average chirp mass for this metallicity
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
-import scipy.interpolate as interpol
-
 
 metals,maxbh = np.loadtxt("mass_max_of_z.dat",unpack=True)
 
@@ -24,7 +28,7 @@ plt.show()
 """
 
 input_metal = 0.1
-sigma = 5.0
+#sigma = 5.0
 """thismetal = np.abs(metalgrid - input_metal).argmin()
 print thismetal
 place = thismetal #np.where(metalgrid == thismetal)
@@ -32,7 +36,7 @@ print place
 maxmass = maxmassgrid[place]
 print maxmass"""
 
-
+"""
 def probability(input_metal,sigma):
     place = np.abs(metalgrid - input_metal).argmin()
     maxmass = maxmassgrid[place]
@@ -42,7 +46,7 @@ def probability(input_metal,sigma):
 
 dist = probability(input_metal,sigma)
 
-"""plt.plot(maxmassgrid,dist)
+plt.plot(maxmassgrid,dist)
 plt.xlabel("BH mass")
 plt.ylabel("probability")
 plt.title(" input metallicity of "+str(input_metal))
