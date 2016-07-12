@@ -198,9 +198,9 @@ def time_function(time_exp):
 
 
 if opts.type_bbh:
-    opts.Z_exponent = 2
+    opts.Z_exponent = 1
 if not opts.type_bbh and not opts.type_bhns:
-    opts.Z_exponent =0   # checkme
+    opts.Z_exponent =1   # checkme
 if opts.type_bhns:
     opts.Z_exponent =0   # checkme
 
