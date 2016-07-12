@@ -467,7 +467,7 @@ distributions   are qualitatively consistent with detailed  binary evolution cal
 
 % POINT:  Model
 To characterize the frequency of different star-forming conditions, we use our cosmological simulations of Milky Way-like galaxies, which provide each galaxy's star formation rate
-$\dot{M}_*$ and star formation metallicity distribution $p(\log Z|t)$ over time.
+$\dot{M}_*$ and metallicity distribution $p(\log Z|t)$ over time.
 
 % POINT: 
 To characterize how often compact binaries form and coalesce, we use the ansatz adopted in \abbrvPSellipticals{} and
@@ -542,7 +542,7 @@ evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRev
 Therefore, up to an irrelevant overall scale factor, the  present-day detection-weighted coalescence rate $r_D$  of binary compact objects formed by within two similar
 galaxies  can be calculated via
 \begin{eqnarray}
- r_D \propto  \int d\log Z  \int _{13 \unit{Gyr}}^0dt  V(Z) \lambda(Z) \frac{dP_t}{dt}(t) \dot{M} p(\log Z|t)
+ r_D \propto  \int d\log Z  \int _{13 \unit{Gyr}}^0dt  V(Z) \lambda(Z) \frac{dP_t}{dt}(t) \dot{M}_* p(\log Z|t)
 \end{eqnarray}
 
 
@@ -551,13 +551,13 @@ galaxies  can be calculated via
 
 
 %\editremark{recheck numbers: we are tweaking things, and Zsun is seemingly inconsistent in the two approaches }
- Our two galaxies have extremely similar star formation histories and metallicity evolution, particularly at late
+ Our two Milky Way-like galaxies have extremely similar star formation histories and metallicity evolution, particularly at late
  times.  
 However, at early times, the \ExcitingGalaxy{} galaxy forms stars for $\simeq 2\unit{Gyr}$ at a lower characteristic metallicity
 ($Z\simeq 0.8 \times10^{-3}$) compared
 to the \BoringGalaxy{} galaxy ($Z\simeq 2\times 10^{-3}$).  In this reigme, the formation efficiency $\lambda$ and sensitive volume $V$
 can depend sensitively on mass; for example, for binary black holes, the ratio of  $(\lambda V)_{\BoringGalaxy{}}/(\lambda
-V)_{\ExcitingGalaxy{}} \simeq 7$.    \jillianremark{ UPDATE} However, in this same epoch, the star formation rate in the \ExcitingGalaxy{} (low-metallicity)
+V)_{\ExcitingGalaxy{}} \simeq 7$.    \jillianremark{ UPDATE} However, in this same epoch, the star formation rate in the \ExcitingGalaxy{} (lower-metallicity)
 galaxy is smaller, by a factor of roughly 2.
 % 1e-3:  V = 276, lambda= 400   
 % 2e-3:  V= 152.657625157, lambda = 100
@@ -614,40 +614,41 @@ percent) on the assembly history alone, even aside from any composition-dependen
 \section{Implications for transient multimessenger astronomy}
 \label{sec:Discussion}
 
-Our calculations suggest that because of the often-long delays between formation and merger, combined with the
-propensity of low-metallicity gas to play an exceptionally significant role, unusually detailed information about each host galaxy could be required to realize the full
-potential of  associations between gravitational wave sources and their candidate host galaxies.
-%
-Fortunately,  with the advent of
-IFUs and position-resolved spectroscopy, observers can now probe the star formation history and metallicity of
-individual gas packets at different points in a galaxy.  
-%
-These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and
-chemical evolution history.    
-
-Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit
-the prospects of detailed electromagnetic followup of individual event. 
-The metallicity of stars and gas adjacent to a specific merger event provides
-few direct, unambiguous clues to a compact binary merger's progenitors.  
-On the one hand, compact binaries are kicked by supernovae, moving substantially away from their birth position
-%  2014arXiv1407.3796S : implications for nucleosynthesis
+While a gravitational wave detection provides detailed information about merging objects (i.e. masses, spins, distance), we need further knowledge to understand the actual origins of the progenitors.  Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit the prospects of examining the environment where the binary first formed.  On the one hand, compact binaries are kicked by supernovae, moving substantially away from their birth position
 \cite{2013ApJ...776...18F,2014ARAA..52...43B}. 
-On the other hand, particularly during the epoch of galaxy formation, galaxies are well-mixed: stars and adjacent gas generally do not have
-similar chemical composition.  
-% POINT: Host tracer gas --we are optimistically assuming the metallicity 
-%  can be measured.  A seperate question is whether you can measure Z in the local environment at all.
-These mixing effects have been previously recognized as an obstacle to interpreting transient event spectra.  For
+On the other hand, particularly during the epoch of galaxy formation, galaxies are well-mixed: stars and adjacent gas generally do not have similar chemical composition.  These mixing effects have been previously recognized as an obstacle to interpreting transient event spectra.  For
 example,   \cite{2010MNRAS.402.1523P} previously demonstrated that absorbing gas neighboring transient events (there, long GRBs)
 would generally have high metallicity, even for low-metallicity progenitors.   
 %
 \citet{2010MNRAS.402.1523P} have previously used hydrodynamical simulations to demonstrate that observed ambient
 metallicities (there, using damped Lyman $\alpha$ absorbers in the host) do not tightly constrain the metallicity
-distribution of the progenitor; see, e.g., their Fig 3.
+distribution of the progenitor; see, e.g., their Fig 3.  Thus, the metallicity of stars and gas adjacent to a specific merger event provides
+few direct, unambiguous clues to a compact binary merger's progenitors.  
+
+
+%Our calculations suggest that because of the often-long delays between formation and merger, combined with the
+%propensity of low-metallicity gas to play an exceptionally significant role, unusually detailed information about each host galaxy could be required to realize the full
+%potential of  associations between gravitational wave sources and their candidate host galaxies.
+%
+Fortunately,  with the advent of
+IFUs and position-resolved spectroscopy, observers can now probe the star formation history and metallicity of
+individual gas packets at different points in a galaxy.  
+These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and
+chemical evolution history.    
+
+%Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit
+%the prospects of detailed electromagnetic followup of individual event. 
+%The metallicity of stars and gas adjacent to a specific merger event provides
+%few direct, unambiguous clues to a compact binary merger's progenitors.  
+  
+% POINT: Host tracer gas --we are optimistically assuming the metallicity 
+%  can be measured.  A seperate question is whether you can measure Z in the local environment at all.
+
 %
 
 
 % POINT: 
-Despite the challenges involved in obtaining sufficient statistics, possibly requiring third-generation instruments to
+Thus, despite the challenges involved in obtaining sufficient statistics, possibly requiring third-generation instruments to
 obtain sufficiently many associations, past experience suggests  host galaxy associations
 will provide unique clues into the formation mechanism of compact binaries.
 % 
