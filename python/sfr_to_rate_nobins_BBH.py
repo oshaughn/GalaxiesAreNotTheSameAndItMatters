@@ -188,10 +188,10 @@ def time_function(time_exp):
     EXCEPT for BH-BH, suppress formation at early times
     """
     # where does this come from?
-    standard_delay =  np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, time_exp),np.zeros(len(dat)))
+    standard_delay =  np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, time_exp)/np.log(13/0.01),np.zeros(len(dat))) # normalized only for time_exp = 1
     if opts.type_bbh:
-        standard_delay =  np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, 1),np.zeros(len(dat)))   # start with 1/t, to avodi confusion
-        standard_delay *= np.where(fac_convert*dat[:,0]>0.25*Zsun_val_stellar, 0.1*(dat[:,0]/1e4),np.ones(len(dat)))  # suppression factor: convert to delay time which is uniform delay time over 10^4 Gyr, and includes 0.1 of all BHBH
+        standard_delay =  np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, 1)/np.log(13/0.1),np.zeros(len(dat)))   # start with 1/t, to avodi confusion.  Normalize it.
+        standard_delay = np.where(np.logical_and(fac_convert*dat[:,0]>0.25*Zsun_val_stellar , dat[:,2]>0.1), 1./13,standard_delay)  # suppression factor: convert to delay time which is uniform delay time over 10^4 Gyr, and includes 0.1 of all BHBH
         return standard_delay
     else:
         return standard_delay

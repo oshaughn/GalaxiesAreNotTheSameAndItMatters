@@ -326,7 +326,7 @@ disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir} =
 6.79 \times 10^{11} \msun$, stellar mass $M_* = 4.24 \times 10^{10}
 \msun$, and maximum circular velocity $v_{circ} = 235$ km s$^{-1}$.
 
-  The simulation h258 (Exciting Galaxy), on the other hand, has a much
+  The simulation h258, on the other hand, has a much
   more active merger history.  At $z = 1$ there is a 1:1 merger event;
   a gas disk rapidly reforms following the collision (see
   \citet{Governato09}), resulting in a massive disk galaxy at $z = 0$
@@ -349,8 +349,10 @@ disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir} =
   one standard deviation of the mean, while the thick dashed lines
   represent the top and bottom 90\%.  We see that the early evolution
   of the metal properties of these galaxies does differ - between 0.5
-  and 6 Gyr, h277 hosts a {\bf modestly} more metal-rich population than
-  h258. \editremark{The difference isn't all that big, I want to address it without sounding foolish.}
+  and 6 Gyr, h277 hosts a \emph{modestly}  more metal-rich population than
+  h258.   For most astrophysical processes, the small metallicity difference illustrated here will have no impact on
+  present-day observables.  However, for binary black holes depend sensitively on all low metallicity star formation
+  over cosmic time; as we show below, these small differences can have an observable impact at present.   
 
 
 \begin{figure*}
@@ -499,6 +501,13 @@ For binaries containing neutron stars, for simplicity and without loss of genera
 time distributions.\footnote{Simulations suggest the delay time distribution varies from model to model and with mass.
   These variations have less impact on our results than the evolving metallicity distribution of star forming gas.}
 %
+For binary black holes forming at metallicities $Z<0.25 Z_\odot$, we adopt the same prescription.  To be qualitatively consistent
+with detailed binary evolution calculations at near-solar metallicity (e.g., \abbrvPSellipticals{} and
+\cite{gwastro-EventPopsynPaper-2016}), for 
+black holes forming at metallicities $Z>0.25 Z_\odot$ we adopt a much more uniform delay time distribution, so 
+coalescing black hole binaries have nearly uniform delay time distribution between $100\unit{Myr}$ and
+$13\unit{Gyr}$\editremark{checkme again - a little hacky}; that said,  our conclusions are not sensitive to this choice.
+%
 For suitable choices of parameter, our phenomenological response function is qualitatively consistent with the results of detailed simulations of binary
 evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2-StarTrackRevised-2012}.
 
@@ -534,13 +543,13 @@ galaxy is smaller, by a factor of roughly 2.
 % 1e-3:  V = 276, lambda= 400   
 % 2e-3:  V= 152.657625157, lambda = 100
 % so the ratio should be a factor of about 7x higher due to this region.
-Therefore, though only a fraction \textbf{XXX} of all star formation occurs in this epoch, by this order of magnitude
+Therefore, because only a fraction of order $10\%$ \textbf{[checkme-JILLIAN?]} of all star formation occurs in this epoch, by this order of magnitude
 argument, the overall number of
-present-day coalescing binary black holes in our two galaxies is expected to differ by as much as a factor of order \textbf{only
-a few percent.}  
+present-day coalescing binary black holes in our two galaxies is expected to differ by of order ten percent.
+% 0.9 + 0.1*7/2
 %
 Using the concrete phenomenological calculations described above, we in fact find
-$r_{D,\BoringGalaxy{}}/r_{D,\ExcitingGalaxy{}}=\textbf{ZZZ}$.    
+$(r_{D}/M)_{\BoringGalaxy{}}/(r_{D}/M)_{\ExcitingGalaxy{}}\simeq 0.9$.    
 
 The close agreement between the two galaxies' binary black hole populations  is entirely a
 a numerical coincdence between the specific star formation rate and metallicities in these two galaxies.  The effects described here
@@ -551,7 +560,7 @@ a numerical coincdence between the specific star formation rate and metallicitie
 More broadly, Table \ref{tab:Results} shows the results of our calculations for the three types of compact binaries
 described above.   These calculations show just how dramatically different the compact binary populations of galaxies
 with similar present-day mass but different star formation histories could be.   In particular, dwarf galaxies have an
-exceptionally large fraction of low-metallicity star formation in their history \cite{Kirby13}.  The precise details of their chemical
+exceptionally large fraction of low-metallicity star formation in their history \citep{Kirby13}.  The precise details of their chemical
 evolution can modify their present-day binary black hole binary populations by factors of order a few, despite  adopting
 the conservative choices described above for the dependence of rate on metallicity.  
 
@@ -564,16 +573,17 @@ percent) on the assembly history alone, even aside from any composition-dependen
 \begin{table}
 \begin{centering}
 \begin{tabular}{|ll|l|}\hline
- \text{\BoringGalaxy{}} & \text{BHBH} & 1.05 \\
- \text{\ExcitingGalaxy{}} & \text{BHBH} & 1.11 \\
- \text{\DwarfOne} & \text{BHBH} & 3.14 \\
- \text{\DwarfTwo} & \text{BHBH} & 10.3 \\ \hline
- \text{\BoringGalaxy{}} & \text{NSNS} & 0.000425 \\
- \text{\ExcitingGalaxy{}} & \text{NSNS} & 0.000513 \\ \hline
- \text{\BoringGalaxy{}} & \text{BHNS} & 0.00162 \\
- \text{\ExcitingGalaxy{}} & \text{BHNS} & 0.00195 \\
- \text{\DwarfOne} & \text{BHNS} & 0.00217 \\
- \text{\DwarfTwo} & \text{BHNS} & 0.00182\\  \hline
+ \text{\BoringGalaxy} & \text{BHBH} & 0.0996 \\
+ \text{\ExcitingGalaxy} & \text{BHBH} & 0.0912 \\
+ \text{\DwarfOne} & \text{BHBH} & 0.212 \\
+ \text{\DwarfTwo} & \text{BHBH} & 0.76 \\
+ \text{\BoringGalaxy} & \text{BHNS} & 0.000219 \\
+ \text{\ExcitingGalaxy} & \text{BHNS} & 0.000264 \\
+ \text{\DwarfOne} & \text{BHNS} & 0.000275 \\
+ \text{\DwarfTwo} & \text{BHNS} & 0.000235 \\
+ \text{\BoringGalaxy} & \text{NSNS} & 0.0000592 \\
+ \text{\ExcitingGalaxy} & \text{NSNS} & 0.0000715 \\
+\hline
 \end{tabular}
 \end{centering}
 \caption{\label{tab:Results}\textbf{Event rates per unit mass $r_D/M$, arbitrary units}, for the three different types of binaries
