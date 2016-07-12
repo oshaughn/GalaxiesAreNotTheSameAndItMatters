@@ -46,7 +46,7 @@ if not opts.starmetal_file:
 metals,maxbh = np.loadtxt("mass_max_of_z.dat",unpack=True)
 metals = metals[::-1]  # write in order
 maxbh = maxbh[::-1]
-metals = np.concatenate( (np.array([1e-9]), metals,[1e5]))
+metals = np.concatenate( (np.array([1e-18]), metals,[1e9]))
 maxbh = np.concatenate( ([maxbh[0]],maxbh,[maxbh[-1]] ))
 
 #plt.plot(metals, maxbh);plt.legend(); plt.xlabel("metals") ; plt.ylabel("max BH mass")
@@ -131,7 +131,7 @@ def Vaveraged_bhbh(Z):
 if opts.verbose:
     print " Building 'V' factor used later...here is the specific table "
     print "  log10 Z/Zsun     V_bns  V_bhns  V_bhbh "
-dat_logZoverZsun = np.linspace(-7,4,400)
+dat_logZoverZsun = np.linspace(-9,7,400)
 dat_nsns = np.zeros(len(dat_logZoverZsun))
 dat_bhns=np.zeros(len(dat_logZoverZsun))
 dat_bhbh=np.zeros(len(dat_logZoverZsun))
@@ -158,7 +158,8 @@ if opts.verbose:
 # format of this file: 3 columns, star metallicity, nearby gas metallicity, formation time of star
 lambda0 = 1e-3
 
-Zsun_val = 0.02
+Zsun_val_stellar = 0.02    # Problem: galaxy plot has zsun = 0.01, but KB has Zsun=0.02
+Zsun_val_JB =0.01
 
 def volume_function():
     """
@@ -167,17 +168,17 @@ def volume_function():
     # we will add something real here
     if not opts.type_bbh and not opts.type_bhns:
         print " Volume function: using NSNS"
-        return fn_nsns(dat[:,0]/Zsun_val)
+        return fn_nsns(dat[:,0]/Zsun_val_stellar)
     elif opts.type_bhns:
         print " Volume function: using BHNS"
-        return fn_bhns(dat[:,0]/Zsun_val)
+        return fn_bhns(dat[:,0]/Zsun_val_stellar)
     else:
         print " Volume function: using BHBH"
-        return fn_bhbh(dat[:,0]/Zsun_val)
+        return fn_bhbh(dat[:,0]/Zsun_val_stellar)
 
 def metal_function(z_exp):
     # number of merging compact binaries in a starburst depends on metallicity
-    return np.minimum(np.power((1e-8+dat[:,0])/Zsun_val,-1.*z_exp), 1e3*np.ones(len(dat)))
+    return np.minimum(np.power((1e-8+dat[:,0])/Zsun_val_stellar,-1.*z_exp), 1e3*np.ones(len(dat)))
 
 def time_function(time_exp):
     """
