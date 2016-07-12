@@ -59,8 +59,10 @@ Recent simulations of compact binary evolution suggest the compact object merger
 sensitively on the progenitor's metallicity, to the extent that rare low-metallicity star formation during galaxy
 assembly can produce more detected compact binaries than typical star formation.   
 Using detailed simulations of galaxy and chemical evolution, we demonstrate by example that galaxies with similar present-day appearance can host distinctly different
-compact binary populations.
-We discuss the implications for transient multimessenger astronomy with compact binary sources. \jillianremark{Add quantifiable stuff when we have it.}
+compact binary populations.  As an example, we demonstrate how the coalescing binary black hole population can differ by
+factors of order  unity, and even binary neutron star populations differ by tens of percent.  
+We discuss the implications for transient multimessenger astronomy with compact binary sources. 
+%\jillianremark{Add quantifiable stuff when we have it.}
 %% Present and future observations of  merging compact binaries can provide valuable constraints on their birthrate
 %%  and formation scenarios.  However, recent binary evolution simulations suggest the compact binary merger rate depends
 %% sensitively on the progentior's metallicity, to the extent that rare low-metallicity star formation during galaxy
@@ -115,7 +117,7 @@ Add me but note conflict \cite{Somerville15}, etc
 
 Add me: \citet{Madau14}
 
-Add me: Hopkins et al  \cite{2016arXiv160508783L} (in context of similar model, building off my prior work)
+%Add me: Hopkins et al  \cite{2016arXiv160508783L} (in context of similar model, building off my prior work)
 
 \section{Introduction}
 % POINT: LIGO soon will detect compact binary mergers....
@@ -480,29 +482,69 @@ galaxies  can be calculated via
 \end{eqnarray}
 
 
-\section{Formation rate for binary black holes}
+\section{Compact object binary formation rate}
 \label{sec:results:BBH}
 
 
-\editremark{recheck numbers: we are tweaking things, and Zsun is seemingly inconsistent in the two approaches }
+%\editremark{recheck numbers: we are tweaking things, and Zsun is seemingly inconsistent in the two approaches }
  Our two galaxies have extremely similar star formation histories and metallicity evolution, particularly at late
  times.  
 However, at early times, the exciting galaxy forms stars for $\simeq 2\unit{Gyr}$ at a lower characteristic metallicity
-($Z\simeq 0.8 10^{-3}$) compared
-to the borinng galaxy ($Z\simeq 2\times 10^{-3}$).  In this reigme, the formation efficiency $\lambda$ and sensitive volume $V$
+($Z\simeq 0.8 \times10^{-3}$) compared
+to the boring galaxy ($Z\simeq 2\times 10^{-3}$).  In this reigme, the formation efficiency $\lambda$ and sensitive volume $V$
 can depend sensitively on mass; for example, for binary black holes, the ratio of  $(\lambda V)_{boring}/(\lambda
-V)_{exciting} \simeq 7$.
+V)_{exciting} \simeq 7$.    However, in this same epoch, the star formation rate in the exciting (low-metallicity)
+galaxy is smaller, by a factor of roughly 2.
 % 1e-3:  V = 276, lambda= 400   
 % 2e-3:  V= 152.657625157, lambda = 100
 % so the ratio should be a factor of about 7x higher due to this region.
 Therefore, though only a fraction \textbf{XXX} of all star formation occurs in this epoch, by this order of magnitude
 argument, the overall number of
-present-day coalescing binary black holes in our two galaxies is expected to differ by as much as a factor of \textbf{YYY (=2?)}.  
+present-day coalescing binary black holes in our two galaxies is expected to differ by as much as a factor of order \textbf{only
+a few percent.}  
 %
 Using the concrete phenomenological calculations described above, we in fact find
-$r_{D,boring}/r_{D,exciting}=\textbf{ZZZ}$.  
+$r_{D,boring}/r_{D,exciting}=\textbf{ZZZ}$.    
 
-The origin of the differenc
+The close agreement between the two galaxies' binary black hole populations  is entirely a
+a numerical coincdence between the specific star formation rate and metallicities in these two galaxies.  The effects described here
+  are well within the scatter around the mass-metallicity relation.  Marginally different realizations of these
+  histories can easily produce factors of order unity difference in galaxies with otherwise indistinguishable
+  present-day properties.\editremark{do we have another example}
+
+More broadly, Table \ref{tab:Results} shows the results of our calculations for the three types of compact binaries
+described above.   These calculations show just how dramatically different the compact binary populations of galaxies
+with similar present-day mass but different star formation histories could be.   In particular, dwarf galaxies have an
+exceptionally large fraction of low-metallicity star formation in their history.  The precise details of their chemical
+evolution can modify their present-day binary black hole binary populations by factors of order a few, despite  adopting
+the conservative choices described above for the dependence of rate on metallicity.  
+
+To highlight how sensitively compact binaries depend on detailed evolutionary trajectories, Table \ref{tab:Results}
+shows results for binary neutron stars.  By our construction, no metallicity dependence is included in the present-day
+event rate for neutron stars.  Thus, the differences in
+present-day state between these two galaxy population models arise solely and exclusively on the time distribution history of past star formation.  In general, the present-day population depends often significantly (i.e., tens of
+percent) on the assembly history alone, even aside from any composition-dependent effects.
+
+\begin{table}
+\begin{centering}
+\begin{tabular}{|ll|l|}\hline
+ \text{Boring} & \text{BHBH} & 1.05 \\
+ \text{Exciting} & \text{BHBH} & 1.11 \\
+ \text{Dwarf1} & \text{BHBH} & 3.14 \\
+ \text{Dwarf2} & \text{BHBH} & 10.3 \\ \hline
+ \text{Boring} & \text{NSNS} & 0.000425 \\
+ \text{Exciting} & \text{NSNS} & 0.000513 \\ \hline
+ \text{Boring} & \text{BHNS} & 0.00162 \\
+ \text{Exciting} & \text{BHNS} & 0.00195 \\
+ \text{Dwarf1} & \text{BHNS} & 0.00217 \\
+ \text{Dwarf2} & \text{BHNS} & 0.00182\\  \hline
+\end{tabular}
+\end{centering}
+\caption{\label{tab:Results}\textbf{Event rates per unit mass $r_D/M$, arbitrary units}, for the three different types of binaries
+  discussed.  
+}
+\end{table}
+
 
 
 \section{Implications for transient multimessenger astronomy}
@@ -518,7 +560,7 @@ individual gas packets at different points in a galaxy.
 These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and
 chemical evolution history.    
 
-Even when electromagnetic counterparts are available, the long delay times between coalescence and merger \jillianremark{(hold on are coalescence and mergers not the same thing?  does coalescence represent the beginning of the inspiral?  hmmm)} limit
+Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit
 the prospects of detailed electromagnetic followup of individual event. 
 The metallicity of stars and gas adjacent to a specific merger event provides
 few direct, unambiguous clues to a compact binary merger's progenitors.  
@@ -556,7 +598,7 @@ The precise host offset can be compared to the distribution of light and star fo
 Finally,  on a host-by-host basis, the delay time between birth and merger has been constrained for long GRBs (\editremark{XXX}), short GRBs \citep{2010ApJ...725.1202L}, and
   SN Ia \citep{2011MNRAS.412.1508M}.  
 %
-The future of gravitational wave host galaxy associations is bright.
+%The future of gravitational wave host galaxy associations is bright.
 
 
 
@@ -583,29 +625,63 @@ The future of gravitational wave host galaxy associations is bright.
 
 \section{Conclusions}
 
-We present a model for binary black hole \jillianremark {and other binary compact object formation?} based on models of binary formation and properties over cosmic time.  We fold these models with star formation histories and metallicity distributions taken from state of the art cosmological simulations of Milky Way-like galaxies.  We demonstrate that galaxies which appear similar at $z = 0$ but have differing merger histories will have different rates of BBH mergers detectable by LIGO.  \jillianremark{sentence detailing the specifics of this prediction, once we know what it is.}   
+We examine the present-day populations of coalescing compact binaries in galaxies with different assembly histories.  We
+combine  detailed and state-of-the-art cosmological simulations of galaxies with a simple but robust phenomenological
+model for how compact binaries form from different environments.   
+%% We model for compact binary black hole \jillianremark {and other binary compact object formation?} based on models of
+%% binary formation and properties over cosmic time.  We fold these models with star formation histories and metallicity
+%% distributions taken from state of the art cosmological simulations of Milky Way-like galaxies. 
+ We demonstrate that
+galaxies which appear similar at $z = 0$ but have differing merger histories will have substantially different
+detection-weighted compact binary
+coalescence rates rates.   
 
-One result of our conclusions is that we can learn about the past assembly history of a galaxy from its LIGO event rate, \jillianremark{ that's really cool.  }  Also we can use resolved star formation histories of nearby galaxies {\bf (citations)} to predict likelihoods for LIGO events.  \jillianremark { what else}\\
 
+For binary black hole mergers in particular, we show that the present-day binary black hole coalescence rate can vary by factors of several in otherwise
+similar present-day environments.   Our calculations supports and extends prior investigations which demonstrated both
+that black hole merger rates depend sensitively on low-metallicitiy environments
+\cite{PSellipticals,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,gwastro-EventPopsynPaper-2016}.   More broadly,
+because compact binaries can merge long after they form, their host galaxy can evolve substantially in composition
+between birth and merger.
+%% and that the delay between compact
+%% binary formation and coalesence ccn be
+%% the sensitive dependence of binary evolution on
+%% metallicity implies that
+%% * BBH properties far from apparent.  No surprise: delays can be long , particularly because formation in low Z favored,
+%% so system changes significantly from assembly conditions
 
-* BBH properties far from apparent.  No surprise: delays can be long \cite{PSellipticals,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,gwastro-EventPopsynPaper-2016}, particularly because formation in low Z favored,
-so system changes significantly from assembly conditions
-
-* EM counterpart properties: delay times are shorter, so more of a surprise that formation scenario matters.  However,
-BH properties depend on $Z$, which can influence the mass and spin of BHs that produce EM counterparts.
-
-
-
-* Detailed analysis of one host galaxy presented in this work is complementary to the population-based approach used in
-\cite{2016arXiv160508783L}, which favored formation in a wide range of galaxies and event times.   % that analysis also
-                                % used a poor input from BSE, about the coalescence delay
-
-Biases towards low-metallicity star formation have been extensively studied in the context of long GRBs and their host galaxies.
-%
+The detailed analysis of the compact binary populations formed through the assembly history of individual galaxies is
+complementary to the  population-based approach reported in
+\cite{2016arXiv160508783L}.     More broadly, our analysis reflect  similar theoretical studies performed in the interpretation of, for
+example, long GRBs and their host galaxies. 
 For example, \cite{2009ApJ...702..377K} demonstrated that a sufficiently strong bias towards low-metallicity star formation would predict
 most  events in the local universe occur low-mass and dwarf galaxies.
 %<
 For less extreme metallicity biases, subsequent calculations by  \citet{2011MNRAS.417..567N} demonstrated that the
+metallicity distribution within galaxies will usually lead to events in a wide range of host galaxies in the local universe.
+% which favored formation in a wide range of galaxies and event times.   % that analysis also
+                                % used a poor input from BSE, about the coalescence delay
+
+
+In short, in this work we have demonstrated that  the confounding effects of host galaxy assembly history can in the
+near term complicate the interpretation of associations between GW sources and candidate host galaxies.   However, given sufficient
+statistics, as will inevitably become available with next-generation GW instruments, combined with large-scale
+multiband followup, these confounding challenges can  both be overcome and converged into opportunity.   In the far future,  with hundreds of thousands of thousands to millions of events per year in
+networks like Cosmic Voyager, Einstein Telescope, and DECIGO, GW measurements could even  provide complementary statistical probes of the past history of
+galaxy assembly and evolution.  
+%% , given The challenge of host-galaxy inhomogeneity is an irritating but demonstrably surmountable obstacle for the analysis and
+%% interpretation of GW host galaxies.  
+%
+
+
+
+%% One result of our conclusions is that we can learn about the past assembly history of a galaxy from its LIGO event rate, \jillianremark{ that's really cool.  }  Also we can use resolved star formation histories of nearby galaxies {\bf (citations)} to predict likelihoods for LIGO events.  \jillianremark { what else}\\
+
+
+
+%* EM counterpart properties: delay times are shorter, so more of a surprise that formation scenario matters.  However, BH properties depend on $Z$, which can influence the mass and spin of BHs that produce EM counterparts.
+
+
 
 
 

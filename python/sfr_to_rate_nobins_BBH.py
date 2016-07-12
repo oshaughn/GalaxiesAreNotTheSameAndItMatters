@@ -161,6 +161,8 @@ lambda0 = 1e-3
 Zsun_val_stellar = 0.02    # Problem: galaxy plot has zsun = 0.01, but KB has Zsun=0.02
 Zsun_val_JB =0.01
 
+fac_convert = Zsun_val_stellar/Zsun_val_JB
+
 def volume_function():
     """
     volume_function: compute the metallicity-dependent factor proportional to V \propto \mc^(15/6)
@@ -168,24 +170,31 @@ def volume_function():
     # we will add something real here
     if not opts.type_bbh and not opts.type_bhns:
         print " Volume function: using NSNS"
-        return fn_nsns(dat[:,0]/Zsun_val_stellar)
+        return fn_nsns(fac_convert*dat[:,0]/Zsun_val_stellar)
     elif opts.type_bhns:
         print " Volume function: using BHNS"
-        return fn_bhns(dat[:,0]/Zsun_val_stellar)
+        return fn_bhns(fac_convert*dat[:,0]/Zsun_val_stellar)
     else:
         print " Volume function: using BHBH"
-        return fn_bhbh(dat[:,0]/Zsun_val_stellar)
+        return fn_bhbh(fac_convert*dat[:,0]/Zsun_val_stellar)
 
 def metal_function(z_exp):
     # number of merging compact binaries in a starburst depends on metallicity
-    return np.minimum(np.power((1e-8+dat[:,0])/Zsun_val_stellar,-1.*z_exp), 1e3*np.ones(len(dat)))
+    return np.minimum(np.power((1e-8+fac_convert*dat[:,0])/Zsun_val_stellar,-1.*z_exp), 1e3*np.ones(len(dat)))
 
 def time_function(time_exp):
     """
     time_function: dP/dt \propto 1/t for t > 0.01 Gyr
+    EXCEPT for BH-BH, suppress formation at early times
     """
     # where does this come from?
-    return np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, time_exp),np.zeros(len(dat)))
+    standard_delay =  np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, time_exp),np.zeros(len(dat)))
+    if opts.type_bbh:
+        standard_delay =  np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, 1),np.zeros(len(dat)))   # start with 1/t, to avodi confusion
+        standard_delay *= np.where(fac_convert*dat[:,0]>0.25*Zsun_val_stellar, 0.1*(dat[:,0]/1e4),np.ones(len(dat)))  # suppression factor: convert to delay time which is uniform delay time over 10^4 Gyr, and includes 0.1 of all BHBH
+        return standard_delay
+    else:
+        return standard_delay
 
 
 if opts.type_bbh:
