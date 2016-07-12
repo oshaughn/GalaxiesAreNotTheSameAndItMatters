@@ -34,7 +34,8 @@ parser.add_argument("--starmetal-file", default=None)
 parser.add_argument("--type-bbh",action='store_true',help="Volume function selection bias (and Z exponent?) appropriate to BBH")
 parser.add_argument("--type-bhns",action='store_true',help="Volume function selection bias (and Z exponent?) appropriate to BH-NS")
 parser.add_argument("--time-exponent",default=1,type=float)
-parser.add_argument("--Z-exponent",default=0,type=float)
+parser.add_argument("--Z-exponent",default=None,type=float)
+parser.add_argument("--verbose", action='store_true')
 opts = parser.parse_args()
 if not opts.starmetal_file:
     print "  Please specify an SFR file "
@@ -45,7 +46,7 @@ if not opts.starmetal_file:
 metals,maxbh = np.loadtxt("mass_max_of_z.dat",unpack=True)
 metals = metals[::-1]  # write in order
 maxbh = maxbh[::-1]
-metals = np.concatenate( (np.array([1e-5]), metals,[100]))
+metals = np.concatenate( (np.array([1e-9]), metals,[1e5]))
 maxbh = np.concatenate( ([maxbh[0]],maxbh,[maxbh[-1]] ))
 
 #plt.plot(metals, maxbh);plt.legend(); plt.xlabel("metals") ; plt.ylabel("max BH mass")
@@ -126,48 +127,94 @@ def Vaveraged_bhbh(Z):
 #print 1, maxbh_of_Z(1), mc_av
 #sys.exit(0)
 
-for lZ in np.linspace(-3,0, 30):
-    print lZ, Vaveraged_bns(np.power(10,lZ)), Vaveraged_bhns(np.power(10,lZ)) , Vaveraged_bhbh(np.power(10,lZ))
+# Get data for three key functions, and interpolate it
+if opts.verbose:
+    print " Building 'V' factor used later...here is the specific table "
+    print "  log10 Z/Zsun     V_bns  V_bhns  V_bhbh "
+dat_logZoverZsun = np.linspace(-7,4,400)
+dat_nsns = np.zeros(len(dat_logZoverZsun))
+dat_bhns=np.zeros(len(dat_logZoverZsun))
+dat_bhbh=np.zeros(len(dat_logZoverZsun))
+for indx in np.arange(len(dat_nsns)):
+    lZ =dat_logZoverZsun[indx]
+    v1=dat_nsns[indx] = Vaveraged_bns(np.power(10,lZ))
+    v2=dat_bhns[indx] = Vaveraged_bhns(np.power(10,lZ))
+    v3=dat_bhbh[indx] = Vaveraged_bhbh(np.power(10,lZ))
+    if opts.verbose:
+        print lZ, v1,v2,v3
 
-sys.exit(0)
+fn_nsns= interp1d(dat_logZoverZsun,dat_nsns)
+fn_bhns= interp1d(dat_logZoverZsun,dat_bhns)
+fn_bhbh= interp1d(dat_logZoverZsun,dat_bhbh)
+#sys.exit(0)
 
 # SFR files:
 #    - not guaranteed to have same # per Z bin ! 
+if opts.verbose:
+    print " File: Loading ", opts.starmetal_file
 dat = np.loadtxt(opts.starmetal_file,skiprows=1)
+if opts.verbose:
+    print " File: Range check on Z ", np.min(dat[:,0]), np.max(dat[:,0])
 # format of this file: 3 columns, star metallicity, nearby gas metallicity, formation time of star
 lambda0 = 1e-3
 
+Zsun_val = 0.02
 
 def volume_function():
     """
-    volume_function: compute the metallicity-dependent factor proportionan to V \propto \mc^(15/6)
+    volume_function: compute the metallicity-dependent factor proportional to V \propto \mc^(15/6)
     """
     # we will add something real here
     if not opts.type_bbh and not opts.type_bhns:
-        return np.array(map(Vaveraged_nsns,dat[:,0]))
+        print " Volume function: using NSNS"
+        return fn_nsns(dat[:,0]/Zsun_val)
     elif opts.type_bhns:
-        return np.array(map(Vaveraged_bhns,dat[:,0]))
+        print " Volume function: using BHNS"
+        return fn_bhns(dat[:,0]/Zsun_val)
     else:
-        return np.array(map(Vaveraged_bhbh,dat[:,0]))
+        print " Volume function: using BHBH"
+        return fn_bhbh(dat[:,0]/Zsun_val)
 
 def metal_function(z_exp):
     # number of merging compact binaries in a starburst depends on metallicity
-    return np.minimum(np.power((1e-8+dat[:,0])/0.02,-1.*z_exp), 1e3*np.ones(len(dat)))
+    return np.minimum(np.power((1e-8+dat[:,0])/Zsun_val,-1.*z_exp), 1e3*np.ones(len(dat)))
 
 def time_function(time_exp):
     """
     time_function: dP/dt \propto 1/t for t > 0.01 Gyr
     """
     # where does this come from?
-    return np.where(dat[:,2]>0.01,1./np.power(dat[:,2], time_exp),np.zeros(len(dat)))
+    return np.where(dat[:,2]>0.01,1./np.power(dat[:,2]+1e-4, time_exp),np.zeros(len(dat)))
 
 
-if opts.Z_exponent:
+if opts.type_bbh:
+    opts.Z_exponent = 2
+if not opts.type_bbh and not opts.type_bhns:
+    opts.Z_exponent =0   # checkme
+if opts.type_bhns:
+    opts.Z_exponent =0   # checkme
+
+
+if opts.verbose:
+    print " ------- "
+if not (opts.Z_exponent is None):
     # print a specific value
     weights = metal_function(opts.Z_exponent) * time_function(opts.time_exponent)*volume_function()
-    print opts.starmetal_file, opts.Z_exponent,  len(dat)*ParseStars.jbStarMass/1e10, np.sum(weights)*lambda0*ParseStars.jbStarMass/1e10, np.sum(weights)/len(dat)
+    print opts.starmetal_file, opts.Z_exponent,  len(dat)*ParseStars.jbStarMass/1e10, np.sum(weights)*lambda0*ParseStars.jbStarMass/1e10 #, np.sum(weights)/len(dat)
+    hist, bin_edges = np.histogram(dat[:,2], weights=weights,density=True,bins=40)
+    bin_centers = (bin_edges[:-1]+bin_edges[1:])/2
+    np.savetxt("hist_data.dat", np.array([bin_centers,hist]).T)
+    plt.plot(bin_centers, hist)
+    plt.xlabel("t (Gyr)")
+    plt.ylabel("dN/dt")
+    plt.savefig("hist_result.png"); plt.clf()
 else:
     # Loop over all from 0 to 3 in steps of 0.1
     for Zexp in np.linspace(0,3, 30):
         weights = metal_function(Zexp)*time_function( opts.time_exponent)*volume_function()
         print opts.starmetal_file, Zexp,  len(dat)*ParseStars.jbStarMass/1e10, np.sum(weights)*lambda0*ParseStars.jbStarMass/1e10, np.sum(weights)/len(dat)
+        hist, bin_edges = np.histogram(dat[:,0], weights=weights)
+        bin_centers = (bin_edges[:-1]+bin_edges[1:])/2
+        plt.plot(bin_centers, hist)
+        plt.savefig("hist_result_" + str(Zexp) + ".png")
+
