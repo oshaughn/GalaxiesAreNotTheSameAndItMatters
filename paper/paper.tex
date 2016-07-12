@@ -149,7 +149,7 @@ In addition to providing a wealth of information about the merger event itself, 
 the sky position and therefore approximate birthplace of each merging binary.    
 %
 On the other hand, gravitational wave detectors can perform high-precision sky and volumetric localization \citep{2016LRR....19....1A,2016arXiv160307333S}.  As GW detector
-networks increase in sensitivity, these localizations will allow statistical and, eventually, unique identification of
+networks increase in number and sensitivity, these localizations will allow statistical and, eventually, unique identification of
 host galaxies directly, even without associated electromagnetic emission.
 %
 As with supernovae and  GRBs, these host galaxy associations   are expected to tightly constrain models for compact binary
@@ -204,7 +204,7 @@ identified via transient multmiessenger astronomy, in the short and long term.  
 
 
 
-\section{Cosmological simulations produce two distinct Milky-Way-like galaxies}
+\section{Cosmological simulations}% produce two distinct Milky-Way-like galaxies}
 \label{sec:sims}
 
 \subsection{Simulating galaxy evolution}
@@ -216,25 +216,25 @@ spatially and temporally resolved star formation, and determine not
 only the metallicity history of compact object progenitors, but also
 their dynamical evolution.  
 %maybe move the below section to later and/or consolidate
-One simulation we report here, h258,
-involves the formation of a Milky Way-like disk galaxy whose
-progenitors undergo major mergers at $z = 2$ and $z = 0.8$.  This
-simulation has been previously discussed by
-\citet{Governato09,Bellovary10,Bellovary11,Brooks11}; however we have
-re-run the simulation at a factor of two higher in spatial resolution
-and additionally included new physics including a prescription for
-cooling by molecular hydrogen \citet{Christensen12}.
+%One simulation we report here, h258,
+%involves the formation of a Milky Way-like disk galaxy whose
+%progenitors undergo major mergers at $z = 2$ and $z = 0.8$.  This
+%simulation has been previously discussed by
+%\citet{Governato09,Bellovary10,Bellovary11,Brooks11}; however we have
+%re-run the simulation at a factor of two higher in spatial resolution
+%and additionally included new physics including a prescription for
+%cooling by molecular hydrogen \citet{Christensen12}.
 
-We selected our simulated region of interest from a 50 Mpc volume of
+We selected our simulated regions of interest from a volume of
 uniform resolution, and resampled the region at very high
 resolution using the volume renormalization technique \citep{Katz93}.
 This technique allows us to follow the detailed physical processes
 involved in galaxy evolution in our selected region while still
-including large-scale torques from cosmic structure.  We use
-WMAP3 cosmology \citep{WMAP3} and model the ionizing UV background
-with the prescription from \citet{Haardt96}.  Stars form
+including large-scale torques from cosmic structure.  Our cosmological parameters are $\Omega_0 = 0.24$, $\Omega_{\rm baryon} = 0.04$, $\Lambda = 0.76$, h = 0.73, $\sigma_8 = 0.77$ 
+ \citep{WMAP3} and model the ionizing UV background
+with the prescription from \citet{Haardt96}.  Our interstellar medium (ISM) model includes the non-equilibrium formation and destruction of H$_2$, which is incorporated in the cooling model along with metal lines \citep{Christensen12}.  Stars form
 probabilistically from gas particles which meet density ($n_{min} =
-10$ amu cm$^{-3}$) and temperature ($T_{max} = 10^4$ K) thresholds. If a gas
+0.1$ amu cm$^{-3}$) and temperature ($T_{max} = 10^3$ K) thresholds. If a gas
 particle meets these criteria, it has a likelihood of forming a star
 particle (representing a simple stellar population with a Kroupa IMF
 \citep{Kroupa}) which is given by
@@ -247,12 +247,15 @@ p = \frac{m_{\rm gas}}{m_{\rm star}} (1 - e^{c^*\rm X_{\rm H_2} \Delta t/t_{\rm 
 where the star formation efficiency parameter $c^*$ is set to 0.1 such
 that our galaxies match the observed Kennicutt-Schmidt law
 \citep{Kennicutt89};  X$_{\rm H_2}$ is the molecular hydrogen fraction of the gas particle; $m_{star}$ and $m_{gas}$ are the star and gas
-particle masses;\footnote{In our high-resolution simulations, each gas particle starts with a mass
-  $m_{gas,0}=26,676 M_\odot$, gaining mass from feedback and losing it to star formation.  Each star particle, when
-  formed, has $1/3$ of the progenitor mass of the forming gas particle.  See \cite{Christensen10} for a discussion
-of resolution issues in these SPH simulations.} $t_{form}$ is the dynamical time for the gas
+particle masses; %\footnote{In our high-resolution simulations, each gas particle starts with a mass
+%  $m_{gas,0}=26,676 M_\odot$, gaining mass from feedback and losing it to star formation.  Each star particle, when
+%  formed, has $1/3$ of the progenitor mass of the forming gas particle.  See \cite{Christensen10} for a discussion
+%of resolution issues in these SPH simulations.} 
+ $t_{form}$ is the dynamical time for the gas
 particle; and $\Delta t$ is the time between star formation episodes,
-which we set to 1 Myr.  We model supernova feedback using the
+which we set to 1 Myr.  A detailed study of different interstellar medium (ISM) models and the resulting star formation properties by \citet{Christensen14a} demonstrates that this model allows star formation to occur in dense clumps of gas, in regions that correspond best to star formation in observed galaxies.  
+
+We model supernova feedback using the
 blastwave formalism described in \citet{McKee77} and implemented in
 our simulations as in \citet{Stinson06}.  Each supernova releases
 $E_{SN} = 10^{51}$ erg into the surrounding gas with a radius
@@ -295,8 +298,8 @@ We identify individual galaxies using the halo finder $AHF$
 \citep{Gill04,Knollmann09}, which identifies halos based on an
 overdensity criterion for a flat universe \citep{Gross97}.  For this
 work, we are focusing on the primary (i.e. most massive) galaxy at any
-given redshift, which serves as the progenitor to our $z = 0$ Milky
-Way-like galaxy.
+given redshift.%, which serves as the progenitor to our $z = 0$ Milky
+%Way-like galaxy.
 
 
 
@@ -377,13 +380,21 @@ metallicity than in the \BoringGalaxy{} counterpart.
 
 \subsection{Dwarf galaxies}
 
-We have also employed the results of detailed simulations for several dwarf galaxies: \DwarfOne{}, \DwarfTwo{}, and others.
+We have also employed the results of detailed simulations for several dwarf galaxies: \DwarfOne{}, \DwarfTwo{}, and others.  The simulation of h603 consists of a low-mass disk galaxy (qualitatively similar to M33).  It has a virial mass of $3.4 \times 10^{11} \msun$, stellar mass of $7.8 \times 10^9 \msun$, and maximum circular velocity of 111 km s$^{-1}$.  We also include a dwarf galaxy, h516, which has a disk with irregularly distributions star formation, with a virial mass of $3.8 \times 10^{10}\msun$, stellar mass $2.5 \times 10^8 \msun$, and maximum circular velocity of 65 km s$^{-1}$.
 
 %% h516 = dwarf2
 %% h603 = dwarf1
 %% dwarf3 = h799
 %% mystery = ? 
 %% control =?
+
+\begin{figure*}
+\includegraphics[width=\columnwidth]{Figures/dwarf1}
+\includegraphics[width=\columnwidth]{Figures/dwarf1}
+\caption{\label{fig:GalaxyImages}Synthetic SDSS $gri$ images of our two lower-mass galaxies, h603 (left) and h516 (right - placeholder image, need image of h516), created with \textsc{SUNRISE} \citep{Jonsson06}.
+\label{fig:images}
+}
+\end{figure*}
 
 \section{Detection-weighted compact binary formation}
 \label{sec:model}
