@@ -40,6 +40,8 @@ opts = parser.parse_args()
 if not opts.starmetal_file:
     print "  Please specify an SFR file "
 
+Mbh_min= 5 # minimum mass of black holes, as allowed in the text
+
 
 # Maximum mass information (single BH)
 
@@ -85,8 +87,8 @@ def average_func(func,input_probability_distribution):
 def make_uniform_func(metal_now):
     MmaxNow = maxbh_of_Z(metal_now)
 #    print MmaxNow
-    nm = 1./(MmaxNow - 3)  # normalization
-    return lambda x, Nm = nm, A = MmaxNow: np.where( np.logical_and(x<A , x > 3), nm* np.ones(len(x)), np.zeros(len(x)))
+    nm = 1./(MmaxNow - Mbh_min)  # normalization
+    return lambda x, Nm = nm, A = MmaxNow: np.where( np.logical_and(x<A , x > Mbh_min), nm* np.ones(len(x)), np.zeros(len(x)))
 
 
 def make_power_func(metal_now,mass_exponent=2):
@@ -94,7 +96,7 @@ def make_power_func(metal_now,mass_exponent=2):
     ret, err = quad( lambda x: np.power(x,-1*mass_exponent),3,MmaxNow)
     nm  =ret
 #    print metal_now, MmaxNow, nm
-    return lambda x, Nm = nm, A = MmaxNow,p=mass_exponent: np.where( np.logical_and(x<A , x > 3), nm* np.power(x,-1.*p), np.zeros(len(x)))
+    return lambda x, Nm = nm, A = MmaxNow,p=mass_exponent: np.where( np.logical_and(x<A , x > Mbh_min), nm* np.power(x,-1.*p), np.zeros(len(x)))
 
 def Vaveraged_bns(Z):
     mc_av =mc(1.4, 1.4)
