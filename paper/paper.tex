@@ -51,24 +51,28 @@
 
 
 \begin{document}
+%<<<<<<< Updated upstream
 %\title{Details matter: Similar host galaxies can harbor different merging compact binary populations} 
 \title{The effects of host galaxy properties on merging compact binaries detectable by LIGO}
-\author{ J. Bellovary}
-\affiliation{Department of Physics, Queensborough Community College, Bayside, NY 11364}
-\email{jbellovary@qcc.cuny.edu}
 \author{R.\ O'Shaughnessy}
 \affiliation{Center for Computational Relativity and Gravitation, Rochester Institute of Technology, Rochester, NY 14623, USA}
 \email{oshaughn@mail.rit.edu}
+\author{ J. Bellovary}
+\affiliation{Department of Physics, Queensborough Community College, Bayside, NY 11364}
+\email{jbellovary@qcc.cuny.edu}
 \begin{abstract}
 % POINT:
 % - existence proof by example .. not an attempt to solve the general problem we raise
 Cosmological simulations of galaxy formation can produce present-day galaxies with a large range assembly and star formation histories.  A detailed study of the metallicity evolution and star formation history of such simulations can assist in predicting LIGO-detectable compact object binary mergers.
 Recent simulations of compact binary evolution suggest the compact object merger rate depends
-sensitively on the progenitor's metallicity, to the extent that rare low-metallicity star formation during galaxy
+sensitively on the progenitor's metallicity.  Rare low-metallicity star formation during galaxy
 assembly can produce more detected compact binaries than typical star formation.   
 Using detailed simulations of galaxy and chemical evolution, we demonstrate by example that galaxies with similar present-day appearance can host distinctly different
 compact binary populations.  As an example, we demonstrate how the coalescing binary black hole population can differ by
-factors of order  unity, and even binary neutron star populations differ by tens of percent.  \jillianremark{add sentence about mass dependence (more in dwarfs).}
+factors of order  unity, and even binary neutron star populations differ by tens of percent.  
+%
+We also demonstrate by concrete example the extent to which dwarf galaxies overabundantly produce compact binary
+mergers, particularly binary black holes. 
 We discuss the implications for transient multimessenger astronomy with compact binary sources. 
 %\jillianremark{Add quantifiable stuff when we have it.}
 %% Present and future observations of  merging compact binaries can provide valuable constraints on their birthrate
@@ -118,10 +122,12 @@ We discuss the implications for transient multimessenger astronomy with compact 
 
 \maketitle
 
+%\editremark{Jillian}: Add me but note conflict \cite{Somerville15}, etc or \cite{2015ARAA..53...51S}
+
+
 %\editremark{We will be very careful to specify how SFR and metallicity are measured, backtracking}
 
 %Add me: \cite{Kirby13}
-\editremark{Jillian}: Add me but note conflict \cite{Somerville15}, etc or \cite{2015ARAA..53...51S}
 
 %Add me: \citet{Madau14}  % not necessary, we are not doing a synthetic universe
 
@@ -131,7 +137,7 @@ We discuss the implications for transient multimessenger astronomy with compact 
 % POINT: LIGO soon will detect compact binary mergers....
 %     ... and possibly EM counter part too
 %     ... which will enable new physics
-Gravitational waves have been detected from  coalescing  black hole binaries \citep{DetectionPaper,LIGO-O1-BBH}. 
+Gravitational waves have been detected from  coalescing  black hole binaries \citep{DiscoveryPaper,LIGO-O1-BBH}. 
 Over the next few years, ground-based gravitational wave detectors like LIGO 
 and Virgo  should detect the gravitational
 wave signal from many more similar merging compact binaries \citep{LIGO-O1-BBH,RatesPaper,gwastro-EventPopsynPaper-2016}, as well as  binary  neutron stars and black hole-neutron star binaries \citep{LIGO-Inspiral-Rates,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}.
@@ -310,7 +316,7 @@ of a galaxy, in terms of its stellar mass and metallicity evolution,
 depends strongly on its interaction history.  Galaxies which appear
 similar at the present day may have had drastically different
 histories, which may result in differences in compact object merger
-rates.  To investigate whether galaxy history affects the GRB event
+rates.  To investigate whether galaxy history affects the compact binary event
 rate, we have chosen two simulations which are extremely similar at $z
 = 0$ but differ strongly in their merger histories; see Figure \ref{fig:images}.
 
@@ -350,7 +356,7 @@ disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir} =
   of the metal properties of these galaxies does differ - between 0.5
   and 6 Gyr, h277 hosts a \emph{modestly}  more metal-rich population than
   h258.   For most astrophysical processes, the small metallicity difference illustrated here will have no impact on
-  present-day observables.  However, for binary black holes depend sensitively on all low metallicity star formation
+  present-day observables.  However,  the population of binary black holes  depends sensitively on all low metallicity star formation
   over cosmic time; as we show below, these small differences can have an observable impact at present.   
 
 
@@ -401,11 +407,11 @@ We have also employed the results of detailed simulations for several dwarf gala
 \label{sec:model}
 
 Our goal in this work is to estimate the \emph{ratio} of compact binaries that should be merging, at present, in the two
-simulated galaxies described above.
+simulated Milky-Way analog galaxies described above.
 
 To explore plausible binary detection scenarios, we adopt a parameterized formalism for binary evolution and event
 detection in an individual galaxy, motivated by
-the detailed studies of  \abbrvPSgrb{} and \abbrvPSellipticals; \jillianremark{this is first mention of PSG and PSE, define} similar approaches have been used by
+the detailed studies of  \abbrvPSgrb{} (\cite{PSgrbs-popsyn}) and \abbrvPSellipticals{} (\cite{PSellipticals});  similar approaches have been used by
 \cite{2016arXiv160508783L} and others.
 
 
@@ -438,14 +444,16 @@ This expression depends explicitly on an assumed and metallicity-dependent mass 
 mergers, through the characteristic chirp mass $\mc_{*}(Z)\equiv [\int p(m_1,m_2|Z) dm_1 d,m_2 (\mc/1.2
   M_\odot)^{15/6}]^{5/16}$ .  We calibrate our metallicity-dependent mass distributions to metallicity-dependent binary
 evolution calculations presented in \cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012} and
-\cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}; see, e.g., their Table 1 and Figures 5-7.    For neutron
+\cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}.  For neutron
 stars, we adopt a fiducial neutron star mass of $1.4 M_\odot$ at all metallicities.  For BH-NS binaries, we adopt a
-highly simplified model: the black hole masses are uniformly \editremark{fixme?} drawn from $5 M_\odot$ to the maximum 
+highly simplified model: the black hole masses are uniformly  drawn from $5 M_\odot$ to the maximum 
 black hole mass $M_{max}(Z)$ allowed by
 \emph{isolated} stellar evolution, as reported in prior work \citep[see,e.g.][and references
   therein]{gwastro-EventPopsynPaper-2016}.  In agreement with much more detailed prior work \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, this simplified model yields typical chirp masses for BH-NS binaries that
 vary slightly as $Z/Z_\odot$ decreases, from a lower limit of $3 M_\odot$ near solar metallicity to an upper limit of
-$4.3 M_\odot$ in low-metallicity environments.  Finally, for binary black holes, we assume  comparable-mass binaries
+$4.3 M_\odot$ in low-metallicity environments.  Not least because the average chirp mass for BH-NS simply cannot vary
+dramatically, given the functional form of $\mc$, our results do not depend sensitively on the choice of black hole mass
+distribution.  Finally, for binary black holes, we assume  comparable-mass binaries
 form ($m_1=m_2$), with the distribution of component masses chosen to be $\propto m_1^{-p}$ 
  between $3 M_\odot$ and $M_{max}(Z)$ and zero otherwise, adopting a fiducial exponent $p=2$; see, e.g.,
 \cite{popsyn-LowMetallicityImpact2b-StarTrackRevised-2013}.    For binary black holes, this means  the
@@ -478,8 +486,21 @@ objects, we adopt a power law
 with $a\in [0,3]$ and $F_{max}<10^3$
 %$\lambda_o F_{max} < 3\times 10^{-4}/M_\odot$
  (see, e.g.\cite{popsyn-LIGO-SFR-2008}, \abbrvKBLowZa).  For the purposes of illustration, we adopt a  concrete scale
-factor  $
-\lambda_0 = 10^{-3}/M_\odot $,  a typical value suitable for neutron star compact binaries (see \abbrvPSgrb{}, \abbrvPSellipticals, and \abbrvKBLowZa).
+factor  $\lambda_0 = 10^{-3}/M_\odot $,  a typical value suitable for neutron star compact binaries (see \abbrvPSgrb{},
+\abbrvPSellipticals, and \abbrvKBLowZa).
+% DOCUMENTATION FOR CHOICE
+%    - classic figures on event rate vs metallicity from Dominik #1.5  (see WVU talk slide 16)
+%        2012-11-WVU/2012-11-WVU-Keynote.key 
+%      Based on event rate changing by x10^4 over 1 order of magnitude. This includes both mass factor and
+%      intrinsic factor.  Mass factor changes by x10, so intrinsic factor is x10^3 over x10 in Z, so a=3 is better.
+%    - saturation will occur after a factor of 10^4
+%    - Can also calibrate to change in event rate from Z sun to 0.1Zsun (i.e., a factor of 10 for model B)
+%      a=1.  This is MUCH BETTER DOCUMENTED and MORE CONSERVATIVE.
+To calibrate the exponent, based on Tables 2 and 3 of
+\cite{popsyn-LowMetallicityImpact2-StarTrackRevised-2012} (model B), for binary black holes and black hole-neutron star
+binaries, we adopt $a=1$, while for binary neutron stars we adopt $a=0$; see, e.g., their Table 1 and Figures
+5-7.\footnote{This choice of exponent provides an extremely conservative assessment of the impact of low Z
+\cite[see,e.g.][]{2012CQGra..29n5011O,gwastro-EventPopsynPaper-2016}. } 
 %
 For binaries containing neutron stars, for simplicity and without loss of generality we adopt the universal delay time distribution
 %% Finally, we parameterize the delay time distribution by  either
@@ -500,8 +521,11 @@ For binaries containing neutron stars, for simplicity and without loss of genera
 time distributions.\footnote{Simulations suggest the delay time distribution varies from model to model and with mass.
   These variations have less impact on our results than the evolving metallicity distribution of star forming gas.}
 %
-For binary black holes forming at metallicities $Z<0.25 Z_\odot$, we adopt the same prescription.  To be qualitatively consistent
-with detailed binary evolution calculations at near-solar metallicity (e.g., \abbrvPSellipticals{} and
+For binary black holes forming at metallicities $Z<0.25 Z_\odot$, we adopt the same prescription.  
+For binary black holes formed near solar metallicity, the delay time distribution can favor long delays between birth
+and merger, as demonstrated in Figures 9 and 10 of \abbrvPSellipticals{}.  [Figure 2 of  \cite{2016arXiv160508783L} is
+  an extreme example of this well-known trend.] 
+To be qualitatively consistent with detailed binary evolution calculations at near-solar metallicity (e.g., \abbrvPSellipticals{} and
 \cite{gwastro-EventPopsynPaper-2016}), for 
 black holes forming at metallicities $Z>0.25 Z_\odot$ we adopt a much more uniform delay time distribution, so 
 coalescing black hole binaries have nearly uniform delay time distribution between $100\unit{Myr}$ and
@@ -511,18 +535,13 @@ For suitable choices of parameter, our phenomenological response function is qua
 evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2-StarTrackRevised-2012}.
 
 
-For binary black holes formed near solar metallicity, the delay time distribution can favor long delays between birth
-and merger, as demonstrated in Figures 9 and 10 of \abbrvPSellipticals{}.  [Figure 2 of  \cite{2016arXiv160508783L} is
-  an extreme example of this well-known trend.]  In practice, however, binary black holes produced near solar
-metallicity correspond to a relatively small proportion of the overall population; we therefore neglect this
-effect\footnote{may want to change}.
 
 
 % POINT: Net effect
 Therefore, up to an irrelevant overall scale factor, the  present-day detection-weighted coalescence rate $r_D$  of binary compact objects formed by within two similar
 galaxies  can be calculated via
 \begin{eqnarray}
- r_D \propto  \int d\log Z  \int _{13 \unit{Gyr}}^0dt  V(Z) \lambda(Z) \frac{dP}{dt}(t) \dot{M} p(\log Z|t)
+ r_D \propto  \int d\log Z  \int _{13 \unit{Gyr}}^0dt  V(Z) \lambda(Z) \frac{dP_t}{dt}(t) \dot{M} p(\log Z|t)
 \end{eqnarray}
 
 
@@ -572,17 +591,16 @@ percent) on the assembly history alone, even aside from any composition-dependen
 \begin{table}
 \begin{centering}
 \begin{tabular}{|ll|l|}\hline
- \text{\BoringGalaxy} & \text{BHBH} & 0.0996 \\
- \text{\ExcitingGalaxy} & \text{BHBH} & 0.0912 \\
- \text{\DwarfOne} & \text{BHBH} & 0.212 \\
- \text{\DwarfTwo} & \text{BHBH} & 0.76 \\
+ \text{\BoringGalaxy} & \text{BHBH} & 0.012 \\
+ \text{\ExcitingGalaxy} & \text{BHBH} & 0.0116 \\
+ \text{\DwarfOne} & \text{BHBH} & 0.0207 \\
+ \text{\DwarfTwo} & \text{BHBH} & 0.0524 \\
  \text{\BoringGalaxy} & \text{BHNS} & 0.000219 \\
  \text{\ExcitingGalaxy} & \text{BHNS} & 0.000264 \\
  \text{\DwarfOne} & \text{BHNS} & 0.000275 \\
  \text{\DwarfTwo} & \text{BHNS} & 0.000235 \\
- \text{\BoringGalaxy} & \text{NSNS} & 0.0000592 \\
- \text{\ExcitingGalaxy} & \text{NSNS} & 0.0000715 \\
-\hline
+ \text{\BoringGalaxy} & \text{NSNS} & 0.000206 \\
+ \text{\ExcitingGalaxy} & \text{NSNS} & 0.000228 \\\hline
 \end{tabular}
 \end{centering}
 \caption{\label{tab:Results}\textbf{Event rates per unit mass $r_D/M$, arbitrary units}, for the three different types of binaries
