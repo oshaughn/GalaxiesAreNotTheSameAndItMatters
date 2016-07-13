@@ -179,14 +179,17 @@ example,  binary neutron star sources should be closer than $400\unit{Mpc}$.  Du
 can be explored at great depth and detail via  position-resolved spectroscopy, enabling detailed position-resolved star-formation
 and chemical evolution histories  \citep[see,e.g.][]{2009MNRAS.396..462K,2014MNRAS.444..336C,
 CALIFA,CALIFA2}.  
+%
+However, unlike short GRBs and supernovae (SN), present-day compact  binary populations can depend sensitively on rare low metallicity
+star formation.
 % POINT: But is it useful?
-In this work, we demonstrate by concrete example that detailed analysis of individual galaxies can be essential to
-investigate key physical questions about the origin of compact binary mergers. 
+In this work, we assess by concrete example the extent to which detailed analysis of individual galaxies' assembly histories will be essential in
+investigations key physical questions about the origin of compact binary mergers. 
 
 
 
 This paper is organized as follows. 
-In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  several galaxies, including two of Milky Way-mass and two dwarfs.  Though the two Milky Way-like galaxies are morphologically similar at $z = 0$, we
+In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  several galaxies, including four of Milky Way-mass and two dwarfs.  Though the four Milky Way-like galaxies are morphologically similar at $z = 0$, we
 show that their star formation and chemical evolution history have subtle but important differences due to their
 distinctive merger histories.   To demonstrate
 these differences have a practical impact,  in \S \ref{sec:model}, we introduce a simple,
@@ -340,7 +343,7 @@ disk structure \citep{Brooks11}.  It has a virial mass of $M_{vir} =
   a gas disk rapidly reforms following the collision (see
   \citet{Governato09}), resulting in a massive disk galaxy at $z = 0$
   which looks remarkably similar to the Milky Way and to the other
-  simulation, h277.  Prior to the $z = 1$ merger, each of the two
+  simulation, h277.  Prior to the $z = 1$ merger, each of the four
   progenitor galaxies actually experiences its own additional major
   merger events around $z = 3$.  The combination of
   the series of major mergers, plus a number of minor interactions and
@@ -369,7 +372,7 @@ We include two additional Milky Way simulations with similar $z = 0$ properties,
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Figures/boring}
 \includegraphics[width=\columnwidth]{Figures/exciting}
-\caption{\label{fig:GalaxyImages}Synthetic SDSS $gri$ images of our two Milky Way-type galaxies, h277 (left) and h258 (right), created with \textsc{SUNRISE} \citep{Jonsson06}.
+\caption{\label{fig:GalaxyImages}Synthetic SDSS $gri$ images of two of our Milky Way-type galaxies, h277 (left) and h258 (right), created with \textsc{SUNRISE} \citep{Jonsson06}.
 \label{fig:images}
 }
 \end{figure*}
@@ -474,7 +477,7 @@ black hole mass $M_{max}(Z)$ allowed by
   therein]{gwastro-EventPopsynPaper-2016}.  In agreement with much more detailed prior work \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, this simplified model yields typical chirp masses for BH-NS binaries that
 vary slightly as $Z/Z_\odot$ decreases, from a lower limit of $3 M_\odot$ near solar metallicity to an upper limit of
 $4.3 M_\odot$ in low-metallicity environments.  Not least because the average chirp mass for BH-NS simply cannot vary
-dramatically, given the functional form of $\mc$, our results do not depend sensitively on the choice of black hole mass
+dramatically, given the functional form of $\mc$, our results for the BH-NS coalescence rate per unit galaxy mass do not depend sensitively on the choice of black hole mass
 distribution.  Finally, for binary black holes, we assume  comparable-mass binaries
 form ($m_1=m_2$), with the distribution of component masses chosen to be $\propto m_1^{-p}$ 
  between $5 M_\odot$ and $M_{max}(Z)$ and zero otherwise, adopting a fiducial exponent $p=2$; see, e.g.,
@@ -587,7 +590,7 @@ galaxy is smaller, by a factor of roughly 2.
 % 1e-3:  V = 475, lambda= 20   
 % 2e-3:  V= 318, lambda = 10
 % so the ratio should be a factor of about 7x higher due to this region.
-Therefore, because only a fraction of order $10\%$ \textbf{[checkme-JILLIAN?]} of all star formation occurs in this epoch, by this order of magnitude
+Therefore, because only a fraction of order $10\%$  of all star formation occurs in this epoch, by this order of magnitude
 argument, the overall number of
 present-day coalescing binary black holes in our two galaxies is expected to differ by of order ten percent.
 % 0.9 + 0.1*7/2
@@ -604,7 +607,7 @@ a numerical coincdence between the specific star formation rate and metallicitie
   are well within the scatter around the mass-metallicity relation.  Marginally different realizations of these
   histories can easily produce factors of order unity difference in galaxies with otherwise indistinguishable
   present-day properties.  That said, two other Milky-Way-like  galaxies (h239 and h285) also show very
-  similar binary black hole coalescence rates $r_D/M$; see Table \ref{tab:Results} . \editremark{but: do more examples show dramatic differences, or comparable changes}
+  similar binary black hole coalescence rates $r_D/M$; see Table \ref{tab:Results}. % \editremark{but: do more examples show dramatic differences, or comparable changes}
 
 More broadly, Table \ref{tab:Results} shows the results of our calculations for the three types of compact binaries
 described above.   These calculations show just how dramatically different the compact binary populations of galaxies
@@ -628,8 +631,8 @@ percent) on the assembly history alone, even aside from any composition-dependen
 \hline
  \text{\BoringGalaxy} & 0.0224 & 0.000247 & 0.000206  & $4.24 \times 10^{10}$ \\
  \text{\ExcitingGalaxy}  &0.0216 & 0.000297 & 0.000228 & $4.46 \times 10^{10}$ \\
-  \text{h239}  &  0.023 &X & 0.000268 & $4.50 \times 10^{10}$\\
- \text{h285} &  0.0236 & X & 0.000241 & $4.56 \times 10^{10}$ \\
+  \text{h239}  &  0.023 & 0.000354 & 0.000268 & $4.50 \times 10^{10}$\\
+ \text{h285} &  0.0236 & 0.000284 & 0.000241 & $4.56 \times 10^{10}$ \\ \hline
  \text{\DwarfOne} &  0.0381 & 0.000308 & 0.000441& $7.8 \times 10^9$ \\
  \text{\DwarfTwo}  & 0.0949 & 0.000257 & 0.000884& $2.5 \times 10^8$ \\
 \hline
