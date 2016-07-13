@@ -549,7 +549,7 @@ To be qualitatively consistent with detailed binary evolution calculations at ne
 \cite{gwastro-EventPopsynPaper-2016}), for 
 black holes forming at metallicities $Z>0.25 Z_\odot$ we adopt a much more uniform delay time distribution, so 
 coalescing black hole binaries have nearly uniform delay time distribution between $100\unit{Myr}$ and
-$13\unit{Gyr}$\editremark{checkme again - a little hacky}; that said,  our conclusions are not sensitive to this choice.
+$13\unit{Gyr}$; that said,  our conclusions are not sensitive to this choice.
 %
 For suitable choices of parameter, our phenomenological response function is qualitatively consistent with the results of detailed simulations of binary
 evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2-StarTrackRevised-2012}.
@@ -598,7 +598,7 @@ However, it is also possible that this close agreement is entirely a
 a numerical coincdence between the specific star formation rate and metallicities in these two galaxies.  The effects described here
   are well within the scatter around the mass-metallicity relation.  Marginally different realizations of these
   histories can easily produce factors of order unity difference in galaxies with otherwise indistinguishable
-  present-day properties.   \editremark{Do we have more examples?}
+  present-day properties.  \editremark{but: do more examples show dramatic differences, or comparable changes}
 
 More broadly, Table \ref{tab:Results} shows the results of our calculations for the three types of compact binaries
 described above.   These calculations show just how dramatically different the compact binary populations of galaxies
@@ -620,10 +620,12 @@ percent) on the assembly history alone, even aside from any composition-dependen
 \text{Simulation}  &  \text{BHBH} &  \text{BHNS}  & \text{NSNS} & M$_* (\msun)$\\
 \hline
 \hline
- \text{\BoringGalaxy} & 0.012  &0.000219 & 0.000206 & $4.24 \times 10^{10}$ \\
- \text{\ExcitingGalaxy}  & 0.0116 & 0.000264 &   0.000228 & $4.46 \times 10^{10}$ \\
- \text{\DwarfOne} & 0.0207  & 0.000275 &  & $7.8 \times 10^9$ \\
- \text{\DwarfTwo}  & 0.0524 & 0.000235  &  & $2.5 \times 10^8$ \\
+ \text{\BoringGalaxy} & 0.0224 & 0.000247 & 0.000206  & $4.24 \times 10^{10}$ \\
+ \text{\ExcitingGalaxy}  &0.0216 & 0.000297 & 0.000228 & $4.46 \times 10^{10}$ \\
+ \text{\DwarfOne} &  0.0381 & 0.000308 & 0.000441& $7.8 \times 10^9$ \\
+ \text{\DwarfTwo}  & 0.0949 & 0.000257 & 0.000884& $2.5 \times 10^8$ \\
+ \text{h239}  &  0.023 &X & 0.000268 & \\
+ \text{h285} &  0.0236 & X & 0.000241 & \\
 \hline
 \end{tabular}
 \end{centering}
@@ -655,7 +657,20 @@ few direct, unambiguous clues to a compact binary merger's progenitors.
 %
 Fortunately,  with the advent of
 IFUs and position-resolved spectroscopy, observers can now probe the star formation history and metallicity of individual gas packets at different points in a galaxy.  
-These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and chemical evolution history.    Obtaining the galaxy-wide evolutionary history can help us infer compact binary formation conditions by identifying the lowest-metallicity formation events using stellar archaeological techniques.
+These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and
+chemical evolution history.    Obtaining the galaxy-wide evolutionary history can help us infer compact binary formation
+conditions by identifying the lowest-metallicity formation events using stellar archaeological techniques.  
+These techniques have been applied with great success to other transient events. 
+For example, in several cases the metallicity of gas neighboring a long GRB (\citet{ 2008AJ....135.1136M};
+\citet{2010AJ....140.1557L}) has been directly measured.  % , short GRB (\editremark{XXX}), or SN has been directly measured.
+%
+The precise host offset can be compared to the distribution of light and star formation  \citep{2010ApJ...708....9F}.
+%
+Finally,  on a host-by-host basis, the delay time between birth and merger has been constrained for
+% long GRBs (\editremark{XXX}), 
+short GRBs \citep{2010ApJ...725.1202L}
+ and
+  SN Ia \citep{2011MNRAS.412.1508M}; see, e.g., the review in  \cite{2014ARAA..52...43B}. 
 
 %Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit
 %the prospects of detailed electromagnetic followup of individual event. 
@@ -677,16 +692,7 @@ Each host galaxy associates a merger to a unique star formation history and meta
 With many events, these associations can potentially determine the ``response function'' for compact binaries: how often star forming gas of a given metallicity evolves into
 merging compact binaries.    
 %
-For example, in several cases the metallicity of gas neighboring a long GRB (\citet{ 2008AJ....135.1136M};
-\citet{2010AJ....140.1557L}) has been directly measured.  % , short GRB (\editremark{XXX}), or SN has been directly measured.
-%
-The precise host offset can be compared to the distribution of light and star formation  \citep{2010ApJ...708....9F}.
-%
-Finally,  on a host-by-host basis, the delay time between birth and merger has been constrained for
-% long GRBs (\editremark{XXX}), 
-short GRBs \citep{2010ApJ...725.1202L}
- and
-  SN Ia \citep{2011MNRAS.412.1508M}; see, e.g., the review in  \cite{2014ARAA..52...43B}.  \jillianremark{RICHARD THIS LAST PARAGRAPH IS STILL SUPER CONFUSE TO ME SORRY.  I think you need to call me and tell me about this response function so I can reword into normalpeople language}
+ %% \jillianremark{RICHARD THIS LAST PARAGRAPH IS STILL SUPER CONFUSE TO ME SORRY.  I think you need to call me and tell me about this response function so I can reword into normalpeople language}
 %
 %The future of gravitational wave host galaxy associations is bright.
 
@@ -788,7 +794,7 @@ galaxy assembly and evolution.
 % POINT: Future directions
 
 \begin{acknowledgements}
-ROS acknowledges support from NSF award AST-1412449, via subcontract from the University of Wisconsin-Milwaukee.
+ROS acknowledges support from NSF award AST-1412449, via subcontract from the University of Wisconsin-Milwaukee, and PHY-1505629.
 %
 JB acknowledges generous support  from the Helen Gurley Brown Trust.
 
