@@ -74,7 +74,7 @@ present-day appearance depend on the details of their assembly.
 %% factors of order  unity, and even binary neutron star populations differ by tens of percent.  
 %
 We also demonstrate by concrete example the extent to which dwarf galaxies overabundantly produce compact binary
-mergers, particularly binary black holes. 
+mergers, particularly binary black holes, relative to more massive galaxies. 
 We discuss the implications for transient multimessenger astronomy with compact binary sources. 
 %\jillianremark{Add quantifiable stuff when we have it.}
 %% Present and future observations of  merging compact binaries can provide valuable constraints on their birthrate
@@ -112,6 +112,9 @@ We discuss the implications for transient multimessenger astronomy with compact 
 %% of the galaxy}
 
 \end{abstract}
+% DCC: 
+% arxiv:
+% DOI: 
 
 %% absolutely critical vs optional
 %
@@ -155,7 +158,7 @@ electromagnetic radiation  via a number of  mechanisms \citep[see][and reference
 %    - Shibata group/Koutarou
 %  In addition to providing a wealth of information about the merger event itself, 
 A multimessenger detection will pin down
-the sky position and therefore approximate birthplace of each merging binary \cite{Nissanke13}.    
+the sky position and therefore approximate birthplace of each merging binary \citep{Nissanke13}.    
 %
 Even in the absence of well-identified electromagnetic counterparts, host galaxy information is still available from gravitational wave localization alone \citep{2016LRR....19....1A,2016arXiv160307333S}.  As GW detector
 networks increase in number and sensitivity, these localizations will allow statistical and, eventually, unique identification of
@@ -175,18 +178,21 @@ Unlike GRBs, detected gravitational wave sources will be limited by the range of
 example,  binary neutron star sources should be closer than $400\unit{Mpc}$.  Due to their proximity, each host galaxy
 can be explored at great depth and detail via  position-resolved spectroscopy, enabling detailed position-resolved star-formation
 and chemical evolution histories  \citep[see,e.g.][]{2009MNRAS.396..462K,2014MNRAS.444..336C,
-  Dalcanton09,Williams11,CALIFA}.  
+CALIFA,CALIFA2}.  
+%
+However, unlike short GRBs and supernovae (SN), present-day compact  binary populations can depend sensitively on rare low metallicity
+star formation.
 % POINT: But is it useful?
-In this work, we demonstrate by concrete example that detailed analysis of individual galaxies can be essential to
-investigate key physical questions about the origin of compact binary mergers. 
+In this work, we assess by concrete example the extent to which detailed analysis of individual galaxies' assembly histories will be essential in
+investigations key physical questions about the origin of compact binary mergers. 
 
 
 
 This paper is organized as follows. 
-In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  several galaxies, including two of Milky Way-mass and two dwarfs.  Though the two Milky Way-like galaxies are morphologically similar at $z = 0$, we
+In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  several galaxies, including four of Milky Way-mass and two dwarfs.  Though the four Milky Way-like galaxies are morphologically similar at $z = 0$, we
 show that their star formation and chemical evolution history have subtle but important differences due to their
 distinctive merger histories.   To demonstrate
-these differences have a significant practical impact,  in \S \ref{sec:model}, we introduce a simple,
+these differences have a practical impact,  in \S \ref{sec:model}, we introduce a simple,
 metallicity-dependent  phenomenological model to calculate the present-day rate and mass distribution of compact binary
 mergers from  a galaxy's known history.   In \S \ref{sec:results:BBH}, we use this model to investigate  the compact
 binary  coalescence rate
@@ -221,8 +227,7 @@ formation, we examine cosmological smoothed particle hydrodynamics
 (SPH) $N$-body simulations of Milky Way-like galaxies with GASOLINE
 \citep{Stadel01,Wadsley04}.  These simulations allow us to analyze both
 spatially and temporally resolved star formation, and determine not
-only the metallicity history of compact object progenitors, but also
-their dynamical evolution.  
+only the metallicity history of compact object progenitors.%, but also their dynamical evolution.  
 %maybe move the below section to later and/or consolidate
 %One simulation we report here, h258,
 %involves the formation of a Milky Way-like disk galaxy whose
@@ -255,10 +260,10 @@ p = \frac{m_{\rm gas}}{m_{\rm star}} (1 - e^{c^*\rm X_{\rm H_2} \Delta t/t_{\rm 
 where the star formation efficiency parameter $c^*$ is set to 0.1 such
 that our galaxies match the observed Kennicutt-Schmidt law
 \citep{Kennicutt89};  X$_{\rm H_2}$ is the molecular hydrogen fraction of the gas particle; $m_{star}$ and $m_{gas}$ are the star and gas
-particle masses; %\footnote{In our high-resolution simulations, each gas particle starts with a mass
-%  $m_{gas,0}=26,676 M_\odot$, gaining mass from feedback and losing it to star formation.  Each star particle, when
-%  formed, has $1/3$ of the progenitor mass of the forming gas particle.  See \cite{Christensen10} for a discussion
-%of resolution issues in these SPH simulations.} 
+particle masses; \footnote{Gas particles start with a set mass
+ and may gain mass from feedback and lose it to star formation.  Each star particle, when
+  formed, has $1/3$ of the progenitor mass of the forming gas particle.  See \cite{Christensen10} for a discussion
+of resolution issues in SPH simulations.} 
  $t_{form}$ is the dynamical time for the gas
 particle; and $\Delta t$ is the time between star formation episodes,
 which we set to 1 Myr.  A detailed study of different interstellar medium (ISM) models and the resulting star formation properties by \citet{Christensen14a} demonstrates that this model allows star formation to occur in dense clumps of gas, in regions that correspond best to star formation in observed galaxies.  
@@ -272,7 +277,8 @@ allowed to cool for the duration of the blastwave, mimicking the
 snowplow phase of a supernova explosion.  Previous works have found
 that this set of parameters results in realistic galaxies which obey a
 number of observed relations such as the mass-metallicity relation
-\citep{Brooks07,Kirby13}, the Tully-Fisher relation \citep{Governato09}, and
+\citep{Brooks07}, % JB: removed Kirby citation
+ the Tully-Fisher relation \citep{Governato09}, and
 the size-luminosity relation \citep{Brooks11}, as well as reproduce
 the detailed characteristics of bulgeless dwarf galaxies
 \citep{Governato10} and the Milky Way \citep{Guedes11}.
@@ -304,14 +310,12 @@ tensor, and $C_{diff}$ is a dimensionless constant which we set to a conservativ
 
 We identify individual galaxies using the halo finder $AHF$
 \citep{Gill04,Knollmann09}, which identifies halos based on an
-overdensity criterion for a flat universe \citep{Gross97}.  For this
-work, we are focusing on the primary (i.e. most massive) galaxy at any
-given redshift.%, which serves as the progenitor to our $z = 0$ Milky
+overdensity criterion for a flat universe \citep{Gross97}.  In each simulation, we are focusing on the stars which make up the primary (i.e. most massive) galaxy at $z = 0$.%, which serves as the progenitor to our $z = 0$ Milky
 %Way-like galaxy.
 
 
 
-\subsection{Two Milky-Way-like galaxies with distinct histories }
+\subsection{Milky-Way-like galaxies with distinct histories }
 
 %{\bf Richard go ahead and edit this however is needed.}  
 The evolution
@@ -320,7 +324,7 @@ depends strongly on its interaction history.  Galaxies which appear
 similar at the present day may have had drastically different
 histories, which may result in differences in compact object merger
 rates.  To investigate whether galaxy history affects the compact binary event
-rate, we have chosen two simulations which are extremely similar at $z
+rate, we have chosen four simulations which are morphologically similar at $z
 = 0$ but differ strongly in their merger histories; see Figure \ref{fig:images}.
 
 The simulation h277  is a Milky Way analog with a
@@ -330,28 +334,30 @@ life.  This simulation has been shown to emulate several Milky Way
 properties, including stellar dynamics
 \citep{Loebman12,Loebman14,Kassin14}, baryon fraction
 \citep{Munshi13}, halo properties \citep{Zolotov09,Zolotov10}, and
-disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir} =
+disk structure \citep{Brooks11}.  It has a virial mass of $M_{vir} =
 6.79 \times 10^{11} \msun$, stellar mass $M_* = 4.24 \times 10^{10}
-\msun$, and maximum circular velocity $v_{circ} = 235$ km s$^{-1}$.
+\msun$, and maximum circular velocity $v_{\rm circ} = 235$ km s$^{-1}$.
 
   The simulation h258, on the other hand, has a much
   more active merger history.  At $z = 1$ there is a 1:1 merger event;
   a gas disk rapidly reforms following the collision (see
   \citet{Governato09}), resulting in a massive disk galaxy at $z = 0$
   which looks remarkably similar to the Milky Way and to the other
-  simulation, h277.  Prior to the $z = 1$ merger, each of the two
+  simulation, h277.  Prior to the $z = 1$ merger, each of the four
   progenitor galaxies actually experiences its own additional major
-  merger events around $z = 2$.  The combination of
+  merger events around $z = 3$.  The combination of
   the series of major mergers, plus a number of minor interactions and
   flybys, gives a stark contrast to the relatively quiescent history
   of h277.  At $z = 0$, h258 has a virial mass of $M_{vir} = 7.74
   \times 10^{11} \msun$, stellar mass $M_* = 4.46 \times 10^{10}
-  \msun$, and maximum circular velocity $v_{circ} = 242$ km s$^{-1}$.  %\editremark{Might we want to show the images of these galaxies?}
+  \msun$, and maximum circular velocity $v_{\rm circ} = 242$ km s$^{-1}$.  %\editremark{Might we want to show the images of these galaxies?}
 
+We include two additional Milky Way simulations with similar $z = 0$ properties, which have evolutionary histories that fall in between the extremes of the two described above.  The galaxy h239 has a total virial mass of $M_{vir} = 9.3 \times 10^{11}\msun$, stellar mass $M_* = 4.50 \times 10^{10}
+\msun$, and maximum circular velocity $v_{\rm circ} = 250$ km s$^{-1}$.  The galaxy h285 has a total virial mass of $M_{vir} = 8.82 \times 10^{11}\msun$, stellar mass $M_* = 4.56 \times 10^{10} \msun$, and maximum circular velocity $v_{\rm circ} = 248$ km s$^{-1}$.  These galaxies are also described in \citet{Munshi13,Bellovary14}.
 
   Due to the differences in merger histories, the star formation histories and metallicity
   evolution of h258 and h277 also differ at early times.  Figure
-  \ref{fig:TwoGalaxies} shows the star formation history (left panel) and metallicity evolution (right panel) of the two galaxies.  The star formation histories are quite different at early times, where h277 has larger bursts of star formation between 2-4 Gyr, but h258 has a large burst at $\sim 6$ Gyr during a major merger.   The right panel shows the mean metallicity of
+  \ref{fig:TwoGalaxies} shows the star formation history (left panel) and metallicity evolution (right panel) of h277 (black) and h258 (red).  The star formation histories are quite different at early times, where h277 has larger bursts of star formation between 2-4 Gyr, but h258 has a large burst at $\sim 6$ Gyr during a major merger.   The right panel shows the mean metallicity of
   recently formed stars vs time (thick solid lines), where we define
   recent as within the past 50 Myr.  The shaded regions correspond to
   one standard deviation of the mean, while the thick dashed lines
@@ -366,7 +372,7 @@ disk properties \citep{Brooks11}.  It has a virial mass of $M_{vir} =
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Figures/boring}
 \includegraphics[width=\columnwidth]{Figures/exciting}
-\caption{\label{fig:GalaxyImages}Synthetic SDSS $gri$ images of our two Milky Way-type galaxies, h277 (left) and h258 (right), created with \textsc{SUNRISE} \citep{Jonsson06}.
+\caption{\label{fig:GalaxyImages}Synthetic SDSS $gri$ images of two of our Milky Way-type galaxies, h277 (left) and h258 (right), created with \textsc{SUNRISE} \citep{Jonsson06}.
 \label{fig:images}
 }
 \end{figure*}
@@ -390,7 +396,7 @@ metallicity than in the \BoringGalaxy{} counterpart.
 
 \subsection{Dwarf galaxies}
 
-We have also employed the results of detailed simulations for several dwarf galaxies: \DwarfOne{}, \DwarfTwo{}, and others.  The simulation of h603 consists of a low-mass disk galaxy (qualitatively similar to M33).  It has a virial mass of $3.4 \times 10^{11} \msun$, stellar mass of $7.8 \times 10^9 \msun$, and maximum circular velocity of 111 km s$^{-1}$.  We also include a dwarf galaxy, h516, which has a disk with irregularly distributions star formation, with a virial mass of $3.8 \times 10^{10}\msun$, stellar mass $2.5 \times 10^8 \msun$, and maximum circular velocity of 65 km s$^{-1}$.  Images of these galaxies are shown in Figure \ref{fig:dwarfimages}. \jillianremark{ {\bf Put SFH and metal hist in Figure 4.  Discuss.}}
+We have also employed the results of detailed simulations for two dwarf galaxies: \DwarfOne{} and \DwarfTwo{}.  The simulation of h603 consists of a low-mass disk galaxy (qualitatively similar to M33).  It has a virial mass of $3.4 \times 10^{11} \msun$, stellar mass of $7.8 \times 10^9 \msun$, and maximum circular velocity of 111 km s$^{-1}$.  The structure and star formation of this galaxy has been extensively studied by \citet{Christensen14b}.  We also include a bulgeless dwarf galaxy, h516, which has a disk with irregularly distributions star formation, with a virial mass of $3.8 \times 10^{10}\msun$, stellar mass $2.5 \times 10^8 \msun$, and maximum circular velocity of 65 km s$^{-1}$.  Images of these galaxies are shown in Figure \ref{fig:dwarfimages}, and we show their star formation history and metallitity evolution in  Figure \ref{fig:TwoDwarfGalaxies}.  Note that these galaxies have quite different masses, and are not meant to be directly comparable.  The more massive h603 has a much more active star formation history and an overall increasing metallicity with time, whereas the less massive h516 is characterized by small bursts of star formation and a fairly flat metallicity evolution.
 
 %% h516 = dwarf2
 %% h603 = dwarf1
@@ -410,7 +416,7 @@ We have also employed the results of detailed simulations for several dwarf gala
 \begin{figure*}
 \includegraphics[width=\columnwidth]{Figures/sfh_dwarf}
 \includegraphics[width=\columnwidth]{Figures/dwarf_zvst}
-\caption{\label{fig:TwoGalaxies}\textbf{Star formation and metallicity versus time}:  \emph{Left panel}: Star formation history $\dot{M}_{*}$
+\caption{\label{fig:TwoDwarfGalaxies}\textbf{Star formation and metallicity versus time}:  \emph{Left panel}: Star formation history $\dot{M}_{*}$
   versus time.  Black corresponds to h603 and red to h516.  
 \emph{Right panel}: A plot of the  metallicity $Z$ of recently-formed stars versus time.  Solid red and black lines show
 the mean metallicity; dotted lines correspond to  90\% of newly-born stars have lower metallicity,   or 10\% of
@@ -426,7 +432,7 @@ newly-born stars have greater metallicity.  %When these two galaxies are $2-3\un
 \label{sec:model}
 
 Our goal in this work is to estimate the \emph{ratio} of compact binaries that should be merging, at present, in the two
-simulated Milky-Way analog galaxies described above.
+simulated Milky-Way analog galaxies described above as well as the dwarfs.
 
 To explore plausible binary detection scenarios, we adopt a parameterized formalism for binary evolution and event
 detection in an individual galaxy, motivated by
@@ -434,7 +440,7 @@ the detailed studies of  \abbrvPSgrb{} (\cite{PSgrbs-popsyn}) and \abbrvPSellipt
 \cite{2016arXiv160508783L} and others.
 
 
-Binary evolution calculations suggest the binary compact object formation rate rate depends sensitively on the assumed metallicity, in conjunction
+Binary evolution calculations suggest the binary compact object formation rate depends sensitively on the assumed metallicity, in conjunction
 with other parameters \citep[see,\,e.g.][and references
   therein]{popsyn-LowMetallicityImpact-Chris2008,popsyn-LIGO-SFR-2008,gwastro-EventPopsynPaper-2016}.
 % POINT: 
@@ -471,7 +477,7 @@ black hole mass $M_{max}(Z)$ allowed by
   therein]{gwastro-EventPopsynPaper-2016}.  In agreement with much more detailed prior work \cite{popsyn-LowMetallicityImpact2c-StarTrackRevised-2014}, this simplified model yields typical chirp masses for BH-NS binaries that
 vary slightly as $Z/Z_\odot$ decreases, from a lower limit of $3 M_\odot$ near solar metallicity to an upper limit of
 $4.3 M_\odot$ in low-metallicity environments.  Not least because the average chirp mass for BH-NS simply cannot vary
-dramatically, given the functional form of $\mc$, our results do not depend sensitively on the choice of black hole mass
+dramatically, given the functional form of $\mc$, our results for the BH-NS coalescence rate per unit galaxy mass do not depend sensitively on the choice of black hole mass
 distribution.  Finally, for binary black holes, we assume  comparable-mass binaries
 form ($m_1=m_2$), with the distribution of component masses chosen to be $\propto m_1^{-p}$ 
  between $5 M_\odot$ and $M_{max}(Z)$ and zero otherwise, adopting a fiducial exponent $p=2$; see, e.g.,
@@ -485,12 +491,12 @@ distributions   are qualitatively consistent with detailed  binary evolution cal
 
 % POINT:  Model
 To characterize the frequency of different star-forming conditions, we use our cosmological simulations of Milky Way-like galaxies, which provide each galaxy's star formation rate
-$\dot{M}_*$ and metallicity distribution $p(\log Z|t)$ over time.
+$\dot{M}_*$ and metallicity distribution $p(\log Z|t)$ over time (see Eqn. \ref{eqn:rate}).
 
 % POINT: 
 To characterize how often compact binaries form and coalesce, we use the ansatz adopted in \abbrvPSellipticals{} and
 \abbrvPSgrb{}: for a star-forming parcel of mass $\Delta M$ the number of binaries born at time $0$ which
-are coalescing now is $\lambda \Delta M dP/dt$, where $\lambda$ is an overall efficiency per unit mass and $P(<t|Z)$ is
+are coalescing now is $\lambda \Delta M dP_t/dt$, where $\lambda$ is an overall efficiency per unit mass and $P_t(<t|Z)$ is
 a metallicity-dependent delay time distribution.\footnote{For simplicity, we assume the mass and delay time
   distributions are uncorrelated.  Figure A9 in \abbrvPSgrb{} shows this approximation, while not strictly true, is an
   excellent approximation for merging BH-BH binaries at solar metallicity.  }
@@ -551,7 +557,7 @@ To be qualitatively consistent with detailed binary evolution calculations at ne
 \cite{gwastro-EventPopsynPaper-2016}), for 
 black holes forming at metallicities $Z>0.25 Z_\odot$ we adopt a much more uniform delay time distribution, so 
 coalescing black hole binaries have nearly uniform delay time distribution between $100\unit{Myr}$ and
-$13\unit{Gyr}$\editremark{checkme again - a little hacky}; that said,  our conclusions are not sensitive to this choice.
+$13\unit{Gyr}$; that said,  our conclusions are not sensitive to this choice.
 %
 For suitable choices of parameter, our phenomenological response function is qualitatively consistent with the results of detailed simulations of binary
 evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRevised-2014,popsyn-LowMetallicityImpact2b-StarTrackRevised-2013,popsyn-LowMetallicityImpact2-StarTrackRevised-2012}.
@@ -562,7 +568,7 @@ evolution  \citep{2010ApJ...715L.138B,popsyn-LowMetallicityImpact2c-StarTrackRev
 % POINT: Net effect
 Therefore, up to an irrelevant overall scale factor, the  present-day detection-weighted coalescence rate $r_D$  of binary compact objects formed by within two similar
 galaxies  can be calculated via
-\begin{eqnarray}
+\begin{eqnarray}\label{eqn:rate}
  r_D \propto  \int d\log Z  \int _{13 \unit{Gyr}}^0dt  V(Z) \lambda(Z) \frac{dP_t}{dt}(t) \dot{M}_* p(\log Z|t)
 \end{eqnarray}
 
@@ -576,7 +582,7 @@ galaxies  can be calculated via
  times.  
 However, at early times, the \ExcitingGalaxy{} galaxy forms stars for $\simeq 2\unit{Gyr}$ at a lower characteristic metallicity
 ($Z\simeq 0.8 \times10^{-3}$) compared
-to the \BoringGalaxy{} galaxy ($Z\simeq 2\times 10^{-3}$).  In this reigme, the formation efficiency $\lambda$ and sensitive volume $V$
+to the \BoringGalaxy{} galaxy ($Z\simeq 2\times 10^{-3}$).  In this regime, the formation efficiency $\lambda$ and sensitive volume $V$
 can depend sensitively on mass; for example, for binary black holes, the ratio of  $(\lambda V)_{\BoringGalaxy{}}/(\lambda
 V)_{\ExcitingGalaxy{}} \simeq 3$.\footnote{Adopting a more extreme exponent for the metallicity dependence ($a=2$) only
   changes this ratio by of order $2$.}   However, in this same epoch, the star formation rate in the \ExcitingGalaxy{} (low-metallicity)
@@ -584,7 +590,7 @@ galaxy is smaller, by a factor of roughly 2.
 % 1e-3:  V = 475, lambda= 20   
 % 2e-3:  V= 318, lambda = 10
 % so the ratio should be a factor of about 7x higher due to this region.
-Therefore, because only a fraction of order $10\%$ \textbf{[checkme-JILLIAN?]} of all star formation occurs in this epoch, by this order of magnitude
+Therefore, because only a fraction of order $10\%$  of all star formation occurs in this epoch, by this order of magnitude
 argument, the overall number of
 present-day coalescing binary black holes in our two galaxies is expected to differ by of order ten percent.
 % 0.9 + 0.1*7/2
@@ -600,11 +606,13 @@ However, it is also possible that this close agreement is entirely a
 a numerical coincdence between the specific star formation rate and metallicities in these two galaxies.  The effects described here
   are well within the scatter around the mass-metallicity relation.  Marginally different realizations of these
   histories can easily produce factors of order unity difference in galaxies with otherwise indistinguishable
-  present-day properties.   \editremark{Do we have more examples?}
+  present-day properties.  That said, two other Milky-Way-like  galaxies (h239 and h285) also show very
+  similar binary black hole coalescence rates $r_D/M$; see Table \ref{tab:Results}. % \editremark{but: do more examples show dramatic differences, or comparable changes}
 
 More broadly, Table \ref{tab:Results} shows the results of our calculations for the three types of compact binaries
 described above.   These calculations show just how dramatically different the compact binary populations of galaxies
-with similar present-day mass but different star formation histories could be.   In particular, dwarf galaxies have an
+with different present-day masses %but different star formation histories 
+could be.   In particular, dwarf galaxies have an
 exceptionally large fraction of low-metallicity star formation in their history \citep{Kirby13}.  The precise details of their chemical
 evolution can modify their present-day binary black hole binary populations by factors of order a few, despite  adopting
 the conservative choices described above for the dependence of rate on metallicity.  
@@ -617,19 +625,21 @@ percent) on the assembly history alone, even aside from any composition-dependen
 
 \begin{table}
 \begin{centering}
-\begin{tabular}{llll}\hline
-\text{Simulation}  &  \text{BHBH} &  \text{BHNS}  & \text{NSNS} \\
+\begin{tabular}{llllc}\hline
+\text{Simulation}  &  \text{BHBH} &  \text{BHNS}  & \text{NSNS} & M$_* (\msun)$\\
 \hline
 \hline
- \text{\BoringGalaxy} & 0.012  &0.000219 & 0.000206 \\
- \text{\ExcitingGalaxy}  & 0.0116 & 0.000264 &   0.000228 \\
- \text{\DwarfOne} & 0.0207  & 0.000275 &  \\
- \text{\DwarfTwo}  & 0.0524 & 0.000235  &  \\
+ \text{\BoringGalaxy} & 0.0224 & 0.000247 & 0.000206  & $4.24 \times 10^{10}$ \\
+ \text{\ExcitingGalaxy}  &0.0216 & 0.000297 & 0.000228 & $4.46 \times 10^{10}$ \\
+  \text{h239}  &  0.023 & 0.000354 & 0.000268 & $4.50 \times 10^{10}$\\
+ \text{h285} &  0.0236 & 0.000284 & 0.000241 & $4.56 \times 10^{10}$ \\ \hline
+ \text{\DwarfOne} &  0.0381 & 0.000308 & 0.000441& $7.8 \times 10^9$ \\
+ \text{\DwarfTwo}  & 0.0949 & 0.000257 & 0.000884& $2.5 \times 10^8$ \\
 \hline
 \end{tabular}
 \end{centering}
 \caption{\label{tab:Results}\textbf{Event rates per unit mass $r_D/M$, arbitrary units}, for the three different types of binaries
-  discussed.  
+  discussed, along with the stellar mass of each galaxy.  
 }
 \end{table}
 
@@ -639,9 +649,9 @@ percent) on the assembly history alone, even aside from any composition-dependen
 \label{sec:Discussion}
 
 While a gravitational wave detection provides detailed information about merging objects (i.e. masses, spins, distance), we need further knowledge to understand the actual origins of the progenitors.  Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit the prospects of examining the environment where the binary first formed.  On the one hand, compact binaries are kicked by supernovae, moving substantially away from their birth position
-\cite{2013ApJ...776...18F,2014ARAA..52...43B}. 
-On the other hand, particularly during the epoch of galaxy formation, galaxies are well-mixed: stars and adjacent gas generally do not have similar chemical composition.  These mixing effects have been previously recognized as an obstacle to interpreting transient event spectra.  For
-example,   \cite{2010MNRAS.402.1523P} previously demonstrated that absorbing gas neighboring transient events (there, long GRBs)
+\citep{2013ApJ...776...18F,2014ARAA..52...43B}. 
+On the other hand, particularly during the early epoch of galaxy formation, galaxies are well-mixed: stars and adjacent gas generally do not have similar chemical composition.  These mixing effects have been previously recognized as an obstacle to interpreting transient event spectra.  For
+example,   \citet{2010MNRAS.402.1523P} previously demonstrated that absorbing gas neighboring transient events (there, long GRBs)
 would generally have high metallicity, even for low-metallicity progenitors.   
 %
 \citet{2010MNRAS.402.1523P} have previously used hydrodynamical simulations to demonstrate that observed ambient
@@ -655,10 +665,21 @@ few direct, unambiguous clues to a compact binary merger's progenitors.
 %potential of  associations between gravitational wave sources and their candidate host galaxies.
 %
 Fortunately,  with the advent of
-IFUs and position-resolved spectroscopy, observers can now probe the star formation history and metallicity of
-individual gas packets at different points in a galaxy.  
+IFUs and position-resolved spectroscopy, observers can now probe the star formation history and metallicity of individual gas packets at different points in a galaxy.  
 These highly-detailed probes will be essential tools to develop a comprehensive model of the galaxy's merger and
-chemical evolution history.    
+chemical evolution history.    Obtaining the galaxy-wide evolutionary history can help us infer compact binary formation
+conditions by identifying the lowest-metallicity formation events using stellar archaeological techniques.  
+These techniques have been applied with great success to other transient events. 
+For example, in several cases the metallicity of gas neighboring a long GRB (\citet{ 2008AJ....135.1136M};
+\citet{2010AJ....140.1557L}) has been directly measured.  % , short GRB (\editremark{XXX}), or SN has been directly measured.
+%
+The precise host offset can be compared to the distribution of light and star formation  \citep{2010ApJ...708....9F}.
+%
+Finally,  on a host-by-host basis, the delay time between birth and merger has been constrained for
+% long GRBs (\editremark{XXX}), 
+short GRBs \citep{2010ApJ...725.1202L}
+ and
+  SN Ia \citep{2011MNRAS.412.1508M}; see, e.g., the review in  \cite{2014ARAA..52...43B}. 
 
 %Even when electromagnetic counterparts are available, the long delay times between binary formation and merger limit
 %the prospects of detailed electromagnetic followup of individual event. 
@@ -680,16 +701,7 @@ Each host galaxy associates a merger to a unique star formation history and meta
 With many events, these associations can potentially determine the ``response function'' for compact binaries: how often star forming gas of a given metallicity evolves into
 merging compact binaries.    
 %
-For example, in several cases the metallicity of gas neighboring a long GRB (\citet{ 2008AJ....135.1136M};
-\citet{2010AJ....140.1557L}) has been directly measured.  % , short GRB (\editremark{XXX}), or SN has been directly measured.
-%
-The precise host offset can be compared to the distribution of light and star formation  \citep{2010ApJ...708....9F}.
-%
-Finally,  on a host-by-host basis, the delay time between birth and merger has been constrained for
-% long GRBs (\editremark{XXX}), 
-short GRBs \citep{2010ApJ...725.1202L}
- and
-  SN Ia \citep{2011MNRAS.412.1508M}; see, e.g., the review in  \cite{2014ARAA..52...43B}.
+ %% \jillianremark{RICHARD THIS LAST PARAGRAPH IS STILL SUPER CONFUSE TO ME SORRY.  I think you need to call me and tell me about this response function so I can reword into normalpeople language}
 %
 %The future of gravitational wave host galaxy associations is bright.
 
@@ -726,14 +738,14 @@ model for how compact binaries form from different environments.
 %% binary formation and properties over cosmic time.  We fold these models with star formation histories and metallicity
 %% distributions taken from state of the art cosmological simulations of Milky Way-like galaxies. 
  We demonstrate that
-galaxies which appear similar at $z = 0$ but have differing merger histories will have substantially different
+galaxies which appear similar at $z = 0$ but have differing merger histories will have somewhat different
 detection-weighted compact binary
-coalescence rates rates.   
+coalescence rates.   
 
 
 For binary black hole mergers in particular, we show that the present-day binary black hole coalescence rate for our two
 Milky-Way like galaxies is nearly identical, independent of their highly distinctive early-time formation histories.   
-This result comes as somewhat of a surprise. 
+This result perhaps comes as somewhat of a surprise, considering the early differences in stellar and chemical evolution.
 %% can vary by factors of several \jillianremark{ UPDATE} in otherwise
 %% similar present-day environments. 
 Our calculations adopt the same framework as  prior investigations, which demonstrated 
@@ -751,7 +763,7 @@ Nonetheless, the apparent anticorrelation between the star formation rate and me
 led to similar late-time populations, despite substantial differences early on.
 %
 Further investigation is critical to assess whether this similarity is retained for more generic galaxy assembly
-histories and binary formation models.
+histories and binary formation models.    Now that we have introduced this method as a proof-of-concept here, it can be applied to large volume simulations, such as Illustris, EAGLE, or Romulus, in order to examine large numbers of galaxies and thus obtain statistically significant results.
 
 The detailed analysis of the compact binary populations formed through the assembly history of individual galaxies is
 complementary to the  population-based approach reported in
@@ -791,7 +803,7 @@ galaxy assembly and evolution.
 % POINT: Future directions
 
 \begin{acknowledgements}
-ROS acknowledges support from NSF award AST-1412449, via subcontract from the University of Wisconsin-Milwaukee.
+ROS acknowledges support from NSF award AST-1412449, via subcontract from the University of Wisconsin-Milwaukee, and PHY-1505629.
 %
 JB acknowledges generous support  from the Helen Gurley Brown Trust.
 
