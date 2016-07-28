@@ -1,0 +1,80 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: mnras.bst
+Database file #1: bhmetals.bib
+I was expecting a `,' or a `}'---line 3435 of file bhmetals.bib
+ :   
+ :   journal ={Submitted to A\&A},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I'm ignoring gwastro-EventPopsynPaper-2016's extra "url" field
+--line 3453 of file bhmetals.bib
+I was expecting a `,' or a `}'---line 3453 of file bhmetals.bib
+ :  
+ :  abstract = {  LIGO has detected gravitational waves from the coalescence and merger of two massive stellar-origin black holes. The detection is consistent with our earlier predictions that the first LIGO detections from massive binary black hole mergers were imminent, based on isolated binary evolution. <br />Within our classical evolutionary scenario we find that the stellar progenitors of the black holes constituting GW150914 most likely formed in low metallicity environments (Z&lt;10\% Zsun). We also find a bimodal distribution for the formation time of GW150914, with a peak only 2 Gyr after the Big Bang (z=3) and another (30\% lower) peak in the relatively recent past at 11 Gyr (z=0.2). The typical channel for the formation of GW150914 involves two very massive stars (40-100 Msun) that interacted once through stable mass transfer and once through common envelope evolution, and both black holes formed without their progenitors exploding as supernovae. The existence of GW150914 indicates that large natal kicks (&gt;400 km/s) for massive black holes are unlikely. Development and survival of the common envelope is likely restricted to evolved stars. While models based on dynamical formation do not predict that the BH spins should be preferentially aligned with the binary angular momentum, our models of isolated BH-BH formation favor aligned BH spins (assuming that the progenitor star spins are aligned when the binaries form). We find that the existence of GW150914 does not require enhanced double black hole formation in dense stellar clusters or via exotic evolutionary channels. Our standard model BH-BH merger rate (200 Gpc^-3 yr^-1) is consistent with the LIGO empirical estimate (2-400 Gpc^-3 yr^-1) and it is 40 times higher than the typical rate of dynamically formed mergers. We predict that BH-BH mergers with total mass of 20-80 Msun are to be detected next.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 3490 of file bhmetals.bib
+ : @article{2014ARAA..52...43B
+ :                            ,
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Name 1 in "{Belczynski}, K, and {Holz}, D. and {Bulik}, T. and {O'Shaughnessy}, R." has a comma at the end for entry gwastro-EventPopsynPaper-2016
+while executing---line 1706 of file mnras.bst
+Name 1 in "{Belczynski}, K, and {Holz}, D. and {Bulik}, T. and {O'Shaughnessy}, R." has a comma at the end for entry gwastro-EventPopsynPaper-2016
+while executing---line 1706 of file mnras.bst
+Name 1 in "{Belczynski}, K, and {Holz}, D. and {Bulik}, T. and {O'Shaughnessy}, R." has a comma at the end for entry gwastro-EventPopsynPaper-2016
+while executing---line 1706 of file mnras.bst
+Name 1 in "{Belczynski}, K, and {Holz}, D. and {Bulik}, T. and {O'Shaughnessy}, R." has a comma at the end for entry gwastro-EventPopsynPaper-2016
+while executing---line 1822 of file mnras.bst
+"ArXiv e-prints" is a string literal, `journal' is a missing field
+---they aren't the same literal types for entry LIGO-O1-BBH
+while executing---line 1822 of file mnras.bst
+Warning--empty journal in LIGO-O1-BBH
+"ArXiv e-prints" is a string literal, `journal' is a missing field
+---they aren't the same literal types for entry LIGO-O1-BBH
+while executing---line 1822 of file mnras.bst
+You've used 69 entries,
+            2881 wiz_defined-function locations,
+            1322 strings with 27575 characters,
+and the built_in function-call counts, 32869 in all, are:
+= -- 2571
+> -- 2585
+< -- 152
++ -- 1145
+- -- 404
+* -- 4224
+:= -- 5278
+add.period$ -- 0
+call.type$ -- 69
+change.case$ -- 138
+chr.to.int$ -- 63
+cite$ -- 70
+duplicate$ -- 1531
+empty$ -- 1521
+format.name$ -- 606
+if$ -- 5526
+int.to.chr$ -- 7
+int.to.str$ -- 0
+missing$ -- 67
+newline$ -- 220
+num.names$ -- 472
+pop$ -- 354
+preamble$ -- 1
+purify$ -- 276
+quote$ -- 0
+skip$ -- 878
+stack$ -- 0
+substring$ -- 1766
+swap$ -- 844
+text.length$ -- 276
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 621
+warning$ -- 1
+while$ -- 504
+width$ -- 0
+write$ -- 699
+(There were 9 error messages)
