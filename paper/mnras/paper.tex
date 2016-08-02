@@ -77,19 +77,19 @@
 
 \author[R. O'Shaughnessy et al.]{R. O'Shaughnessy,$^1$\thanks{E-mail: oshaughn@mail.rit.edu}
 J. M. Bellovary,$^2$ 
-C. R. Christensen,$^3$ 
-S. Shen,$^4$ 
-F. Governato,$^5$ 
-A. Brooks$^6$\\
+A. Brooks$^3$
+C. R. Christensen,$^4$ 
+S. Shen,$^5$ 
+F. Governato,$^6$ \\
 %
 %
 %% List of institutions
 $^1$Center for Computational Relativity and Gravitation, Rochester Institute of Technology, Rochester, NY 14623, USA  \\
 $^2$Department of Physics, Queensborough Community College, Bayside, NY 11364, USA\\
-$^3$Department of Physics, Grinnell College, Grinnell, IA, 50112, USA\\
-$^4$Institute of Astronomy, University of Cambridge, Cambridge CB3 OHA, UK\\
-$^5$Department of Astronomy, University of Washington, Seattle, WA 98195, USA\\
-$^6$Department of Physics and Astronomy, Rutgers University, Piscataway, New Jersey, 08854, USA
+$^3$Department of Physics and Astronomy, Rutgers University, Piscataway, New Jersey, 08854, USA\\
+$^4$Department of Physics, Grinnell College, Grinnell, IA, 50112, USA\\
+$^5$Institute of Astronomy, University of Cambridge, Cambridge CB3 OHA, UK\\
+$^6$Department of Astronomy, University of Washington, Seattle, WA 98195, USA\\
  }
 
 
@@ -351,11 +351,11 @@ properties, including stellar dynamics
   \msun$, and maximum circular velocity $v_{\rm circ} = 242$ km s$^{-1}$.  %\editremark{Might we want to show the images of these galaxies?}
 
 We include two additional Milky Way simulations with similar $z = 0$ properties, which have evolutionary histories that fall in between the extremes of the two described above.  The galaxy h239 has a total virial mass of $M_{vir} = 9.3 \times 10^{11}\msun$, stellar mass $M_* = 4.50 \times 10^{10}
-\msun$, and maximum circular velocity $v_{\rm circ} = 250$ km s$^{-1}$.  The galaxy h285 has a total virial mass of $M_{vir} = 8.82 \times 10^{11}\msun$, stellar mass $M_* = 4.56 \times 10^{10} \msun$, and maximum circular velocity $v_{\rm circ} = 248$ km s$^{-1}$.  These galaxies are also described in \citet{Bellovary14,Sloane16}.
+\msun$, and maximum circular velocity $v_{\rm circ} = 250$ km s$^{-1}$.  The galaxy h285 has a total virial mass of $M_{vir} = 8.82 \times 10^{11}\msun$, stellar mass $M_* = 4.56 \times 10^{10} \msun$, and maximum circular velocity $v_{\rm circ} = 248$ km s$^{-1}$.  These galaxies are also described in \citet{Bellovary14,Sloane16}.  
 
   Due to the differences in merger histories, the star formation histories and metallicity
   evolution of h258 and h277 also differ at early times.  Figure
-  \ref{fig:TwoGalaxies} shows the star formation history (left panel) and metallicity evolution (right panel) of h277 (black) and h258 (red).  The star formation histories are quite different at early times, where h277 has larger bursts of star formation between 2-4 Gyr, but h258 has a large burst at $\sim 6$ Gyr during a major merger.   The right panel shows the mean metallicity of
+  \ref{fig:TwoGalaxies} shows the star formation history (left panel) and metallicity evolution (right panel) of h277 (black) and h258 (red).\footnote{We choose not to show galaxies h239 and h285 in our figures, as they fall in between the values bracketed by h258 and h277 and add confusion to the plots.}  The star formation histories are quite different at early times, where h277 has larger bursts of star formation between 2-4 Gyr, but h258 has a large burst at $\sim 6$ Gyr during a major merger.   The right panel shows the mean metallicity of
   recently formed stars vs time (thick solid lines), where we define
   recent as within the past 50 Myr.  The shaded regions correspond to
   one standard deviation of the mean, while the thick dashed lines
@@ -364,7 +364,7 @@ We include two additional Milky Way simulations with similar $z = 0$ properties,
   and 6 Gyr, h277 hosts a \emph{modestly}  more metal-rich population than
   h258.   For most astrophysical processes, the small metallicity difference illustrated here will have no impact on
   present-day observables.  However,  the population of binary black holes  depends sensitively on all low metallicity star formation
-  over cosmic time; as we show below, these small differences can have an observable impact at present.   
+  over cosmic time.%; as we show below, these small differences can have an observable impact at present.   
 
 
 \begin{figure*}
@@ -433,7 +433,7 @@ simulated Milky-Way analog galaxies described above as well as the dwarfs.
 
 To explore plausible binary detection scenarios, we adopt a parametrized formalism for binary evolution and event
 detection in an individual galaxy, motivated by
-the detailed studies of  \abbrvPSgrb{} (\cite{PSgrbs-popsyn}) and \abbrvPSellipticals{} (\cite{PSellipticals});  similar approaches have been used by
+the detailed studies of  \cite[][(hereafter \abbrvPSgrb{})]{PSgrbs-popsyn} and  \citet[][(hereafter \abbrvPSellipticals{})]{PSellipticals};  similar approaches have been used by
 \cite{2016arXiv160508783L} and others.
 
 
@@ -575,7 +575,7 @@ galaxies  can be calculated via
 
 
 %\editremark{recheck numbers: we are tweaking things, and Zsun is seemingly inconsistent in the two approaches }
- Our two Milky Way-like galaxies have extremely similar star formation histories and metallicity evolution, particularly at late
+ Our four Milky Way-like galaxies have extremely similar star formation histories and metallicity evolution, particularly at late
  times.  
 However, at early times, the \ExcitingGalaxy{} galaxy forms stars for $\simeq 2\unit{Gyr}$ at a lower characteristic metallicity
 ($Z\simeq 0.8 \times10^{-3}$) compared
@@ -593,7 +593,7 @@ present-day coalescing binary black holes in our two galaxies is expected to dif
 % 0.9 + 0.1*7/2
 %
 Using the concrete phenomenological calculations described above, we in fact find
-$(r_{D}/M)_{\BoringGalaxy{}}/(r_{D}/M)_{\ExcitingGalaxy{}}\simeq 0.9$.    
+$(r_{D}/M)_{\BoringGalaxy{}}/(r_{D}/M)_{\ExcitingGalaxy{}}\simeq 0.9$.    \jillianremark{\bf RICHARD this is 0.1 in my calcuations}  
 
 The close agreement between the two galaxies' binary black hole populations, determined by the anticorrelation between
 star formation rate and metallicity, may be a single example of a broad trend.  This anticorrelation could cause
