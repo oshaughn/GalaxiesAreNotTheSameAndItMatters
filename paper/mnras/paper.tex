@@ -77,19 +77,19 @@
 
 \author[R. O'Shaughnessy et al.]{R. O'Shaughnessy,$^1$\thanks{E-mail: oshaughn@mail.rit.edu}
 J. M. Bellovary,$^2$ 
-A. Brooks$^3$
-C. R. Christensen,$^4$ 
-S. Shen,$^5$ 
-F. Governato,$^6$ \\
+A. Brooks,$^3$
+S. Shen,$^4$ 
+F. Governato,$^5$ 
+C. R. Christensen$^6$ \\
 %
 %
 %% List of institutions
 $^1$Center for Computational Relativity and Gravitation, Rochester Institute of Technology, Rochester, NY 14623, USA  \\
 $^2$Department of Physics, Queensborough Community College, Bayside, NY 11364, USA\\
 $^3$Department of Physics and Astronomy, Rutgers University, Piscataway, New Jersey, 08854, USA\\
-$^4$Department of Physics, Grinnell College, Grinnell, IA, 50112, USA\\
-$^5$Institute of Astronomy, University of Cambridge, Cambridge CB3 OHA, UK\\
-$^6$Department of Astronomy, University of Washington, Seattle, WA 98195, USA\\
+$^4$Institute of Astronomy, University of Cambridge, Cambridge CB3 OHA, UK\\
+$^5$Department of Astronomy, University of Washington, Seattle, WA 98195, USA\\
+$^6$Department of Physics, Grinnell College, Grinnell, IA, 50112, USA\\
  }
 
 
@@ -189,14 +189,13 @@ investigating key physical questions about the origin of compact binary mergers.
 
 
 This paper is organized as follows. 
-In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  several galaxies, including four of Milky Way-mass and two dwarfs.  Though the four Milky Way-mass galaxies are morphologically similar at $z = 0$, we
-show that their star formation and chemical evolution history have subtle but important differences due to their
-distinctive merger histories.   To demonstrate
-these differences have a practical impact,  in \S \ref{sec:model}, we introduce a simple,
+In \S \ref{sec:sims}, we describe detailed hydrodynamical simulations of  several galaxies, including four of Milky Way-mass and two dwarfs.  Though the four Milky Way-like galaxies are morphologically similar at $z = 0$, their star formation and chemical evolution history have subtle differences due to their
+distinctive merger histories.   To demonstrate the practical impact of
+these differences as well as that of halo mass,  in \S \ref{sec:model}, we introduce a simple,
 metallicity-dependent  phenomenological model to calculate the present-day rate and mass distribution of compact binary
 mergers from  a galaxy's known history.   In \S \ref{sec:results:BBH}, we use this model to investigate  the compact
 binary  coalescence rate
-dependence on the galaxy's assembly history.   
+dependence on each galaxy's assembly history and mass.   
 %% We also demonstrate that even the coalescence rates of binary neutron stars (NSNS) and black hole-neutron
 %% star (BH-NS) binaries also depend surprisingly sensitively on the assembly history of each galaxy. 
 In \S~\ref{sec:Discussion} we discuss the implications of our study for the interpretation of host galaxy associations
@@ -244,7 +243,7 @@ This technique allows us to follow the detailed physical processes
 involved in galaxy evolution in our selected region while still
 including large-scale torques from cosmic structure.  Our cosmological parameters are $\Omega_0 = 0.24$, $\Omega_{\rm baryon} = 0.04$, $\Lambda = 0.76$, h = 0.73, $\sigma_8 = 0.77$ 
  \citep{WMAP3} and we model the ionizing UV background
-with the prescription from \citet{Haardt96}.  Our interstellar medium (ISM) model includes the non-equilibrium formation and destruction of H$_2$, which is incorporated in the cooling model along with metal lines \citep{Christensen12}.  Stars form
+with the prescription from \citet{Haardt96}.  Our interstellar medium (ISM) model includes the non-equilibrium formation and destruction of H$_2$, which is incorporated in the cooling model along with metal lines, along with shielding of HI and H$_2$ \citep{Christensen12}.  Stars form
 probabilistically from gas particles which meet density ($n_{min} =
 0.1$ amu cm$^{-3}$) and temperature ($T_{max} = 10^3$ K) thresholds, though since star formation also depends on the H$_{\rm 2}$ content of a particle (see below) the densities are nearly always much higher than this threshold. If a gas
 particle meets these criteria, it has a likelihood of forming a star
@@ -366,6 +365,7 @@ We include two additional Milky Way simulations with similar $z = 0$ properties,
   present-day observables.  However,  the population of binary black holes  depends sensitively on all low metallicity star formation
   over cosmic time.%; as we show below, these small differences can have an observable impact at present.   
 
+We wish to point out that these simulations do not include the effects of supermassive black holes (SMBHs).  These galaxies are at the mass where feedback from SMBH accretion is thought to affect star formation, and adding these effects may add additional scatter to the stellar and metal evolution of each galaxy, which could alter the binary black hole merger history as well.
 
 \begin{figure*}
 \includegraphics[width=\columnwidth]{boring}
@@ -383,17 +383,17 @@ We include two additional Milky Way simulations with similar $z = 0$ properties,
   versus time.  Black corresponds to \BoringGalaxy{} and red to \ExcitingGalaxy.  
 \emph{Right panel}: A plot of the  metallicity $Z$ of recently-formed stars versus time.  Solid red and black lines show
 the mean metallicity; dotted lines correspond to  90\% of newly-born stars with lower metallicity,   or 10\% of
-newly-born stars with greater metallicity.  When these two galaxies are $2-3\unit{Gyr}$ old, prior to the first major
+newly-born stars with greater metallicity.  The shaded region represents one standard deviation.  When these two galaxies are $2-3\unit{Gyr}$ old, prior to the first major
 merger, newly-born stars are created with significantly different metallicity.  Additionally, prior to the
 second major merger of h258 at $\simeq 6\unit{Gyr}$, stars form in the \ExcitingGalaxy{} galaxy at a systematically lower
-metallicity than in the \BoringGalaxy{} counterpart.
+metallicity than in the \BoringGalaxy{} counterpart.  Even from 8-13 Gyr, h258 has a slightly lower metallicity than h277.
 }
 \end{figure*}
 
 
 \subsection{Dwarf galaxies}
 
-We have also employed the results of detailed simulations for two dwarf galaxies: \DwarfOne{} and \DwarfTwo{}.  The simulation of h603 consists of a low-mass disc galaxy (qualitatively similar to M33).  It has a virial mass of $3.4 \times 10^{11} \msun$, stellar mass of $7.8 \times 10^9 \msun$, and maximum circular velocity of 111 km s$^{-1}$.  The structure and star formation of this galaxy has been extensively studied by \citet{Christensen14b}.  We also include a bulgeless dwarf galaxy, h516, which has a disc with irregularly distributed star formation, with a virial mass of $3.8 \times 10^{10}\msun$, stellar mass $2.5 \times 10^8 \msun$, and maximum circular velocity of 65 km s$^{-1}$.  Images of these galaxies are shown in Figure \ref{fig:dwarfimages}, and we show their star formation history and metallicity evolution in  Figure \ref{fig:TwoDwarfGalaxies}.  Note that these galaxies have quite different masses, and are not meant to be directly comparable.  The more massive h603 has a much more active star formation history and an overall increasing metallicity with time, whereas the less massive h516 is characterized by small bursts of star formation and a fairly flat metallicity evolution.
+We have also employed the results of detailed simulations for two dwarf galaxies: \DwarfOne{} and \DwarfTwo{}.  The simulation of h603 consists of a low-mass disc galaxy (qualitatively similar to M33).  It has a virial mass of $3.4 \times 10^{11} \msun$, stellar mass of $7.8 \times 10^9 \msun$, and maximum circular velocity of 111 km s$^{-1}$.  The structure and star formation of this galaxy has been extensively studied by \citet{Christensen14b}.  We also include a bulgeless dwarf galaxy, h516, which has a disc with irregularly distributed star formation, with a virial mass of $3.8 \times 10^{10}\msun$, stellar mass $2.5 \times 10^8 \msun$, and maximum circular velocity of 65 km s$^{-1}$.  Images of these galaxies are shown in Figure \ref{fig:dwarfimages}, and we show their star formation history and metallicity evolution in  Figure \ref{fig:TwoDwarfGalaxies}.  Note that these galaxies have quite different masses, and are not meant to be directly comparable.  The more massive h603 has a much more active star formation history and an overall increasing metallicity with time, whereas the less massive h516 is characterized by small bursts of star formation and a fairly flat metallicity evolution, perhaps due to its substantial outflows.
 
 %% h516 = dwarf2
 %% h603 = dwarf1
@@ -417,7 +417,7 @@ We have also employed the results of detailed simulations for two dwarf galaxies
   versus time.  Red corresponds to h603 and black to h516.  
 \emph{Right panel}: A plot of the  metallicity $Z$ of recently-formed stars versus time.  Solid red and black lines show
 the mean metallicity; dotted lines correspond to  90\% of newly-born stars with lower metallicity,   or 10\% of
-newly-born stars with greater metallicity.  %When these two galaxies are $2-3\unit{Gyr}$ old, prior to the first major
+newly-born stars with greater metallicity.  The shaded region represents one standard deviation.%When these two galaxies are $2-3\unit{Gyr}$ old, prior to the first major
 %merger of  near the peak of their
 %star-forming history, newly-born stars are created with significantly different metallicity.  Additionally, prior to the
 %second major merger of galaxy B at $\simeq 6\unit{Gyr}$, stars form in the \ExcitingGalaxy{} galaxy at a systematically lower
@@ -428,7 +428,7 @@ newly-born stars with greater metallicity.  %When these two galaxies are $2-3\un
 \section{Detection-weighted compact binary formation}
 \label{sec:model}
 
-Our goal in this work is to estimate the \emph{ratio} of compact binaries that should be merging, at present, in the two
+Our goal in this work is to estimate the \emph{ratio} of compact binaries that should be merging, at present, in the four
 simulated Milky-Way analog galaxies described above as well as the dwarfs.
 
 To explore plausible binary detection scenarios, we adopt a parametrized formalism for binary evolution and event
@@ -593,25 +593,26 @@ present-day coalescing binary black holes in our two galaxies is expected to dif
 % 0.9 + 0.1*7/2
 %
 Using the concrete phenomenological calculations described above, we in fact find
-$(r_{D}/M)_{\BoringGalaxy{}}/(r_{D}/M)_{\ExcitingGalaxy{}}\simeq 0.9$.    \jillianremark{\bf RICHARD this is 0.1 in my calcuations}  
+$(r_{D}/M)_{\BoringGalaxy{}}/(r_{D}/M)_{\ExcitingGalaxy{}}\simeq 0.9$.   
 
 The close agreement between the two galaxies' binary black hole populations, determined by the anticorrelation between
 star formation rate and metallicity, may be a single example of a broad trend.  This anticorrelation could cause
 galaxies with similar present-day properties to always have similar present-day binary black hole populations,
-regardless of their detailed assembly histories.
-However, it is also possible that this close agreement is entirely a numerical coincidence between the specific star formation rate and metallicities in these two galaxies.  The effects described here
+regardless of their detailed assembly histories.  If low metallicity star formation makes up a small fraction of the total stellar mass, which is the case for each Milky Way-like galaxy we study here, then the quantity $V(Z) \lambda(Z) \dot{M}_* p(\log Z|t)$ must differ by about an order of magnitude for the binary black hole merger rates to differ strongly.  Such a scenario is possible if we alter our conservative choice of the exponent $a$ in the $\lambda(Z)$ function, but nonetheless is rather unlikely that galaxies in this mass range will undergo drastically different early evolution.
+%However, it is also possible that this close agreement is entirely a numerical coincidence between the specific star formation rate and metallicities in these two galaxies.  
+The effects described here
   are well within the scatter around the mass-metallicity relation.  Marginally different realizations of these
   histories can easily produce factors of order unity difference in galaxies with otherwise indistinguishable
-  present-day properties.  That said, two other Milky-Way-like  galaxies (h239 and h285) also show very
-  similar binary black hole coalescence rates $r_D/M$; see Table \ref{tab:Results}. % \editremark{but: do more examples show dramatic differences, or comparable changes}
+  present-day properties.  %That said, two other Milky-Way-like  galaxies (h239 and h285) also show very
+ % similar binary black hole coalescence rates $r_D/M$; see Table \ref{tab:Results}. % \editremark{but: do more examples show dramatic differences, or comparable changes}
 
 More broadly, Table \ref{tab:Results} shows the results of our calculations for the three types of compact binaries
-described above.   These calculations show just how dramatically different the compact binary populations of galaxies
-with different present-day masses %but different star formation histories 
-could be.   In particular, dwarf galaxies have an
-exceptionally large fraction of low-metallicity star formation in their history \citep{Kirby13}.  The precise details of their chemical
+described above.   These calculations show just how dramatically {\em different} the compact binary populations of galaxies
+with different present-day {\em masses} %but different star formation histories 
+could be.   The dwarf galaxies have an
+exceptionally large fraction of low-metallicity star formation in their history \citep{Kirby13} relative to the more massive galaxies.  The precise details of their chemical
 evolution can modify their present-day binary black hole binary populations by factors of order a few, despite  adopting
-the conservative choices described above for the dependence of rate on metallicity.  
+the conservative choices described above for the dependence of rate on metallicity.  The progenitors and electromagnetic counterparts of future gravitational wave events are overall much more likely to be located in nearby dwarf galaxies with a large population of low metallicity stars.
 
 To highlight how sensitively compact binaries depend on detailed evolutionary trajectories, Table \ref{tab:Results}
 shows results for binary neutron stars.  By our construction, no metallicity dependence is included in the present-day
@@ -758,7 +759,7 @@ Nonetheless, the apparent anticorrelation between the star formation rate and me
 led to similar late-time populations, despite substantial differences early on.
 %
 Further investigation is critical to assess whether this similarity is retained for more generic galaxy assembly
-histories and binary formation models.    Now that we have introduced this method as a proof-of-concept here, it can be applied to large volume simulations, such as Illustris, EAGLE, or Romulus, in order to examine large numbers of galaxies and thus obtain statistically significant results.
+histories and binary formation models.    Now that we have introduced this method as a proof-of-concept here, it can be applied to large volume simulations, such as Illustris, EAGLE, or Romulus \citep{Illustris,EAGLE,Tremmel16}, in order to examine large numbers of galaxies and thus obtain statistically significant results.
 
 The detailed analysis of the compact binary populations formed through the assembly history of individual galaxies is
 complementary to the  population-based approach reported in
