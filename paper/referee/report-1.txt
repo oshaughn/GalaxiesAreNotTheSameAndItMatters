@@ -1,0 +1,76 @@
+
+Copied below are the reviewer's comments on your manuscript entitled "The effects of host galaxy properties on merging compact binaries detectable by LIGO", ref. MN-16-2725-MJ, which you submitted to Monthly Notices of the Royal Astronomical Society.
+
+Moderate revision of your manuscript is requested before it is reconsidered for publication.
+
+You should submit your revised version, together with your response to the reviewer's comments via the Monthly Notices ScholarOne Manuscripts site https://mc.manuscriptcentral.com/mnras.
+Enter your Author Centre, where you will find your manuscript title listed under "Manuscripts with Decisions." Under "Actions," click on "Create a Revision." Your manuscript reference will be appended to denote a revision.
+
+IMPORTANT: do not submit your revised manuscript as a new paper!
+
+You will not be able to make your revisions to the originally submitted files of the manuscript held on ScholarOne Manuscripts. Instead, you must delete the original files and abstract and replace them with your revised files. Check that any requests for colour publication or online-only publication are correct. Proof read the resulting PDF and HTML files that are generated carefully. If you have used a .bib file to generate your bibliography in Latex, please include this in your .tar archive along with the .bbl and .tex files; this will aid the editing and typesetting process.
+
+When submitting your revised manuscript, you will be able to respond to the comments made by the reviewer in the space provided. You should also use this space to document any changes you make to the original manuscript. In order to expedite the processing of the revised manuscript, please be as specific as possible in your response to the reviewer. Changes to the manuscript should be highlighted (e.g. in bold or colour), to assist the referee and editor. Along with the highlighted manuscript you should also upload clean files (remove any bold font/track changes) for our publishers, as accepted manuscripts are now immediately published online ahead of the proof-corrected version.
+
+Because we are trying to facilitate timely publication of manuscripts submitted to MNRAS, your revised manuscript should be uploaded promptly. If you do not submit your revision within six months, we may consider it withdrawn and request it be resubmitted as a new submission.
+
+Please note that, due to the tight schedule, any post-acceptance changes notified after the paper has gone into production (i.e. the day after the acceptance email is sent) cannot be incorporated into the paper before it is typeset. Such changes will therefore need to be made as part of the proof corrections. To avoid excessive proof corrections and the delay that these can cause, you are strongly encouraged to ensure that each version of your paper submitted to MNRAS is completely ready for publication!
+
+I look forward to receiving your revised manuscript.
+
+Regards,
+
+Anna
+
+Anna Evripidou
+Assistant Editor
+"Monthly Notices" and "Geophysical Journal International"
+Royal Astronomical Society
+Email: ae@ras.org.uk
+Tel: (+44) 0207 734 3307 (Ext. 124 except Wednesday)
+Tel: (+44) 0207 734 3307 (Ext. 117 Wednesday)
+
+
+This message is confidential and is intended solely for the use of the individual(s) to whom it is addressed.  If you have received this message in error, do not open any attachment but please notify the sender (above) and delete this message from your system.
+
+cc: all listed co-authors.
+
+
+Reviewer's Comments:
+
+Comments to the Author
+
+Referee report of the paper : ID MN-16-2725-MJ
+entitled "The effects of host galaxy properties on merging compact binaries detectable by LIGO" for "Monthly Notices of the Royal Astronomical Society", by O'Shaughnessy, Richard et al.
+
+This manuscript develops cosmological simulations of galaxy formation that are able to reproduce present-day galaxies with a large range of assembly and star formation histories.
+The authors study the correlated metallicity evolutions with the aim of predicting LIGO-detectable compact object binary merger events. They study how sensitively these events depend on the details of mass assembly and show that low Z dwarf galaxies produce more compact binary mergers (in particular binary black holes) compared to more massive galaxies.
+
+The topic is timely and important, and this paper merit publication in MNRAS after the following points are taken into account.
+
+Cosmological simulation
+1. The authors used outdate cosmological parameters from Spergel et al. (2007). Those from the CMB Planck mission (arXiv150201589; Planck Collaboration; Ade, et al. Planck 2015 results. XIII. Cosmological parameters) are improved and should be used instead.
+Namely, Omega_m = 0.315 with Omega_B = 0.049, Omega_lambda = 0.685 and sigma_8 = 0.882 with h = 0.68. The authors should analyze the potential impact of these parameters on their calculation.
+
+Chemical evolution
+2. The authors follow the Weaver and Woosley (1993) prescription for metal enrichment from SNII. More details must be given regarding this
+important part of their calculation, in particular since the metallicity has a major impact on the predicted compact merger rate. 
+Also, the more complete study (Woosley and Weaver 1995, WW95, ApJSup, 101, 181) would be more appropriate. Specifically, in this paper WW95 give yields for different SNII as a function of the initial metallicity of massive stars, which is not considered in the present study.
+The authors should give more details regarding their metallicity calculation, including the respective roles of SNII/SNIa, potential Pop III star evolution, IMF sensitivity, etc … and include the followed references (and references therein) for more developed discussion:
+- Metallicity-constrained merger rates of binary black holes and the stochastic gravitational wave background  Dvorkin et al. 2016, MNRAS, 461, 3877.
+- Gravitational waves from the remnants of the first stars  Hartwig et al. 2016, 460, L74
+- The origin of dispersion in DLA metallicities     Dvorkin et al 2015, MNRAS, 452, L36
+
+Moreover, It would be interesting to consider the recent papers "Coevolution of metallicity and star formation in galaxies to z=3.7", Hunt et al. arXiv, 1608.05417 and arXiv1608.05418 which compile 1000 galaxies (0 < z < 4) with two orders of magnitude in metallicity range, a factor of 10^6 in SFR, and a factor of 10^5 in stellar mass. they find the correlation 12+log(O/H) = -0.14 log (SFR) + 0.37 log (M*) + 4.82. The authors could compare and discuss their calculation regarding these results.
+
+Compact object binary rates
+3. Concerning the compact object binary rates, the authors give in their table 1 results of their simulations for three different types of binaries. Is it possible to get an idea about the typical deviation correlated to the metallicity one ?
+
+
+4. Please check and update references, particularly:
+Guetta and Piran 2007, JCAP 07, 003
+O'Shaughnessy et al 2008b, CQGra29, 5011
+Dominik et al 2015 (and not 2014) ApJ, 806, 263
+Define BD2010 (probably Belczynski Dominik et al 2010b ?)
+The LIGO Coll. 2016a, ref missing
+….
