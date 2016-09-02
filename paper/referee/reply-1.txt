@@ -57,8 +57,17 @@ Compact object binary rates
 different types of binaries. Is it possible to get an idea about the typical deviation correlated to the metallicity one
 ?
 
-    A: The correlation between present-day population, SFR and Z history, and the specific compact binary is
-    unfortunately complicated.
+    A:  If the referee is asking whether we have a simple estimate for how much the compact object binary
+    population and merger rate changes as the metallicity distribution and history changes.  we have included an
+    order-of-magnitude discussion a the start of section 4.  Unfortunately, the  correlation between present-day
+    population, SFR and Z history, and the present-day  compact binary population is  complicated.  Because of the SFR-M-Z
+    relationship, not all galaxy SFR and Z  evolution paths can be realized as a galaxy grows.  Moreover, different
+    types of binaries depend more or less sensitively on low metallicity environments.
+      That said, our results for the binary neutron star case should be considered as characteristic for how sensitively
+    the compact binary population depends on the galaxy's assembly history.
+
+   If the referee is asking how sensitively our results depend on our appromximations -- that is, the systematic error
+   due to adopting a approximate treatment of metallicity evolution -- then we refer the referee to the answer to #2 above.
 
 
 4. Please check and update references, particularly:
