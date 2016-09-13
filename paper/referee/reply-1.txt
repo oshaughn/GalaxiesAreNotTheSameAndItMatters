@@ -13,6 +13,9 @@ Namely, Omega_m = 0.315 with Omega_B = 0.049, Omega_lambda = 0.685 and sigma_8 =
          That said, more recent simulations by the Gasoline group and others adopt more modern cosmological parameters.  
        Future work will apply this framework to a broader and more representative sample of galaixes.
 
+       A: (JB)  Cosmological parameters such as Omega_x, sigma_8, and h affect the statistical evolution of populations of halos and their evolution.  Different parameters will result in changes in a simulated uniform cosmological volume.  We select halos for zoom-in simulations based on specific criteria such as mass and merger histories.  Since we focus on a small number of specific galaxies, the large-scale statistical differences caused by different cosmological parameters will only affect our results in a negligible way.   That said, more recent simulations by our group and others adopt more modern cosmological parameters.  Future work will apply this framework to a broader and more representative sample of galaixes.  We have added a footnote in the paper with regard to cosmological parameter seleciton.
+
+
 Chemical evolution
 2. The authors follow the Weaver and Woosley (1993) prescription for metal enrichment from SNII. More details must be given regarding this
 important part of their calculation, in particular since the metallicity has a major impact on the predicted compact merger rate. 
@@ -25,6 +28,8 @@ therein) for more developed discussion:
 - Metallicity-constrained merger rates of binary black holes and the stochastic gravitational wave background  Dvorkin et al. 2016, MNRAS, 461, 3877.
 - Gravitational waves from the remnants of the first stars  Hartwig et al. 2016, 460, L74
 - The origin of dispersion in DLA metallicities     Dvorkin et al 2015, MNRAS, 452, L36
+
+The referee has helped us discover a citation error - we do in fact follow the Woosley and Weaver (1995) metal enrichment prescription, not 1993.  We have corrected the citation in the paper.  
 
    A: We have expanded our discussion of how we generate and evolve the metal distribution of the universe.
         Given both  the simple metallicity dependence incorporated in our parameterized binary 
@@ -79,3 +84,29 @@ The LIGO Coll. 2016a, ref missing
 ….
 
    A: We have reviewed and updated the references.
+
+
+From skype 9/2:
+
+The referee seems to be asking whether we have a simple estimate for
+    how much the compact object binary population and merger rate
+    changes as the metallicity distribution and history changes.
+    
+A: If the referee is asking whether we have a simple estimate for how
+    much the compact object binary population and merger rate changes
+    as the metallicity distribution and history changes.  we have
+    included an order-of-magnitude discussion a the start of section
+    4.  Unfortunately, the correlation between present-day population,
+    SFR and Z history, and the specific compact binary is complicated.
+    Because of the SFR-M-Z relationship, not all galaxy SFR and Z
+    evolution paths can be realized as a galaxy grows.  Moreover,
+    different types of binaries depend more or less sensitively on low
+    metallicity environments.  That said, our results for the binary
+    neutron star case should be considered as characteristic for how
+    sensitively the compact binary population depends on the galaxy's
+    assembly history.
+
+If the referee is asking how sensitively our results depend on our
+   appromximations -- that is, the systematic error due to adopting a
+   approximate treatment of metallicity evolution -- then we refer the
+   referee to the answer to #2 above.
