@@ -15,7 +15,7 @@
 %\usepackage{eps2pdf}
 
 %%% MNRAS stuff  %%%
-%\usepackage{newtxtext,newtxmath}
+\usepackage{newtxtext,newtxmath}
 \usepackage[T1]{fontenc}
 \usepackage{ae,aecompl}
 \usepackage{amssymb}	% Extra maths symbols
@@ -242,7 +242,7 @@ resolution using the volume renormalization technique \citep{Katz93}.
 This technique allows us to follow the detailed physical processes
 involved in galaxy evolution in our selected region while still
 including large-scale torques from cosmic structure.  Our cosmological parameters are $\Omega_0 = 0.24$, $\Omega_{\rm baryon} = 0.04$, $\Lambda = 0.76$, h = 0.73, $\sigma_8 = 0.77$ 
- \citep{WMAP3} and we model the ionizing UV background
+ \citep{WMAP3}.  \footnote{Since we are simulating individual galaxy environments rather than large populations of halos, the selection of cosmological parameters provides a negligible contribution to the variance in the overall evolutionary history of galaxies in our simulations. } We model the ionizing UV background
 with the prescription from \citet{Haardt96}.  Our interstellar medium (ISM) model includes the non-equilibrium formation and destruction of H$_2$, which is incorporated in the cooling model along with metal lines, along with shielding of HI and H$_2$ \citep{Christensen12}.  Stars form
 probabilistically from gas particles which meet density ($n_{min} =
 0.1$ amu cm$^{-3}$) and temperature ($T_{max} = 10^3$ K) thresholds, though since star formation also depends on the H$_{\rm 2}$ content of a particle (see below) the densities are nearly always much higher than this threshold. If a gas
@@ -275,7 +275,7 @@ allowed to cool for the duration of the blastwave, mimicking the
 adiabatic expansion phase of a supernova explosion.  Previous works have found
 that this set of parameters results in realistic galaxies which obey a
 number of observed relations such as the mass-metallicity relation
-\citep{Brooks07}, % JB: removed Kirby citation
+\citep{Brooks07,Christensen16}, % JB: removed Kirby citation
  the Tully-Fisher relation \citep{Christensen16}, and
 the size-luminosity relation \citep{Brooks11}, as well as reproduce
 the detailed characteristics of bulgeless dwarf galaxies
@@ -285,22 +285,34 @@ Metals are created in supernova explosions
 and deposited directly to the gas within the blast radius.  Stellar
 masses are converted to ages as described by \citet{Raiteri96}, and
 stars more massive than 8 M$_\odot$ are able to undergo a Type II
-supernova.  We follow metal enrichment from both Type II and Type 1a
-supernova, with metal yields derived from \citet{Weaver93} and
-\citet{Thielemann86} respectively. {\bf Richard:
- We adopt a fiducial Salpeter IMF.   We do not
- self-consistently evolve our population of compact binaries and metallicity: for simplicity and consistent with common
- practice, our model for chemical evolution is derived from isolated stars.  
- As described in ZZZ [PROBABLY NEED A PLOT], the  derived cosmological metal evolution and star formation rate history derived using this
- procedure is broadly consistent with the cosmological star formation history and metallicity evolution of the universe.
- In particular, our procedure in bulk is broadly consistent with previous work on star formation over cosmic time,
- including  phenomenological models for cosmological
- metal evolution and star formation history overall  \cite{2016MNRAS.461.3877D}; the mass-metallicity relationship; and
- the mass-metallicity-SFR correlation
- \cite{2010MNRAS.408.2115M,2016MNRAS.tmp.1187H} NEED MORE REPRESENTATIVE CITATIONS BESIDES THE ONE THE REFEREE WANTS.  Our procedure also yields scatter in metallicity between galaxies,
- consistent with the observed dispersion in the mass-metallicity relation (ZZZ; Panter?) and observation of DLAs
- \cite{2015MNRAS.452L..36D}; see YYY for comparison.
-}
+supernova.  \jillianremark{  For Type II supernovae, iron and oxygen are produced according to the analytic fits used in \citet{Raiteri96} using the yields from \citet{Woosley95}:
+
+\begin{equation}
+M_{\rm Fe} = 2.802 \times 10^{-4} M_*^{1.864}
+\end{equation}
+\begin{equation}
+M_{\rm O} = 4.586 \times 10^{-4} M_*^{2.721}.
+\end{equation}
+
+Feedback from Type Ia supernovae also follows \citet{Raiteri96}.  Each supernova produces $0.63\msun$ iron and $0.13 \msun$ oxygen \citet{Thielemann86}.  Metal production from stellar winds is also included; we implement stellar wind feedback based on \citet{Kennicutt94} and the returned mass fraction is derived using a function by \citet{Weidemann87}.  The returned gas has the same metallicity as the star particle.
+
+We do not include specific prescriptions for metal distribution based on initial metallicity (such as for Population III stars) or variations in IMF.  }
+
+
+%{\bf Richard:
+% We adopt a fiducial Salpeter IMF.   We do not
+% self-consistently evolve our population of compact binaries and metallicity: for simplicity and consistent with common
+% practice, our model for chemical evolution is derived from isolated stars.  
+% As described in ZZZ [PROBABLY NEED A PLOT], the  derived cosmological metal evolution and star formation rate history derived using this
+% procedure is broadly consistent with the cosmological star formation history and metallicity evolution of the universe.
+% In particular, our procedure in bulk is broadly consistent with previous work on star formation over cosmic time,
+% including  phenomenological models for cosmological
+% metal evolution and star formation history overall  \cite{2016MNRAS.461.3877D}; the mass-metallicity relationship; and
+% the mass-metallicity-SFR correlation
+% \cite{2010MNRAS.408.2115M,2016MNRAS.tmp.1187H} NEED MORE REPRESENTATIVE CITATIONS BESIDES THE ONE THE REFEREE WANTS.  Our procedure also yields scatter in metallicity between galaxies,
+% consistent with the observed dispersion in the mass-metallicity relation (ZZZ; Panter?) and observation of DLAs
+% \cite{2015MNRAS.452L..36D}; see YYY for comparison.
+%}
 
 Also included in our simulations is a scheme for turbulent metal
 diffusion \citep{Shen10}.   Once created,  metals
