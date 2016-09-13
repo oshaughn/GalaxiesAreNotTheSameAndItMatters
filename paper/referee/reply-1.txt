@@ -5,15 +5,14 @@ Cosmological simulation
 Namely, Omega_m = 0.315 with Omega_B = 0.049, Omega_lambda = 0.685 and sigma_8 = 0.882 with h = 0.68. The authors should analyze the potential impact of these parameters on their calculation.
 
 
-   A:  ** TENTATIVE **
-       Cosmological parameters enter into our results principally insofar as they select the relative probability of different
-       evolutionary trajectories like the fiducial examples shown here.   Therefore, as a demonstration and proof of
-       concept, our calculation should not depend significantly on the choice of precise cosmological parameters: far
-       more variance exists between galaxies within a given cosmological realization.    
-         That said, more recent simulations by the Gasoline group and others adopt more modern cosmological parameters.  
-       Future work will apply this framework to a broader and more representative sample of galaixes.
-
-       A: (JB)  Cosmological parameters such as Omega_x, sigma_8, and h affect the statistical evolution of populations of halos and their evolution.  Different parameters will result in changes in a simulated uniform cosmological volume.  We select halos for zoom-in simulations based on specific criteria such as mass and merger histories.  Since we focus on a small number of specific galaxies, the large-scale statistical differences caused by different cosmological parameters will only affect our results in a negligible way.   That said, more recent simulations by our group and others adopt more modern cosmological parameters.  Future work will apply this framework to a broader and more representative sample of galaixes.  We have added a footnote in the paper with regard to cosmological parameter seleciton.
+       A:  Cosmological parameters such as Omega_x, sigma_8, and h affect the statistical evolution of populations
+       of halos and their evolution.  Different parameters will result in changes in a simulated uniform cosmological
+       volume.  We select halos for zoom-in simulations based on specific criteria such as mass and merger histories.
+       Since we focus on a small number of specific galaxies, the large-scale statistical differences caused by
+       different cosmological parameters will only affect our results in a negligible way.   That said, more recent
+       simulations by our group and others adopt more modern cosmological parameters.  Future work will apply this
+       framework to a broader and more representative sample of galaixes.  We have added a footnote in the paper with
+       regard to cosmological parameter seleciton. 
 
 
 Chemical evolution
@@ -32,15 +31,16 @@ therein) for more developed discussion:
 The referee has helped us discover a citation error - we do in fact follow the Woosley and Weaver (1995) metal enrichment prescription, not 1993.  We have corrected the citation in the paper.  
 
    A: We have expanded our discussion of how we generate and evolve the metal distribution of the universe.
-        Given both  the simple metallicity dependence incorporated in our parameterized binary 
-        evolution and the fixed cost of our simulations (inherited and reused across many prior works) 
-        we continue to use WW93 yields, as a reasonably representative estimate for cosmological and galactic chemical
-        evolution.  At the level of accuracy we require (i.e., bulk chemical evolution accurate to tens of percent; no
+        Critically, our calculations were indeed performed with the WW95 (not WW93) metal enrichment prescription;
+        the citation mixup was entirely due to a  miscommunication between the authors.
+        
+        That said, at the level of accuracy we require (i.e., bulk chemical evolution accurate to tens of percent; no
         individual isotope tracking; inconsistent application of low-Z wind models to binary populations and isolated stars;
         using individual galaxy representatives), this model sufficies to characterize reprocessing from moderate-mass
         stars reasonably close to solar metallicity.  (Our results do not depend too sensitively on the lowest
         metallicity stars.)  However, to more accurately and self-consistently characterize the
-        impact of the first few generations of very low metallicity stars on compact binary populations,  we will revise our chemical evolution model in subsequent work.
+        impact of the first few generations of very low metallicity stars on compact binary populations,  we will
+        revisit  our chemical evolution model in subsequent work.
   
 
 
@@ -51,8 +51,9 @@ correlation 12+log(O/H) = -0.14 log (SFR) + 0.37 log (M*) + 4.82. The authors co
 calculation regarding these results. 
 
    A: Our narrow study, using only a handful of representative galaxies, is not well-suited to calibrating or validating
-      mass-metallicity or mass-metallicity-SFR relationships.  That said, our galaxies ARE [JILLIAN CHECKME] consistent
-      with the mass-metallicity-SFR relationship described here, on averarage, throughout their evolution.
+      mass-metallicity or mass-metallicity-SFR relationships.  That said, our galaxies are consistent
+      with the mass-metallicity-SFR relationship described here, on averarage, throughout their evolution.  
+      We have included a figure and discussion to illustrate the relationship.
 
       The anticorrelation between SFR and metallicity does indeed provide a natural explanation for our results.
 
