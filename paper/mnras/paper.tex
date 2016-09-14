@@ -285,7 +285,7 @@ Metals are created in supernova explosions
 and deposited directly to the gas within the blast radius.  Stellar
 masses are converted to ages as described by \citet{Raiteri96}, and
 stars more massive than 8 M$_\odot$ are able to undergo a Type II
-supernova.  \jillianremark{  For Type II supernovae, iron and oxygen are produced according to the analytic fits used in \citet{Raiteri96} using the yields from \citet{Woosley95}:
+supernova.    For Type II supernovae, iron and oxygen are produced according to the analytic fits used in \citet{Raiteri96} using the yields from \citet{Woosley95}:
 
 \begin{equation}
 M_{\rm Fe} = 2.802 \times 10^{-4} M_*^{1.864}
@@ -296,8 +296,6 @@ M_{\rm O} = 4.586 \times 10^{-4} M_*^{2.721}.
 
 Feedback from Type Ia supernovae also follows \citet{Raiteri96}.  Each supernova produces $0.63\msun$ iron and $0.13 \msun$ oxygen \citet{Thielemann86}.  Metal production from stellar winds is also included; we implement stellar wind feedback based on \citet{Kennicutt94} and the returned mass fraction is derived using a function by \citet{Weidemann87}.  The returned gas has the same metallicity as the star particle.
 
-We do not include specific prescriptions for metal distribution based on initial metallicity (such as for Population III stars) or variations in IMF.  We cannot thus discuss Population III contributions to the gravitational wave background; however, studies by  \citet{Hartwig16}  and \citet{Dvorkin16} suggest that this contribution is fairly negligible.  We have shown that our scheme for metal production and distribution produces galaxies which match the mass-metallicity relation at $z \sim 3$ \citep{Brooks07} as well as in the local universe \citep{Christensen16}.  At higher redshifts, there is a very large spread in the metal distributions of damped Lyman alpha systems \citep{Dvorkin15}, suggesting that global galaxy metallicities depend on a wide range of parameter space.  Recently \citet{Hunt16a,Hunt16b} has presented {\bf depictions} of the mass-metallicity-star formation rate fundamental plane, which demonstrates an evolutionary relationship between these quantities.  {\bf we agree with the stuff}
-}
 
 
 %{\bf Richard:
@@ -330,8 +328,10 @@ D = C_{diff} |S_{ij}| h
 %
 and $h$ is the SPH smoothing length, $S_{ij}$ is the trace-free shear
 tensor, and $C_{diff}$ is a dimensionless constant which we set to a conservative value of 0.03.  
-{\bf Combined with infall, this procedure produces a range of metallicities within each galaxy.  
-}
+Combined with infall, this procedure produces a range of metallicities within each galaxy.  
+
+
+We do not include specific prescriptions for metal distribution based on initial metallicity (such as for Population III stars) or variations in IMF.  We cannot thus discuss Population III contributions to the gravitational wave background; however, studies by  \citet{Hartwig16}  and \citet{Dvorkin16} suggest that this contribution is fairly negligible.  We have shown that our scheme for metal production and distribution produces galaxies which match the mass-metallicity relation at $z \sim 3$ \citep{Brooks07} as well as in the local universe \citep{Christensen16}.  At higher redshifts, there is a very large spread in the metal distributions of damped Lyman alpha systems \citep{Dvorkin15}; manifestly, other features in the galaxy evolutionary history play a role in its present day metallicity.  Recently \citet{Hunt16a,Hunt16b} has demonstrated a relationship between of the mass, metallicity, and star formation rate, which demonstrates an evolutionary relationship between these quantities.  As we will discuss in future work, we have verified that our evolutionary prescriptions are also qualitatively consistent with this relation.
 
 %Sijing finds that C = 0.05 makes for a good comparison to clusters, and that C = 0.05 - 0.1 is expected from turbulence theory.
 
@@ -454,23 +454,23 @@ newly-born stars with greater metallicity.  The shaded region represents one sta
 }
 \end{figure*}
 
-\subsection{Mass-metallicity-SFR relation}
-
-{\bf
-
-Simulations and observations suggest that galaxies only  exist with a relatively narrow range of possible masses,
-metallicities, and star formation rates; see, e.g., \citet{2010MNRAS.408.2115M,2016MNRAS.tmp.1187H}.   For example,  
-\cite{2016MNRAS.tmp.1187H} suggest a correlation beteween mass, metallicity, and star formation rate
-\begin{eqnarray}
-12+\log [O/H] = -0.14 log (SFR) + 0.37 log (M_*) + 4.82
-\end{eqnarray}
-In particular, taking this expression at face value, the star formation rate and metallicity are anticorrelated: a high
-star formation rate can occur only at low metallicity.  
-Figure XXXX shows the trajectories of our fiducial simulations' median $Z$ and star formation rate, using this
-diagnostic.  ARE THEY REASONABLE?
-
-
-}
+%\subsection{Mass-metallicity-SFR relation}
+%
+%{\bf
+%
+%Simulations and observations suggest that galaxies only  exist with a relatively narrow range of possible masses,
+%metallicities, and star formation rates; see, e.g., \citet{2010MNRAS.408.2115M,2016MNRAS.tmp.1187H}.   For example,  
+%\cite{2016MNRAS.tmp.1187H} suggest a correlation beteween mass, metallicity, and star formation rate
+%\begin{eqnarray}
+%12+\log [O/H] = -0.14 log (SFR) + 0.37 log (M_*) + 4.82
+%\end{eqnarray}
+%In particular, taking this expression at face value, the star formation rate and metallicity are anticorrelated: a high
+%star formation rate can occur only at low metallicity.  
+%Figure XXXX shows the trajectories of our fiducial simulations' median $Z$ and star formation rate, using this
+%diagnostic.  ARE THEY REASONABLE?
+%
+%
+%}
 
 \section{Detection-weighted compact binary formation}
 \label{sec:model}
@@ -481,11 +481,9 @@ simulated Milky-Way analog galaxies described above as well as the dwarfs.
 To explore plausible binary detection scenarios, we adopt a parametrized formalism for binary evolution and event
 detection in an individual galaxy, motivated by
 the detailed studies of  \cite[][(hereafter \abbrvPSgrb{})]{PSgrbs-popsyn} and  \citet[][(hereafter \abbrvPSellipticals{})]{PSellipticals};  similar approaches have been used by
-\cite{2016arXiv160508783L} and others.
-{\bf 
-Since prior population synthesis investigations  extend relatively smoothly to very metallicity, we do not introduce a
+\cite{2016arXiv160508783L} and others.  Since prior population synthesis investigations  extend relatively smoothly to very metallicity, we do not introduce a
 distinct, special group of low-metallicity Population III stars.
-}
+
 
 Binary evolution calculations suggest the binary compact object formation rate depends sensitively on the assumed metallicity, in conjunction
 with other parameters \citep[see,\,e.g.][and references
@@ -824,12 +822,12 @@ metallicity distribution within galaxies will usually lead to events in a wide r
 % which favored formation in a wide range of galaxies and event times.   % that analysis also
                                 % used a poor input from BSE, about the coalescence delay
 
-{\bf In our investigation, we have neglected the impact of population III stars.
+In our investigation, we have neglected the impact of population III stars.
 Previous studies suggest the first generation of stars may contribute a small but nonzero fraction of detectable events,
 potentially with distinctively high black hole masses
-\cite{2016MNRAS.460L..74H,2016PhRvL.117f1101S,2014MNRAS.442.2963K}.  
+\citep{2016MNRAS.460L..74H,2016PhRvL.117f1101S,2014MNRAS.442.2963K}.  
 % http://adsabs.harvard.edu/abs/2004ApJ...612..597W
-}
+
 
 
 In short, in this work we have demonstrated that  the confounding effects of host galaxy assembly history can in the
